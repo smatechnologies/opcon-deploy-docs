@@ -1,5 +1,5 @@
 module.exports = {
   mySidebar: [
-    'getting-started',
+    'index',
   ],
 };

@@ -1,5 +1,52 @@
 module.exports = {
   mySidebar: [
     'index',
+    'release-notes',
+    'using-opcon-deploy',
+    'script-management',
+    'deploy-sap-jobs',
+    'installation',
+    'user-interface',
+    {
+      type: 'category', 
+      label: 'Administration',
+      collapsed: true,
+      items: [
+        'administration/users',
+        'administration/servers',
+        'administration/audits',
+        'administration/settings',
+      ], 
+    },
+    'scripts',
+    {
+      type: 'category', 
+      label: 'Transformations',
+      collapsed: true,
+      items: [
+        'transformations/transformation-rules',
+        'transformations/transformation-tag-definitions',
+        'transformations/transformation-tag-examples',
+        'transformations/transformations-special-definitions',
+      ], 
+    },
+    'schedules',
+    'packages',
+    {
+      type: 'category', 
+      label: 'Deployments',
+      collapsed: true,
+      items: [
+        'deployments/deployments',
+        'deployments/transformation-rules-tree',
+        'deployments/deployments-browse',
+      ], 
+    },
+    'scheduled-batch-deployment',
+    'batch-processing',
+    'batch-deployment-implementation',
+    'database-archiving',
+    'batch-diagram-processing',
+    'package-and-schedule-diagram',
   ],
 };

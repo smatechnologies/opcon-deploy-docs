@@ -8,12 +8,14 @@
 * OpCon Server version 18.3 minimum
 * OpCon RestAPI must be active for each OpCon system participating in OpCon Deploy
 * To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org).
+* To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete.
+* To implement Windows Authentication for the OpCon Impex Server requires manual configuration after the installation is complete.
 
 ## Deploy Installation
 
 The OpCon Deploy installation process consists of three basic steps: the installation of the client software, the installation of the database, and the installation of the server software.
 
-The client software may be installed as many times as required on any Windows system.
+The client software may be installed as many times as required on any Windows system. 
 
 The database should only be installed once on a SQL Server environment. It can be installed on an existing SQL Server implementation used by OpCon or on a separate installation. There are no dependencies between an SMA OpCon database and an SMA OpCon Deploy database.
 
@@ -146,7 +148,9 @@ Complete the procedures in this section to install a new OpCon Deploy Server:
 
 The config.ini file contains the configuration statements that provide the connection to the OpCon Deploy database. After installation, the config.ini file can be found in the c:\ProgramData\OpConxps\Deploy\client directory.
 
-Users may establish a connection to the OpCon Deploy database using Windows Authentication.
+Users may establish a connection to the OpCon Deploy database using Windows Authentication. The databaseUser should be left blank and the password of the Windows Domain user should be encrypted and placed in the config file (see databaseUser / databaseUserPassword).
+
+Users may establish a TLS connection to the OpCon Deploy database if required by adding ***;ssl=require*** to the database URL (see databaseURL).
 
 ### debug
 
@@ -167,13 +171,18 @@ The database driver software class name.
 The database URL. If a specific database instance is to be used for MS SQL, the instance name is appended after the database name.
    * For MS SQL: ```jdbc:jtds:sqlserver: //<server>/SMAOpConDeploy jdbc:jtds:sqlserver://<server>/SMAOpConDeploy;instance=INST001```
 
+The database URL. If TLS is required append the **;ssl=require** to the URL.
+   * For MS SQL: ```jdbc:jtds:sqlserver: //<server>/SMAOpConDeploy jdbc:jtds:sqlserver://<server>/SMAOpConDeploy;ssl=require```
+
 ### databaseUser
 
 The name of the database user who has the required privileges to all tables in the OpCon Deploy database.
+For Windows Authentication, the field should be left blank.
 
 ### databaseUserPassword
 
 The password of the database user, encrypted using the Enterprise Manager encryption tool.
+For Windows Authentication, the field should contain the encrypted password of the Windows User.
 
 ### minConnections
 
@@ -214,9 +223,62 @@ databaseDriver=net.sourceforge.jtds.jdbc.Driver
 
 databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpconDeploy
 
-#databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;instance=INST001
+# example for connecting to a specific instance
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;instance=INST001       
+
+# example for connection using SSL
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;ssl=require
+
+# example for connecting to a specific instance using SSL
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;instance=INST001;ssl=require
 
 databaseUser=ormadmin
+
+databaseUserPassword=sYnk3bzpZybGPbSOrhsr4g==
+
+minConnections=1
+
+maxConnections=25
+
+graphvizDirectory=F:\\GraphViz_238\\bin\\dot.exe
+
+diagramDirectory=C:\\test\\relmgmt\\diagrams
+
+```
+
+## Sample Deploy Client Configuration File using Windows Authentication
+
+```
+
+# SMA OpCon Deploy Configuration File
+
+#
+
+###########################
+
+#  General Settings Area  #
+
+###########################
+
+
+debug=false
+
+ebeanServerName=mssql
+
+databaseDriver=net.sourceforge.jtds.jdbc.Driver
+
+databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpconDeploy
+
+# example for connecting to a specific instance
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;instance=INST001
+
+# example for connection using SSL
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;ssl=require
+
+# example for connecting to a specific instance using SSL
+# databaseUrl=jdbc:jtds:sqlserver://VM-REPOS-SQL/SMAOpConDeploy;instance=INST001;ssl=require
+
+databaseUser=
 
 databaseUserPassword=sYnk3bzpZybGPbSOrhsr4g==
 
@@ -234,14 +296,27 @@ diagramDirectory=C:\\test\\relmgmt\\diagrams
 
 The config.ini file contains the configuration statements that provide the connection to the local OpCon system. After installation, the config.ini file can be found in the ```c:\ProgramData\OpConxps\Deploy\Server``` directory.
 
+### Configuring Windows Authentication
+
+When using Windows Authentication, **the SMA OpCon Impex2 RestAPI** service must be executed using a Windows Domain user.
+
+- Stop the **the SMA OpCon Impex2 RestAPI** service.
+- Set the opcon.db.using.winauth property to true.
+- Change the service to execute under a specific account (***Properties -> Log On*** not ***Local System Account***).
+- Ensure the chosen account is registered with SQL Server.
+- While the db user and password entered during installation are not used, they should not be removed from the config.ini file. 
+- Restart the **the SMA OpCon Impex2 RestAPI** service.
+
 ### Deploy Server Configuration Statement Descriptions
 
 | Tag Name | Description |
 | -------- | ----------- |
-|  opcon.server.name | The name of the OpCon server to which the OpCon Deploy RESTFul Server will connect |
+| opcon.server.name | The name of the OpCon server to which the OpCon Deploy RESTFul Server will connect |
 | opcon.db.name | The name of the OpCon database to which the OpCon Deploy RESTFul Server will connect (e.g., OPCONXPS)|
 | opcon.db.user | The name of a valid user who has privileges on the database named in the opcon.db.name definition (e.g., opconsam) |
 | opcon.db.password | The password of the user named in the opcon.db.user definition |
+| opcon.db.using.winauth | Indicates if the connection to the OpCon Database should use Windows Authentication (values true or false) |
+| opcon.db.connection.max | The maximum number fo simultaneous database connections allowed to the OpCon database |
 | web.port | The port number used by the OpCon Deploy RESTFul server (default 9001) |
 | system.debug | Set to true or false - Should only be set to true at SMA Technologies' request |
 
@@ -255,6 +330,8 @@ opcon.server.name=EC2AMAZ-2QV0RKO
 opcon.db.name=OPCONXPS
 opcon.db.user=opconsam
 opcon.db.password=sYnk3bzpZybGPbSOrhsr4g==
+opcon.db.using.winauth=false
+opcon.db.connection.max=10
 #
 # REST server configuration
 #
@@ -266,6 +343,28 @@ system.debug=false
 
 ```
 
+### Sample Deploy Server Configuration File using Windows Authentication
+
+```
+#
+# OpCon server connection information
+#
+opcon.server.name=EC2AMAZ-2QV0RKO
+opcon.db.name=OPCONXPS
+opcon.db.user=opconsam
+opcon.db.password=sYnk3bzpZybGPbSOrhsr4g==
+opcon.db.using.winauth=true
+opcon.db.connection.max=10
+#
+# REST server configuration
+#
+web.port=9001
+#
+# Logger configuration
+#
+system.debug=false
+
+```
 ## Deploy Database Backup Scripts
 
 When implementing a production environment, it is necessary to take regular backups of the OpCon Deploy database.

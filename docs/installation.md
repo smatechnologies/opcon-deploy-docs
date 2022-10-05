@@ -9,7 +9,7 @@
 * OpCon RestAPI must be active for each OpCon system participating in OpCon Deploy
 * To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org).
 * To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete.
-* To implement Windows Authentication for the OpCon Impex Server requires manual configuration after the installation is complete.
+* To implement Windows Authentication for the OpCon Impex Server requires OpCon versions 21.0.10, 20.0.15 or greater and manual configuration after the installation is complete.
 
 ## Deploy Installation
 

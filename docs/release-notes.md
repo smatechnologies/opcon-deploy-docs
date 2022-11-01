@@ -4,6 +4,18 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 21.2
+
+2022 September
+
+:white_check_mark: **OPCDEPLOY-1325**: Fixed issues with the Import file function when schedule definition file contains embedded script jobs.
+
+:white_check_mark: **OPCDEPLOY-1317**: Corrected merging of Department and Access Code information during package creation.
+
+:white_check_mark: **OPCDEPLOY-1323**: Optimized transaction demarcation during the deploy process. The initial deployment record is created outside the transaction and a new deployment status 'Failed' will be displayed if the deployment fails. If the deployment is restarted and completes successfully, the initial deployment record will be used.
+
+:white_check_mark: **OPCDEPLOY-1326**: Added environment transformation to TH, RM and RU properties when used within Dependency expressions and event complex expressions.
+
 ## Version 21.1
 
 2022 February

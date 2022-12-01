@@ -5,7 +5,7 @@ The Devops.SMAOpConDeployClient.exe provides integration possibilities with the 
 The concept is to create schedules and scripts within an OpCon system, export these created definitions (schedule and script version) and store them in a DevOps repository. 
 These definitions can them be deployed to OpCon systems through Release Pipelines, or directory from a branch in a repository using Deploy.
 
-![DevOps Extraction Process](../img/devops-extraction-process.png)
+![DevOps Extraction Process](../static/img/devops-extraction-process.png)
 
 The extraction part of the integration is to export the required definitions from the development OpCon system and store them in a branch of a local DevOps repository. During this process, the schedule definition is first saved as a new version in the Deploy repository. The script version is also saved as a new script version if the script is defined in the Deploy repository. If the script itself is not definied in the Deploy repsoitory, the script is inserted into the Deploy repositoty and the script versions stored.
 The definitions are extracted as files which can then be included in a local DevOps repository branch which is subsequently 'pushed' up to the main repository and then via a 'pull-request' merged into the production branch.

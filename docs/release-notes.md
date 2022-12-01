@@ -8,24 +8,36 @@ sidebar_label: 'Release notes'
 
 2022 December
 
-:eight_spoked_asterisk: **OPCDEPLOY-1319**: Deploy now provides a new batch process File.SMAOpConDeployClient which provides support for extraction of schedules and scripts from either an OpCon system or the Deploy repository. It also 
-supports inserting schedule definitions or script versions from files into the Deploy repository.
+:eight_spoked_asterisk: **OPCDEPLOY-1319**: Deploy now provides a new batch process File.SMAOpConDeployClient which provides support for extraction of schedules and scripts from either an OpCon system or the Deploy repository. It also supports inserting schedule definitions or script versions from files into the Deploy repository.
+
 :eight_spoked_asterisk: **OPCDEPLOY-1321**: Added backend integration with DevOps to enable retrieval of schedules or script versions from a branch within the repository. 
-:eight_spoked_asterisk: **OPCDEPLOY-1320**: Deploy now provides a new batch process Devops.SMAOpConDeployClient which provides support for extraction of schedules and scripts from an OpCon system. It also supports deploying a
-schedule or script version from files or from a DevOps repository. When Deploying a schedule or script, the definition is first stored in the Deploy repository and then 'deployed' to the target system using the standard Deploy
-mechanism.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1320**: Deploy now provides a new batch process Devops.SMAOpConDeployClient which provides support for extraction of schedules and scripts from an OpCon system. It also supports deploying a schedule or script version from files or from a DevOps repository. When Deploying a schedule or script, the definition is first stored in the Deploy repository and then 'deployed' to the target system using the standard Deploy mechanism.
+
 :eight_spoked_asterisk: **OPCDEPLOY-1322**: Added script name change transformation rule. During environment transformation, prefix now added to script to create a unique instance of the script for the defined environment. 
 
 ## Version 21.2
 
 2022 September
 
-:white_check_mark: **OPCDEPLOY-1324**: Created upadted EM-Core-API library for ImpE2x.
+:white_check_mark: **OPCDEPLOY-1324**: Created updated EM-Core-API library for ImpE2x.
+
 :white_check_mark: **OPCDEPLOY-1317**: Department and Access code are not deployed when we deploy a package.
+
 :white_check_mark: **OPCDEPLOY-1323**: Concurrent deployments create Deadlock on deployment table, resulting in deployment of schedule succeeding, but information in Deploy database
 not updated.
+
 :white_check_mark: **OPCDEPLOY-1325**: Script versions not imported correctly when performing a file Import.
+
 :white_check_mark: **OPCDEPLOY-1326**: during transformation, environment Tag not applied to Event Trigger Job Completion Complex Expression for TH name.
+
+:white_check_mark: **OPCDEPLOY-1325**: Fixed issues with the Import file function when schedule definition file contains embedded script jobs.
+
+:white_check_mark: **OPCDEPLOY-1317**: Corrected merging of Department and Access Code information during package creation.
+
+:white_check_mark: **OPCDEPLOY-1323**: Optimized transaction demarcation during the deploy process. The initial deployment record is created outside the transaction and a new deployment status 'Failed' will be displayed if the deployment fails. If the deployment is restarted and completes successfully, the initial deployment record will be used.
+
+:white_check_mark: **OPCDEPLOY-1326**: Added environment transformation to TH, RM and RU properties when used within Dependency expressions and event complex expressions.
 
 ## Version 21.1
 

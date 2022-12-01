@@ -46,6 +46,7 @@ module.exports = {
     "batch-processing",
     "batch-deployment-implementation",
     "batch-file-integration",
+    "batch-devops-integration",
     "database-archiving",
     "batch-diagram-processing",
     "package-and-schedule-diagram",

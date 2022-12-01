@@ -200,6 +200,14 @@ Used with diagram feature and defines the location of the GraphViz dot exe progr
 
 Used with diagram feature and defines the location of the created .dot and .pdf files.
 
+### devOpsOrganization
+
+Used with DevOps integration and consists of the Organization name.
+
+### devOpsToken
+
+Used with DevOps integration and consists of the PAT (Personal Access Token) of the user that is allowed to access the data in the DevOps repository.
+
 ## Sample Deploy Client Configuration File
 
 ```
@@ -243,6 +251,10 @@ maxConnections=25
 graphvizDirectory=F:\\GraphViz_238\\bin\\dot.exe
 
 diagramDirectory=C:\\test\\relmgmt\\diagrams
+
+devOpsOrganization=SMATechnologies
+
+devOpsToken=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ```
 
@@ -289,6 +301,10 @@ maxConnections=25
 graphvizDirectory=F:\\GraphViz_238\\bin\\dot.exe
 
 diagramDirectory=C:\\test\\relmgmt\\diagrams
+
+devOpsOrganization=SMATechnologies
+
+devOpsToken=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ```
 

@@ -881,6 +881,22 @@ This tag is used to change the schedule start time.
 
     * (*Required*). New value for schedule auto build time in the format HH:MM.
 
+### Script_Name
+
+This tag is used to change the script name value of the script definition. The script name is changed in embedded script job definitions as well:
+
+* currentValue	
+
+    * (*Required*): Contains the name of the script in the script definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
 ### Threshold_Name
 
 This tag is used to change the threshold name value of the threshold definition. The threshold name is changed in events as well as dependencies and supports the following tags:

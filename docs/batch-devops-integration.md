@@ -16,7 +16,7 @@ The schedule information is then written out into a file and the name of  the fi
 
 These files can then be included in a new branch of a local repository, committed and pushed up to the main DevOps repository where a 'pull-request' can be created to merge the new definition into the production branch.
 
-![DevOps Deploy Process](../img/devops-deploy-process.png)
+![DevOps Deploy Process](../static/img/devops-deploy-process.png)
 
 The deployment process uses Deploy to 'push' the definitiosn to the target system. During this process, the definitions are stored in the Deploy repository as new versions of existing schedules and scripts before they are sent to the target system. If a release tag is provided, the tag will be included in the description fields of the Deploy records as well as the deployment information of the schedule and the description of the script version. This means that it will be possible to see which DevOps release version is active on the OpCon system.
 

@@ -4,9 +4,32 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.0
+
+2022 December
+
+:eight_spoked_asterisk: **OPCDEPLOY-1319**: Deploy now provides a new batch process File.SMAOpConDeployClient which provides support for extraction of schedules and scripts from either an OpCon system or the Deploy repository. It also supports inserting schedule definitions or script versions from files into the Deploy repository.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1321**: Added backend integration with DevOps to enable retrieval of schedules or script versions from a branch within the repository. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1320**: Deploy now provides a new batch process Devops.SMAOpConDeployClient which provides support for extraction of schedules and scripts from an OpCon system. It also supports deploying a schedule or script version from files or from a DevOps repository. When Deploying a schedule or script, the definition is first stored in the Deploy repository and then 'deployed' to the target system using the standard Deploy mechanism.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1322**: Added script name change transformation rule. During environment transformation, prefix now added to script to create a unique instance of the script for the defined environment. 
+
 ## Version 21.2
 
 2022 September
+
+:white_check_mark: **OPCDEPLOY-1324**: Created updated EM-Core-API library for ImpE2x.
+
+:white_check_mark: **OPCDEPLOY-1317**: Department and Access code are not deployed when we deploy a package.
+
+:white_check_mark: **OPCDEPLOY-1323**: Concurrent deployments create Deadlock on deployment table, resulting in deployment of schedule succeeding, but information in Deploy database
+not updated.
+
+:white_check_mark: **OPCDEPLOY-1325**: Script versions not imported correctly when performing a file Import.
+
+:white_check_mark: **OPCDEPLOY-1326**: during transformation, environment Tag not applied to Event Trigger Job Completion Complex Expression for TH name.
 
 :white_check_mark: **OPCDEPLOY-1325**: Fixed issues with the Import file function when schedule definition file contains embedded script jobs.
 
@@ -21,7 +44,6 @@ sidebar_label: 'Release notes'
 2022 February
 
 :white_check_mark: **OPCDEPLOY-1315**: Added more informational logging when working with SAP jobs.
-
 :white_check_mark: **OPCDEPLOY-1309**: Added Auto Build Reset capabilities during Deployment of schedules and packages. When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. When selecting the Auto Build checkbox, the values are initially set to 1. When not selected, the values are set to 0. To reset the Auto Build and Auto Delete values, select the Auto Build checkbox and set the Days in Advance and Days values to 0. This will remove the the Auto Build and Auto Delete values.
 
 :eight_spoked_asterisk: **OPCDEPLOY1311**: Deploy now allows role names to be part of the transformation, to map them to the names on the target system. Role_Add: This tag is used to add a Role during deployment. The Role name will be added in Role, schedules, scripts and departments. The new Role name must be defined in the target system. This tag supports the following: newValue: Required: Contains the name of the Role to add. All other fields are disabled.

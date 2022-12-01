@@ -172,6 +172,7 @@ Other important points to note:
     * Schedule_Instance_Property
     * Schedule_Name
     * Schedule_Named_Instance
+    * Script_Name
     * Threshold_Name
     * Unix_GroupId_UserId
     * Unix_Group_Id

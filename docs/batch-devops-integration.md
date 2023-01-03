@@ -7,6 +7,7 @@ These definitions can then be deployed to OpCon systems through Release Pipeline
 
 ![DevOps Extraction Process](../static/img/devops-extraction-process.png)
 
+
 The extraction part of the integration is to export the schedule and script definitions from the development OpCon system and store them in a branch of a local DevOps repository. During this process, the extracted information is first saved into the Deploy repository, creating new versions of the schedule and script. If the schedule does not exist in Deploy repository, a new schedule definition is created. If the script does not exist, the script is inserted into the Deploy repository and all the script versions stored.
 
 The schedule information is then written out into a file and the name of the file consists of the schedule name and a .json extension. The script version is written out into a file and the name of the file consists of the script name.

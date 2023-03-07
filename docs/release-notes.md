@@ -4,6 +4,20 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.1
+
+2022 December
+
+:eight_spoked_asterisk: **OPCDEPLOY-1331**: Corrected an error that enabled Job Name Field for Role Name transformation rule.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1332**: Corrected an error when more than one job name field is defined in a set of transformation rules. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1335**: Changed logging moving large logging entries to DEBUG and corrected log setup to ensure DEBUG is turned off by default.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1336**: Corrected package simulation error when only first schedule in package is compared instead of all schedules in the package.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1339**: Add OpConMFT job-type compatibility check for OpCon version 22.0.
+
 ## Version 22.0
 
 2022 December

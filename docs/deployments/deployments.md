@@ -80,6 +80,9 @@ When Next is selected, the Summary dialog appears presenting the sections the us
 
 When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. When selecting the Auto Build checkbox, the values are initially set to 1. When not selected, the Auto Build and Auto Delete settings return to the values currently defined on the schedule imported into OpCon Deploy.
 
+To remove the AutoBuild options, select the **AutoBuild** Checkbox and set the **days in advance for** and **days** to 0.
+To remove the AutoDelete option, select the **AutoDelete** Checkbox and set the **days ago** to 0. 
+
 If the requirement is to rebuild the existing schedules in the daily after the schedule definition has been deployed, select the Rebuild Schedules in Daily checkbox. When this is selected, all schedules present in the daily from the current date will be rebuilt. During the rebuild process, a check is made to see if the schedules are in an **On-Hold** condition. If the schedule is in an **On-Hold** condition the schedule is rebuilt in that condition. A check is also made to see if the schedule in the daily has any schedule instance properties and if schedule instance properties are present, these values are used during the rebuild process instead of the values from the master.
 
 It is then possible to continue by selecting the Back, Simulate, Batch Deploy, or Deploy option.

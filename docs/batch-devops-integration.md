@@ -5,7 +5,8 @@ The Devops.SMAOpConDeployClient.exe provides integration possibilities with the 
 The concept is to create schedules and scripts within an OpCon system, export these created definitions (schedule and script version) and store them in a DevOps repository. 
 These definitions can then be deployed to OpCon systems through Release Pipelines, or directory from a branch in a repository using Deploy.
 
-![DevOps Extraction Process](../img/devops-extraction-process.png)
+![DevOps Extraction Process](../static/img/devops-extraction-process.png)
+
 
 The extraction part of the integration is to export the schedule and script definitions from the development OpCon system and store them in a branch of a local DevOps repository. During this process, the extracted information is first saved into the Deploy repository, creating new versions of the schedule and script. If the schedule does not exist in Deploy repository, a new schedule definition is created. If the script does not exist, the script is inserted into the Deploy repository and all the script versions stored.
 
@@ -13,7 +14,7 @@ The schedule information is then written out into a file and the name of the fil
 
 These files can then be included in a new branch of a local repository, committed and pushed up to the main DevOps repository where a 'pull-request' can be created to merge the new definition into the production branch.
 
-![DevOps Deploy Process](../img/devops-deploy-process.png)
+![DevOps Deploy Process](../static//img/devops-deploy-process.png)
 
 The deployment process uses Deploy to 'push' the definitions to the target system. During this process, the definitions are stored in the Deploy repository as new versions of existing schedules and scripts before they are sent to the target system. If a release tag is provided, the tag will be included in the description field of the Deploy records as well as the deployment information of the schedule and the description of the script version. This means that it will be possible to see which DevOps release version is active on the OpCon system.
 

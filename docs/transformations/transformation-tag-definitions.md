@@ -315,7 +315,7 @@ This tag is used to change a value in the Message Logging Severity field of the 
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
-### IBMi_Message_Logging_Level
+### IBMi_Message_Logging_Text
 
 This tag is used to change a value in the Message Logging Text field of the IBM i job definition and supports the following tags:
 
@@ -375,7 +375,7 @@ This tag is used to change a value in the User ID text field of the IBM i job de
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
-### Job_Instance_Properties
+### Job_Instance_Property
 
 This tag is used to change the job instance property name value of the job instance property definition as well as the contents of the property. The job instance property name is also changed in the Windows command line, Windows working directory, UNIX start image and UNIX fields. This tag supports the following tags:
 
@@ -561,7 +561,7 @@ This tag is used to change the value of MCP prerun file title associated with th
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
-### MCP_User
+### MCP_User_Code
 
 This tag is used to change the value of an MCP user associated with the job and supports the following tags:
 
@@ -805,7 +805,7 @@ This tag is used to change the name of the Machine Group in a schedule definitio
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
-### Schedule_Instance_Properties
+### Schedule_Instance_Property
 
 This tag is used to change the Schedule Instance Property name value of the schedule instance property definition and the contents of the property. The schedule instance property name will also be changed in the Schedule Events, Job Instance Properties, Events, Windows Command Line, Windows Working Directory, UNIX Start Image, and UNIX fields of the jobs associated with the schedule . This tag also supports the following tags:
 

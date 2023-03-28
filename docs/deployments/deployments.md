@@ -78,7 +78,9 @@ When Next is selected, the Summary dialog appears presenting the sections the us
 
 ![Deployment Summary Dialog](/img/deployment-summary-dialog.png)
 
-When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. When selecting the Auto Build checkbox, the values are initially set to 1. When not selected, the Auto Build and Auto Delete settings return to the values currently defined on the schedule imported into OpCon Deploy.
+When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. 
+When selecting the Auto Build checkbox, the values are initially set to 1. 
+When not selected, the Auto Build and Auto Delete settings return to the values currently defined on the schedule imported into OpCon Deploy.
 
 To remove the AutoBuild options, select the **AutoBuild** Checkbox and set the **days in advance for** and **days** to 0.
 To remove the AutoDelete option, select the **AutoDelete** Checkbox and set the **days ago** to 0. 

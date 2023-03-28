@@ -36,11 +36,11 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 **-bd**	
 
-* Optional argument that defines the schedule auto build days used with DEPLOY
+* Optional argument that defines the schedule auto build days used with DEPLOY. When set to 0 and build days in advance set to 0, will reset the values 
 
 **-bda**	
 
-* Optional argument that defines the schedule auto build days in advance used in DEPLOY
+* Optional argument that defines the schedule auto build days in advance used in DEPLOY. When set to 0 and build days set to 0, will reset the values
 
 **-d**	
 
@@ -48,7 +48,7 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 **-dd**	
 
-* Optional argument that defines the schedule auto delete days used with DEPLOY
+* Optional argument that defines the schedule auto delete days used with DEPLOY. When set to 0, will reset the value
 
 **-dno**	
 

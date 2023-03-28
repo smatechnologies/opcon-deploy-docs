@@ -10,6 +10,7 @@
 * To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org).
 * To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete.
 * To implement Windows Authentication for the OpCon Impex Server requires OpCon versions 21.0.10, 20.0.15 or greater and manual configuration after the installation is complete.
+* Version 22.2 requires matching SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, opCon 21.0.14 or greater and OpCon 20.0.20 or greater). 
 
 ## Deploy Installation
 

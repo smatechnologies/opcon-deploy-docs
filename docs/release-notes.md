@@ -4,6 +4,13 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.2
+
+2023 March
+
+:eight_spoked_asterisk: **OPCDEPLOY-1338**: Separated reset AutoBuild days and AutoDelete days into two separate rules. Therefore it is now possible to reset either AutoBuild days or AutoDelete days.
+it should be noted that this implementation requires matched SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, opCon 21.0.14 or greater and OpCon or greater 20.0.20). 
+
 ## Version 22.1
 
 2022 December

@@ -4,6 +4,15 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.3
+
+2023 April
+
+:eight_spoked_asterisk: **OPCDEPLOY-1341**: Added new 'Include sub-schedules' option in Checkin Summary Page that will recursively add sub-schedules found during a schedule import to the import process. The import result
+of each schedule is displayed in the results view. The message reporting that the schedule version already exists, has been changed to a WARNING message and the color changed to dark yellow. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1343**: Added 'Update Schedule Versions' button to Package Dialog. When selected, the schedules associated with the package will be updated to the latest version of the schedule in the Deploy database. 
+
 ## Version 22.2
 
 2023 March

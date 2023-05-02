@@ -54,6 +54,10 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 * Optional flag used with DEPLOY. Use of this flag indicates that the schedule definitions on the target system should not be overwritten
 
+**-id**	
+
+* Optional argument for IMPORT, that indicates the record id of the deployment record. This is used by the batch deployment process. If this is not present a new deployment record is created (Default 0) 
+
 **-fw**
 
 * An argument that defines the filename used with IMPORT or INIT for schedules.
@@ -72,6 +76,14 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 * Optional argument that defines the server name
     * For IMPORT or INIT, it is the name of the source OpCon system
     * For DEPLOY and SIMULATE, it is the name of the target OpCon system
+
+**-sap**
+
+* (Optional) Used to indicate that if a SAP job is encountered, the SAP definition must be extracted / inserted (Default false)
+
+**-sub**
+
+* (Optional) argument for IMPORT that is used to indicate that if sub-schedules are found in the schedules, the sub-schedules should also be included in the import process (Default false)
 
 **-t**	
 

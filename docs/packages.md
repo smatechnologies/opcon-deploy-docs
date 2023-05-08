@@ -16,11 +16,23 @@ The Manage function allows packages to be managed in the OpCon Deploy system. It
 
 When working with the View or edit Packages dialog, the information of an existing package can be displayed by selecting the package from the Name drop-down list. Once the package name has been selected, a list of versions of the package will appear in the Version drop-down list. If the package is deployed to production, the version that is deployed to production will be indicated on the drop-down list. When a version has been selected, the information is displayed in the View/edit package section of the dialog.
 
-When a package is selected, the Create Diagram and Create Header Diagram buttons are activated, making it possible to create a diagram from the package definition. The diagram is then displayed in PDF format.
+When a package is selected, the Create Diagram, the Create Header Diagram and the Update Schedule Versions buttons are activated, making it possible to create a diagram from the package definition or update the schedule version of all schedules associated with the package to the latest version in the Deploy database. When a diagram has been selected, it is displayed in PDF format.
 
 The Create Diagram button creates a complete diagram of the schedules, including: jobs, resources, and dependencies. The Create Header Diagram button creates a diagram which displays the schedule header with container jobs only. If job dependencies exist between the jobs on the schedules, these dependencies will be displayed. Please refer to the topic Package and Schedule Diagram for more information.
 
 If changes are made to the package information, then the Save and Cancel buttons will be enabled.
+
+Updating the Schedule Versions of a package
+
+Clicking the Update Schedule Versions button will bring up the Update Schedule Versions confirmation message:
+
+![Update Package Schedule Versions Confirmation Message](/img/update-package-schedule-versions-confirmation.png)
+
+Confirming the message will update the version of schedules associated with the package to the latest version of the schedule in the Deploy database. If the schedule version is the already the latest version, no changes are made.
+
+A completion message is displayed in the upper message bar.
+
+If changes have been made, the Save and Cancel buttons will be enabled. To save the changes and create a new package version, click on the Save button.
 
 Deleting a Package
 

@@ -28,11 +28,14 @@ Once Next has been selected, the list of schedules will be retrieved from the ch
 
 ![Schedule Import Schedule Selection Image](/img/schedule-import-schedule-selection.png)
 
-Once Next has been selected, the selected schedule(s) will be displayed in the Schedule Import (Summary) dialog appears. This provides a summary of your selections, provides a Refresh SAP Job Definitions checkbox to indicate if OpCon SAP R3 jobs are encountered in the schedule then the SAP server job definitions should be extracted from the SAP server (otherwise, uses values in 13100 and 13101 records), and adds a description that will be included in the import.
+Once Next has been selected, the selected schedule(s) will be displayed in the Schedule Import (Summary) dialog appears. This provides a summary of your selections, allows selection of import options and allows a description to be added to the import process.
+Supported IMport Options:
+- **Refresh SAP Job Definitions** indicates if OpCon SAP R3 jobs are encountered in the schedule, then the SAP server job definitions should be extracted from the SAP server (otherwise, uses values in 13100 and 13101 records).
+- **Include Sub-Schedules** indicates if container jobs are encountered in the schedule, the associated sub-schedule should be included in the import process. The schedules are checked recursively and each sub-schedule is imported as a separate schedule. The result of all schedule imports is displayed in the results message.
 
 ![Schedule Import Summary Image](/img/schedule-import-summary.png)
 
-If the schedule(s) has been inserted successfully into the repository, you will get a success message indicating that the schedule has been inserted as version (*n*) for each selected schedule.
+If the schedule(s) has been inserted successfully into the repository, you will get a success message indicating that the schedule has been inserted as version (*n*) for each selected schedule. During the schedule import process a check is made to see if the schedule definition matches the current version in the Deploy database. If this is the case, a warning message will be displayed indicating that the schedule already exists in the database a version (*n*);
 
 ![Schedule Import Success Image](/img/schedule-import-success-message.png)
 

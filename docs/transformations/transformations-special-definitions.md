@@ -16,7 +16,7 @@ Within OpCon, a schedule name must be unique within an OpCon instance. There may
 
 (*Required*): This tag is defined in the Transformations object and consists of a value that will be prefixed to schedule, property, resource, and threshold definitions.
 
-![Environment Sample](../static/img/environment-sample.png)
+![Environment Sample](../../static/img/environment-sample.png)
 
 ### Frequency_Use_Existing_Definitions 
 
@@ -26,7 +26,7 @@ Within OpCon, a schedule name must be unique within an OpCon instance. There may
 
 * One example would be if there is a frequency definition on the target system LWDOM (the last working day of the month). During testing, the frequency definition for LWDOM will probably be an All Days definition, as you do not want to wait until the last day of the month to perform tests.
 
-![Frequency_Use_Existing_Definitions Sample](../static/img/frequency-use-existing-definitions.png)
+![Frequency_Use_Existing_Definitions Sample](../../static/img/frequency-use-existing-definitions.png)
 
 ### Move_Schedule_Package
 

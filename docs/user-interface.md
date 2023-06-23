@@ -2,7 +2,7 @@
 
 When starting the client software, the user must log in to gain access to the application by entering an appropriate user code and password. After installation, a default Administration user Admin with a password of admin can be used to access the SMA OpCon Deploy database initially. The password of the Admin user should then be changed.
 
-![Login Image](/img/login-image.png)
+![Login Image](../static/img/login-image.png)
 
 OpCon Deploy supports users logging in to the application using Windows Authentication. To login to OpCon Deploy as the current Windows user, select the Use Windows Authentication checkbox. If the checkbox is selected, no user name or password is required.
 
@@ -10,13 +10,13 @@ Once the user has logged into the application, the user interface is displayed, 
 
 If the user is not defined with the ADMINISTRATION role, the Administration section of the user interface will not be available.
 
-![Main Screen Image](/img/main-screen-image.png)
+![Main Screen Image](../static/img/main-screen-image.png)
 
 However, non-Administration users who have been granted read-only access to view the Audit logs will have the Audits button enabled and centered in the Administration section of the splash screen. Non-Admin users with access to the Audit logs will not be able to use any other administrative features and those icons will not be displayed.
 
 For more information on Viewing Audit Messages, refer to [Administration](administration/users).
 
-![Non Admin Main Screen Image](/img/non-admin-main-screen.png)
+![Non Admin Main Screen Image](../static/img/non-admin-main-screen.png)
 
 ## Logoff Menu
 

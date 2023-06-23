@@ -21,7 +21,7 @@ One of the OpCon systems that is participating in the OpCon Deploy environment s
     * Login to the OpCon Deploy client as a user with Admin privileges.
     * Add a server with the name "BatchScheduleServer" and point to the above identified batch schedule server:
 
-![Sample Batch Schedule Server Definition](/img/sample-batch-server-definition.png)
+![Sample Batch Schedule Server Definition](../static/img/sample-batch-server-definition.png)
 
 ## BATCH_DEPLOY Schedule
 
@@ -44,13 +44,13 @@ The scheduled batch deployment process begins with the selection of the schedule
 
 An overview of the Batch Deployment Process is displayed in the image below:
 
-![Batch Deployment Process Overview](/img/batch-deployment-process-overview.png)
+![Batch Deployment Process Overview](../static/img/batch-deployment-process-overview.png)
 
 After the batch deployment is successfully scheduled, the ```BATCH_DEPLOY``` schedule is built into daily for the specified batch deploy date on the batch schedule server. OpCon Deploy then injects either a ```DEPLOY_SCHEDULE``` or ```DEPLOY_PACKAGE``` task into the ```BATCH_ DEPLOY``` schedule using the OpCon RestAPI.
 
 If the task is injected correctly into the ```BATCH_DEPLOY``` schedule, a successful completion message is displayed to the user and a record is inserted into the Deployment table, indicating that the schedule or package has been scheduled for future deployment.
 
-![Deployment Record Showing Scheduled Deployment](/img/deployment-record-showing-deployment.png)
+![Deployment Record Showing Scheduled Deployment](../static/img/deployment-record-showing-deployment.png)
 
 
 

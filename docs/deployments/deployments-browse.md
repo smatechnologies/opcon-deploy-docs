@@ -120,7 +120,7 @@ In some cases, transformation rules that have been selected cannot be included b
 
 If this happens when deploying a schedule, the transformation rules that were to be added to this deployment will appear in the selection window but will not be selectable. A warning message on the Build Options and Summary screen reading: "The selected server does not allow transformation rules: this deployment will fail" appears in place of the usual information message stating the number of rules in the deployment:
 
-![Message Image](/img/server-not-accepting-transformation-rules.png)
+![Message Image](../static/img/server-not-accepting-transformation-rules.png)
 
 At this point, the deployment cannot be completed. You may choose to go back to the previous screen, simulate a deployment, or cancel the current deployment. The Batch Deploy and Deploy buttons will be disabled.
 
@@ -128,13 +128,13 @@ The same thing happens when deploying a package. If the target server does not s
 
 The package deployment transformation rules will appear on the Build options and Summary screen but will not be selectable, and the Deploy buttons will be disabled.
 
-![Package Deployment](/img/package-deployment-transformation.png)
+![Package Deployment](../static/img/package-deployment-transformation.png)
 
 Click the Back button to return to the previous screen, or Cancel to cancel the deployment.
 
 A similar situation occurs if the server being deployed to does not accept transformation rules and rules have not been previously saved for the deployment. An information message will appear stating: "No transformation rules will be applied during this deployment":
 
-![Message Image](/img/all-rules-and-not-applied.png)
+![Message Image](../static/img/all-rules-and-not-applied.png)
 
 In this case, the deployment can be completed with no transformation rules being applied. The same information alert message will display for deployments that have no transformation rules selected and the server does not allow for transformation rules.
 

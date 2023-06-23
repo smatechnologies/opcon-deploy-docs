@@ -4,15 +4,15 @@ Batch Deployment is used to deploy a schedule or package at a future date and ti
 
 The Batch Deploy consists of selecting the schedule or package for deployment, the target OpCon server, and, if required, transformation rules. Once this selection is complete, the Batch Deploy button can be selected, which will then request the date and time of the deployment. The user must also enter their OpCon Deploy password.
 
-![Batch Deployment Process Overview](/img/batch-deployment-process-overview.png)
+![Batch Deployment Process Overview](../static/img/batch-deployment-process-overview.png)
 
 OpCon Deploy then injects either a ```DEPLOY_SCHEDULE``` or ```DEPLOY_PACKAGE``` task into the ```BATCH_DEPLOY``` schedule using the OpCon RestAPI. If the task is injected correctly into the ```BATCH_DEPLOY``` schedule, a successful completion message is displayed to the user and a record is inserted into the Deployment table, indicating that the schedule or package has been scheduled for future deployment.
 
-![Deployment Record Showing Scheduled Deployment](/img/deployment-record-showing-deployment.png)
+![Deployment Record Showing Scheduled Deployment](../static/img/deployment-record-showing-deployment.png)
 
 The following message will be displayed if OpCon Deploy is unable to schedule the task for future deployment:
 
-![Deployment Scheduling Error Message](/img/deployment-scheduling-error.png)
+![Deployment Scheduling Error Message](../static/img/deployment-scheduling-error.png)
 
 The following items are required when implementing the Batch Deploy capability:
 
@@ -32,4 +32,4 @@ The Server Address field defines the connection to the OpCon RestAPI using TLS (
 
 The definition requires OpCon API Port number (9010) and Using TLS must be selected.
 
-![Sample BatchScheduleServer Definition](/img/sample-batchscheduleserver-definition.png)
+![Sample BatchScheduleServer Definition](../static/img/sample-batchscheduleserver-definition.png)

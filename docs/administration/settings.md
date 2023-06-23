@@ -2,7 +2,7 @@
 
 When working with OpCon Deploy, it is possible to set some global rules that will override individual user selections. These rules are enabled or disabled by using the Settings function.
 
-![Update Global Preferences Image](/img/update-global-preferences.png)
+![Update Global Preferences Image](../static/img/update-global-preferences.png)
 
 ## Update Global Preferences
 

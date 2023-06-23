@@ -16,7 +16,7 @@ Within OpCon, a schedule name must be unique within an OpCon instance. There may
 
 (*Required*): This tag is defined in the Transformations object and consists of a value that will be prefixed to schedule, property, resource, and threshold definitions.
 
-![Environment Sample](/img/environment-sample.png)
+![Environment Sample](../static/img/environment-sample.png)
 
 ### Frequency_Use_Existing_Definitions 
 
@@ -26,7 +26,7 @@ Within OpCon, a schedule name must be unique within an OpCon instance. There may
 
 * One example would be if there is a frequency definition on the target system LWDOM (the last working day of the month). During testing, the frequency definition for LWDOM will probably be an All Days definition, as you do not want to wait until the last day of the month to perform tests.
 
-![Frequency_Use_Existing_Definitions Sample](/img/frequency-use-existing-definitions.png)
+![Frequency_Use_Existing_Definitions Sample](../static/img/frequency-use-existing-definitions.png)
 
 ### Move_Schedule_Package
 
@@ -62,12 +62,12 @@ When moving the schedule to production, it must be empty while the currentValue 
 
 * This first example shows how the schedule can be created. In this case, the value DEV will be prefixed to the schedule name, frequency names, resource, thresholds, and global properties.
 
-![Move_Schedule_Package Create Initial Package Example](/img/create-initial-package.png)
+![Move_Schedule_Package Create Initial Package Example](../static/img/create-initial-package.png)
 
 * This second example shows how the schedule package can be moved between the test scenarios. In this case, the value DEV will be replaced on the schedule name, frequency names, resource, thresholds, and global properties with TST.
 
-![Move_Schedule_Package Between Test Scenarios Example](/img/move-between-test-scenarios.png)
+![Move_Schedule_Package Between Test Scenarios Example](../static/img/move-between-test-scenarios.png)
 
 * This third example displays how the schedule package can be moved to production. In this case, the value TST will be removed from the schedule name, frequency names, resource, thresholds, and global properties and the frequencies will take on the values defined in the target OpCon system and not the value in the definition.
 
-![Move_Schedule_Package to Production Example](/img/move-to-production.png)
+![Move_Schedule_Package to Production Example](../static/img/move-to-production.png)

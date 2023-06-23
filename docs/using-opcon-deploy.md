@@ -22,7 +22,7 @@ Schedules are extracted from OpCon systems and stored in the central repository 
 
 Schedule definitions are extracted from the source OpCon system and stored in JSON format in the Central repository. The following provides a high-level overview of the JSON format:
 
-![JSON Schedule Definition](/img/json-schedule-definition.png)
+![JSON Schedule Definition](../static/img/json-schedule-definition.png)
 
 Schedules can also be grouped into packages and deployed as a consistent unit.
 
@@ -30,7 +30,7 @@ Schedules can also be grouped into packages and deployed as a consistent unit.
 
 In general, a schedule (SCHED_ABC) will be developed on an OpCon environment (DEV) and once the development is complete, the schedule definition will be imported into the OpCon Deploy and stored in JSON format in the Central Repository, as illustrated in the General Processes graphic.
 
-![General Process Image](/img/general-process.png)
+![General Process Image](../static/img/general-process.png)
 
 Transformation Rules can also be created and imported into the Central Repository. In this case the diagram shows a set of Transformation Rules associated with each OpCon system imported and inserted as version 1.
 
@@ -40,7 +40,7 @@ When SCHED_ABC is imported into the Central Repository a version number is alloc
 
 If changes or corrections are required to an existing schedule definition in the Central Repository, the schedule must be deployed to a development OpCon environment (DEV), as illustrated in the Modifying Schedule Definitions graphic.
 
-![Modifying Definitions Image](/img/modifying-schedule-definitions.png)
+![Modifying Definitions Image](../static/img/modifying-schedule-definitions.png)
 
 A schedule definition in the repository is never overwritten, and any changes to an existing schedule definition in the repository will automatically create a new version of the schedule definition. Once the required changes or corrections to SCHED_ABC are completed, the schedule definition must be imported into the Central Repository causing a new version of the schedule definition to be created. This means that the original schedule definition remains as version 1 while the modified schedule definition becomes version 2. The schedule definition SCHED_ABC is then updated on the OpCon environments (PRODA and PRODB) by deploying version 2 of the schedule definition applying the appropriate transformation rules.
 
@@ -48,7 +48,7 @@ Schedule definition deployment is a multi-step process that consists of a select
 
 During the selection process, you are required to select the schedule definition to deploy, the target OpCon system to deploy the schedule to, optionally any transformation rules to apply to the schedule definition and an optional description for the deployment:
 
-![Deployment Process Image](/img/overview-deployment-process.png)
+![Deployment Process Image](../static/img/overview-deployment-process.png)
 
 ## Two-Step Deployment Process
 

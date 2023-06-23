@@ -14,7 +14,7 @@ The import process is divided into two distinct phases with the first phase bein
 
 OpCon Deploy requires that each OpCon system participating in the OpCon Deploy environment requires a license. To enforce this, a check is made to determine if the requested system has a valid OpCon Deploy license. If the system does not have a valid license, the following message will be displayed:
 
-![Schedule Import Invalid License Image](/img/schedule-import-invalid-license.png)
+![Schedule Import Invalid License Image](../static/img/schedule-import-invalid-license.png)
 
 ## Import Selection Phase
 
@@ -22,28 +22,28 @@ The import process begins with the selection of the OpCon system to import the s
 
 To start the Import, select the Schedules Import function. The Schedule Import (Select a server) dialog appears and you will need to select, from the drop-down list, the OpCon system from which to import the schedule and then select the Next button. It should be noted that only OpCon systems defined in the SMAOpconDeploy database will appear in the list.
 
-![Schedule Import Source Image](/img/schedule-import-source-system.png)
+![Schedule Import Source Image](../static/img/schedule-import-source-system.png)
 
 Once Next has been selected, the list of schedules will be retrieved from the chosen OpCon system and displayed in the schedules list of the Schedule Import (Select a Schedule to import) dialog. Once the schedule list has been created, it is possible to filter the schedule names on the list by entering a value in the Filter by Schedule Name field. It is possible to select multiple schedules to import from the source OpCon system by selecting the schedule names and then using the > arrow to move the schedules names to the right-hand list. Once schedule(s) has been selected, select the Next or Finish button.
 
-![Schedule Import Schedule Selection Image](/img/schedule-import-schedule-selection.png)
+![Schedule Import Schedule Selection Image](../static/img/schedule-import-schedule-selection.png)
 
 Once Next has been selected, the selected schedule(s) will be displayed in the Schedule Import (Summary) dialog appears. This provides a summary of your selections, allows selection of import options and allows a description to be added to the import process.
 Supported IMport Options:
 - **Refresh SAP Job Definitions** indicates if OpCon SAP R3 jobs are encountered in the schedule, then the SAP server job definitions should be extracted from the SAP server (otherwise, uses values in 13100 and 13101 records).
 - **Include Sub-Schedules** indicates if container jobs are encountered in the schedule, the associated sub-schedule should be included in the import process. The schedules are checked recursively and each sub-schedule is imported as a separate schedule. The result of all schedule imports is displayed in the results message.
 
-![Schedule Import Summary Image](/img/schedule-import-summary.png)
+![Schedule Import Summary Image](../static/img/schedule-import-summary.png)
 
 If the schedule(s) has been inserted successfully into the repository, you will get a success message indicating that the schedule has been inserted as version (*n*) for each selected schedule. During the schedule import process a check is made to see if the schedule definition matches the current version in the Deploy database. If this is the case, a warning message will be displayed indicating that the schedule already exists in the database a version (*n*);
 
-![Schedule Import Success Image](/img/schedule-import-success-message.png)
+![Schedule Import Success Image](../static/img/schedule-import-success-message.png)
 
 ## Import File
 
 The Import File function is used to register a schedule definition (contents must be in .JSON format) with the OpCon Deploy system from a file. During the process, the file is selected using the Browse... function. When the file is read in, a check is automatically performed to see if the format is valid.
 
-![Import Schedule Definition from File](/img/import-schedule-definition-file.png)
+![Import Schedule Definition from File](../static/img/import-schedule-definition-file.png)
 
 When the file is read in, the information contained in the descriptionList will be displayed in the Description section.
 
@@ -53,7 +53,7 @@ To insert the definition in the repository, select the OK button. A message will
 
 The Browse function provides the opportunity to display information about schedule definitions in the repository.
 
-![Browse Schedule Definition](/img/browse-schedule-definition.png)
+![Browse Schedule Definition](../static/img/browse-schedule-definition.png)
 
 The Browse and filter Schedules imported dialog presents a list of all schedule records. This next table describes the information displayed in the dialog.
 
@@ -79,7 +79,7 @@ To view the schedule definitions, perform a right-click on the definition in the
 
 It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
 
-![View of Schedule Definition Saved in Central Repository](/img/view-schedule-definition-repository.png)
+![View of Schedule Definition Saved in Central Repository](../static/img/view-schedule-definition-repository.png)
 
 ## Create Diagram
 

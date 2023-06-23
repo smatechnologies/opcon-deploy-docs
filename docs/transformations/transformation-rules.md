@@ -35,7 +35,7 @@ Other important points to note:
 
 * The Import File function is used to import a transformation rule into the central repository. When importing a rule, a unique name must be given to the rule or the name selected from the list of existing rules defined in the database. When importing a new file, the file name will be used as the unique name. An optional description can be entered describing the contents of the transformation file.
 
-![Transformation Rules Import Image](../static/img/transformation-rule-import.png)
+![Transformation Rules Import Image](../../static/img/transformation-rule-import.png)
 
 ### Add a Transformation Rule
 
@@ -59,7 +59,7 @@ Other important points to note:
 
 * When all changes have been completed, click Save to update the transformation rule. A new version is created each time the transformation rule is updated, with the exception of a rule rename. No new version is created if the only change to the transformation rule is a renaming.
 
-![Transformation Rule Image](../static/img/transformation-rule-editor.png)
+![Transformation Rule Image](../../static/img/transformation-rule-editor.png)
 
 * A transformation rule contains a list of transformations, displayed at the lower part of the Transformation Rule Editor. Use the toolbar buttons on the right side of the list to make changes to the transformations:
     * Click the Up arrow to move the priority of the transformation higher.
@@ -70,11 +70,11 @@ Other important points to note:
 
 * After clicking the Green Plus or Pencil icons, the transformation editor opens. Define the transformation and Save.
 
-![Transformation Editor Image](../static/img/edit-transformation-rule.png)
+![Transformation Editor Image](../../static/img/edit-transformation-rule.png)
 
 * To change an existing rule, double-click on the rule and the Create or edit a transformation dialog will appear. To change the Tag ID, select a new tag from the drop-down list. Change or add definitions, as required, and select Save to update the rule.
 
-![Create or Update Transformation Image](../static/img/edit-transformation-rule-save.png)
+![Create or Update Transformation Image](../../static/img/edit-transformation-rule-save.png)
 
 * In the transformation rule editor, to create a new rule, select the green plus icon on the right-hand side. To remove a rule, select the red cross icon on the right-hand side. When all changes have been completed, select Save to update the transformation rule and create the initial or new version.
 
@@ -82,7 +82,7 @@ Other important points to note:
 
 * The Browse function provides the opportunity to display information about the transformation rule as well as the definitions associated with the rule.
 
-![Transformation Rules Browse Image](../static/img/transformation-rule-browse.png)
+![Transformation Rules Browse Image](../../static/img/transformation-rule-browse.png)
 
 * To update the list of transformation rules displayed in this window, click the Refresh button.
 
@@ -105,13 +105,13 @@ Other important points to note:
 
 * It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
 
-![View of Transformation Definition Image](../static/img/view-transformation-definition.png)
+![View of Transformation Definition Image](../../static/img/view-transformation-definition.png)
 
 ## Defining Transformation Rules
 
 * Defining transformation files consists of creating JSON files containing the transformation rules. A rule consists of a tag_id definition that defines the type of definition statement to transform, a current_value definition that defines the existing value in the definition, the new_value definition that contains the changes to be made to the definition, and the partial_update definition that indicates if the replacement is a partial update.
 
-![Sample Transformation Rule Image](../static/img/transformation-rule-json.png)
+![Sample Transformation Rule Image](../../static/img/transformation-rule-json.png)
 
 * A template JSON file is available in the template directory after the installation is complete. This next table identifies the tags that define the transformation rule values that are currently supported.
 
@@ -244,6 +244,6 @@ Care should be taken when using partial updates across multiple schedules as the
 
 * This next graphic shows the transformation_template.json file. If tags are not needed, they can be omitted or defined as “”.
 
-![Transformation JSON Template Image](../static/img/transformation-json-template.png)
+![Transformation JSON Template Image](../../static/img/transformation-json-template.png)
 
 

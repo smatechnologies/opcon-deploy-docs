@@ -62,12 +62,12 @@ When moving the schedule to production, it must be empty while the currentValue 
 
 * This first example shows how the schedule can be created. In this case, the value DEV will be prefixed to the schedule name, frequency names, resource, thresholds, and global properties.
 
-![Move_Schedule_Package Create Initial Package Example](../static/img/create-initial-package.png)
+![Move_Schedule_Package Create Initial Package Example](../../static/img/create-initial-package.png)
 
 * This second example shows how the schedule package can be moved between the test scenarios. In this case, the value DEV will be replaced on the schedule name, frequency names, resource, thresholds, and global properties with TST.
 
-![Move_Schedule_Package Between Test Scenarios Example](../static/img/move-between-test-scenarios.png)
+![Move_Schedule_Package Between Test Scenarios Example](../../static/img/move-between-test-scenarios.png)
 
 * This third example displays how the schedule package can be moved to production. In this case, the value TST will be removed from the schedule name, frequency names, resource, thresholds, and global properties and the frequencies will take on the values defined in the target OpCon system and not the value in the definition.
 
-![Move_Schedule_Package to Production Example](../static/img/move-to-production.png)
+![Move_Schedule_Package to Production Example](../../static/img/move-to-production.png)

@@ -52,7 +52,7 @@ To start the OpCon Deploy process, select the Script OpCon Deploy function. The 
 
 Once the scripts have been selected, select the Next button to select the OpCon system to which to deploy the scripts.
 
-![Deploy Scripts Select Server Image](../static/img/scripts-select-servers.png)
+![Deploy Scripts Select Server Image](../static/img/scripts-select-server.png)
 
 The target OpCon system can be selected from the drop-down list. Once the target system has been selected, select either the Next or Finish button. If the Next button is selected, the Script Deployment Summary dialog appears. It is possible to add a description in the comment field, which can be used to describe the reason for the deployment.
 

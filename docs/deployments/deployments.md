@@ -239,7 +239,7 @@ During deployment, once a server that allows transformation rules has been selec
 
 ![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-transformation-rule-selection-dialog.png)
 
-As noted in the [Transformation Rules](/transformations/transformation-rules) topic, the rules are listed in the order of what is applied before initiating deployment. This means the transformation rules will be applied as follows:
+As noted in the [Transformation Rules](../transformations/transformation-rules) topic, the rules are listed in the order of what is applied before initiating deployment. This means the transformation rules will be applied as follows:
 
 * Server Transformation Rules
 * Package Transformation Rules

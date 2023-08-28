@@ -10,7 +10,7 @@ If the OpCon system supports SAP agents, the SAP agents must be configured to su
 
 The Servers function allows servers to be managed in OpCon Deploy. It is possible to Add, Delete, or Update (Save) server information.
 
-![Server Management Image](/img/admin-server-dialog.png)
+![Server Management Image](../../static/img/admin-server-dialog.png)
 
 ## Select Server Section
 
@@ -69,7 +69,7 @@ Indicates if the connection to the OpCon RestAPI server uses TLS
 
 When adding default transformation rules to the server, select the Edit button and the Select one or more rules dialog will appear.
 
-![Default Transformation Rule Image](/img/transformation-rule-selection-dialog.png)
+![Default Transformation Rule Image](../../static/img/transformation-rule-selection-dialog.png)
 
 To add a transformation rule, either double-click on the rule in the upper table or select the rule in upper table then click the Include arrow. To remove a transformation rule, either double-click or select the rule in the lower table and the click the Remove arrow.
 
@@ -77,15 +77,15 @@ To view the Transformation Rule definitions, perform a right-click on the defini
 
 It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
 
-![Viewing Transformation Rule Definitions Image](/img/transformation-rules-definition.png)
+![Viewing Transformation Rule Definitions Image](../../static/img/transformation-rules-definition.png)
 
 When adding SAP server definitions to the server, select the Edit button associated with the SAP servers and the SAP servers selection dialog will appear.
 
-![SAP Server Selection](/img/sap-server-selection.png)
+![SAP Server Selection](../../static/img/sap-server-selection.png)
 
 To add a new SAP server, select the + button and the Create or edit an SAP Server dialog will appear.
 
-![Create or Edit an SAP Server Image](/img/sap-edit-server.png)
+![Create or Edit an SAP Server Image](../../static/img/sap-edit-server.png)
 
 This list contains descriptions of each field in the Create or edit an SAP Server dialog.
 

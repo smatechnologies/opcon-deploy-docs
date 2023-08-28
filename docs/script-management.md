@@ -16,7 +16,7 @@ During the import process, a check is made to see if the script exists in the Op
         * If the script version does not exist, get the latest version number of the script from the repository and extract all versions from the OpCon system between the latest version in the repository and the new script version (e.g., if the script version being imported is 6 and the latest version in the repository is 3, get versions 4 and 5 from the OpCon system as these versions must exist on the OpCon system).
 * If the script does not exist, get all versions of the script from the OpCon system and insert them into the repository (e.g. if we have a script version of 3, then the script information is created; versions 1 and 2 are extracted from the OpCon system and versions 1,2, and 3 are inserted into the OpCon Deploy repository).
 
-![Script Import Image](/img/script-import-process.png)
+![Script Import Image](../static/img/script-import-process.png)
 
 ## Deployment Process
 
@@ -29,4 +29,4 @@ During the deployment process, a check is made to the target OpCon system to see
         * If the script version does not exist, get the latest version number of the script from the OpCon system and extract all versions from the repository between the latest version on the OpCon system and the new script version (e.g., if the script version being deployed is 6 and the latest version on the OpCon system is 3, get versions 4 and 5 from the repository as these versions must exist in the repository).
 * If the script does not exist, get all script versions of the script from the repository including the required version and deploy them into the OpCon system repository (e.g., if we have a script version of 3, then the script information is created; versions 1 and 2 are extracted from the repository and versions 1,2, and 3 are deployed to the OpCon system).
 
-![Script Deploy Image](/img/script-deploy-process.png)
+![Script Deploy Image](../static/img/script-deploy-process.png)

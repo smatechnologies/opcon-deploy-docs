@@ -2,7 +2,7 @@
 
 When working with the OpCon Deploy, all actions performed by users are audited and entries inserted into the Audit table. The entries consist of an audit category, a timestamp, a description, and the user who performed the action.
 
-![Audit Queries Image](/img/administration-audit-queries.png)
+![Audit Queries Image](../../static/img/administration-audit-queries.png)
 
 The Audit function provides query access to the Audit database table and allows a user who has the Administration role to perform to perform queries on the table. The queries are performed by selecting filters then selecting the Apply button. The filters consist of category, user, a string value, a start date, and an end date.
 

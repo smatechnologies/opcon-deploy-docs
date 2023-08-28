@@ -16,13 +16,13 @@ The Deploy process is divided into two distinct phases with the first phase bein
 
 OpCon Deploy requires that each OpCon Deploy system participating in the OpCon Deploy environment requires a license. To enforce this, a check is made to determine if the requested system has a valid OpCon Deploy license. If the system does not have a valid license, the following message will be displayed:
 
-![Deployment Invalid OpCon Deploy License Message](/img/deployment-invalid-license.png)
+![Deployment Invalid OpCon Deploy License Message](../../static/img/deployment-invalid-license.png)
 
 ## Deploy Selection Phase
 
 To start the Deploy process, select the deployments Deploy function. The Select a Deployment type dialog will appear so that the deployment type can be selected (Schedule or Package).
 
-![Deployment Selection Type Dialog](/img/deployment-selection-type.png)
+![Deployment Selection Type Dialog](../../static/img/deployment-selection-type.png)
 
 The deployment process begins with the selection of the type of deployment. Following that, various dialogs will be presented leading the user through the process.
 
@@ -40,11 +40,11 @@ Once a schedule has been included in a package, it can no longer be deployed as 
 
 Once a schedule has been selected, select the Next button.
 
-![Deployment Schedule Selection Dialog](/img/deployment-schedule-selection.png)
+![Deployment Schedule Selection Dialog](../../static/img/deployment-schedule-selection.png)
 
 Once the schedule has been selected, the next task is to select the target OpCon system to which the schedule will be deployed. It should be noted that the user role of the user will define what OpCon systems are present in the drop-down list. For example, if the user role is Production, then only Production OpCon systems will appear in the list.
 
-![Deployment Server Selection Dialog](/img/deployment-server-selection.png)
+![Deployment Server Selection Dialog](../../static/img/deployment-server-selection.png)
 
 Once a target OpCon system has been selected, the user has four options (Next, Simulate, Batch Deploy, or Deploy) to continue the process.
 
@@ -59,7 +59,7 @@ Once a target OpCon system has been selected, the user has four options (Next, S
 
 When Next is selected, it will be possible to add transformation rules to the deployment process. It should be noted that it is possible to add a set of transformation rules to a server that will be used for every deployment to that server.
 
-![Deployment Transformation Rule Selection Dialog](/img/deployment-transformation-rule-selection.png)
+![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-transformation-rule-selection.png)
 
 A selection of transformation rules and versions appear in the upper table of the screen. To add a transformation rule, select the rule in the upper table and then select the include arrow. To remove a transformation rule, select the rule in the lower table and the select the remove arrow.
 
@@ -76,7 +76,7 @@ It is then possible to continue by selecting the Next, Simulate, Batch Deploy, o
 
 When Next is selected, the Summary dialog appears presenting the sections the user made. It is possible to add a description that will be included in the deployment record, to set the schedule auto build options, to indicate if any existing schedules in the daily must be rebuilt, and if OpCon SAP R3 jobs are encountered, to create the SAP server job definitions. If the checkbox is not selected, then the OpCon SAP R3 jobs will be linked with the existing SAP server job definitions.
 
-![Deployment Summary Dialog](/img/deployment-summary-dialog.png)
+![Deployment Summary Dialog](../../static/img/deployment-summary-dialog.png)
 
 When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. 
 When selecting the Auto Build checkbox, the values are initially set to 1. 
@@ -102,7 +102,7 @@ It is then possible to continue by selecting the Back, Simulate, Batch Deploy, o
 
 If OpCon Deploy is selected, the schedule is then deployed to the target OpCon system. At this point, a check is performed to verify features contained in the deployment match features on a requested machine. If a deployment contains a feature that a requested feature does not have, the deployment will be stopped and Impex will return the following error message:
 
-![Machine Feature Check Error Message](/img/machine-feature-error-message.png)
+![Machine Feature Check Error Message](../../static/img/machine-feature-error-message.png)
 
 If there are multiple features missing in a machine, each one will now be displayed.
 
@@ -130,7 +130,7 @@ When Simulate is selected, the following checks are completed for production sys
 * For UNIX jobs, machine features are checked for embedded scripts, file arrival, job output parsing, environmental variables and encrypted token support.
 * For IBM i jobs, machine features are checked for file arrival.
 
-![Sample Simulation Report](/img/sample-simulation-report.png)
+![Sample Simulation Report](../../static/img/sample-simulation-report.png)
 
 The Sample Simulation Report shows a sample of a Simulate report that contains multiple warnings. When warnings are found during a Simulate process, it will not be possible to deploy the Schedule. If no warnings are encountered, a Deploy option will appear next to the Copy To Clipboard option, which can then be used to complete the Deployment process.
 
@@ -150,19 +150,19 @@ The encrypted token support check is only performed during a simulation and is n
 
 For deployments to a primary machine with alternate machines or a Machine Group, each machine must support encrypted tokens to successfully complete the deployment. Machine selection for the job is set in the Job Details:
 
-![Job Details- Machine Selection](/img/job-details-machine-selection.png)
+![Job Details- Machine Selection](../../static/img/job-details-machine-selection.png)
 
 When Batch Deploy is selected, the Batch Deployment dialog will appear. The user should then select a date using the date selector, select a time from the Time drop-down list, enter their OpCon Deploy Password, and select OK to submit the request. The Time drop-down list consists of hourly values from 00:00 to 24:00. The reason that selection from the list must be made is that the time is appended to value DEP-FRQ- to create the required frequency name when performing the job add function.
 
-![Batch Deployment Dialog](/img/batch-deployment-dialog.png)
+![Batch Deployment Dialog](../../static/img/batch-deployment-dialog.png)
 
 Once OK has been selected, a confirmation message will be displayed requesting the user to confirm that the deployment must take place.
 
-![Batch Deploy Confirmation Message](/img/batch-deployment-confirmation.png)
+![Batch Deploy Confirmation Message](../../static/img/batch-deployment-confirmation.png)
 
 When Deploy is selected, a confirmation message will be displayed requesting the user to confirm that deployment must take place.
 
-![Deploy Confirmation Message](/img/deploy-confirmation-image.png)
+![Deploy Confirmation Message](../../static/img/deploy-confirmation-image.png)
 
 When OK is selected, the deployment check phase commences. During this phase, a check is made to see if a previous deployment of the schedule definition exists on the target OpCon system by retrieving the schedule.
 
@@ -172,29 +172,29 @@ If the server type is a production server, a check is performed matching the ret
 
 The user has the option to see the differences by selecting the See Differences button, to abort the deployment by selecting the No button, or continue with the deployment of the new version by selecting the Yes button. It should be noted that any changes will not be lost, as the retrieved schedule definition is stored in the deployment record and can be referenced.
 
-![Deployment Mismatch Message](/img/deploy-mismatch-message.png)
+![Deployment Mismatch Message](../../static/img/deploy-mismatch-message.png)
 
 To determine the differences, a JSON compare is performed on the extracted information and the information in the deployment record defined in the deployment information. The path value indicates where the difference is so /scheduleList/0/jobList/0 indicates the first job in the first scheduleList of the JSON definition.
 
-![Differences Example](/img/differences-example.png)
+![Differences Example](../../static/img/differences-example.png)
 
 If the server type is a non-production server, a check is performed to see if the schedule definition exists on the target OpCon system. If the schedule definition exists on the system, a message will be displayed informing the user that the schedule definition already exists providing information on when it was deployed and who deployed it. The user has the option to abort the deployment so that it can be determined if the deployment should go ahead or continue with the deployment of the new version. It should be noted that any changes will not be lost as the retrieved schedule definition is stored in the deployment record and can be referenced.
 
-![Deployment Already Exists Message](/img/deployment-already-exists.png)
+![Deployment Already Exists Message](../../static/img/deployment-already-exists.png)
 
 During the deployment of a schedule definition to a target OpCon system, deployment information is added to the start of the Schedule documentation field. This contains information about the deployment and should not be changed. During the Deploy Check phase, this information is extracted from the retrieved schedule definition and used to obtain the deployment record from the repository associated with that deployment. If the deployment information is not found, the following error message will be displayed:
 
-![Deployment Information Missing Message](/img/deployment-information-missing.png)
+![Deployment Information Missing Message](../../static/img/deployment-information-missing.png)
 
 The user has the option to abort the deployment and check why this information is missing or continue with the deployment.
 
 If deployment completes successfully, the following message will be displayed:
 
-![Successful Deployment Message](/img/successful-deployment.png)
+![Successful Deployment Message](../../static/img/successful-deployment.png)
 
 If the deployment errors, a message will be displayed informing the user why the deployment errored.
 
-![Deployment Error Message](/img/deployment-error.png)
+![Deployment Error Message](../../static/img/deployment-error.png)
 
 ## Package Deployment
 
@@ -204,11 +204,11 @@ A list of package names appears in the upper portion of the dialog. When a packa
 
 Once a package has been selected, select the Next button.
 
-![Deployment Package Selection Dialog](/img/deployment-package-selection.png)
+![Deployment Package Selection Dialog](../../static/img/deployment-package-selection.png)
 
 One the package has been selected, the next task is to select the target OpCon system to which the package will be deployed. It should be noted that the user role of the user will define what OpCon systems are present in the drop-down list. For example, if the user role is Production, then only Production OpCon systems will appear in the list.
 
-![Deployment Server Selection Dialog](/img/deployment-server-selection.png)
+![Deployment Server Selection Dialog](../../static/img/deployment-server-selection.png)
 
 Once a target OpCon system has been selected, the user has four options (Next, Simulate, Batch Deploy, or Deploy) to continue the process.
 
@@ -237,9 +237,9 @@ If transformation rules are selected, the result of the deployment depends on th
 
 During deployment, once a server that allows transformation rules has been selected, transformation rules can be selected in the Transformation Rules Selection Dialog (seen below). The Build options and Summary screen includes the list of transformation rules that will be applied during the deployment. It should be noted that it is possible to add a set of transformation rules to a server that will be used for deployment to that server.
 
-![Deployment Transformation Rule Selection Dialog](/img/deployment-transformation-rule-selection-dialog.png)
+![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-transformation-rule-selection-dialog.png)
 
-As noted in the [Transformation Rules](/transformations/transformation-rules) topic, the rules are listed in the order of what is applied before initiating deployment. This means the transformation rules will be applied as follows:
+As noted in the [Transformation Rules](../transformations/transformation-rules) topic, the rules are listed in the order of what is applied before initiating deployment. This means the transformation rules will be applied as follows:
 
 * Server Transformation Rules
 * Package Transformation Rules
@@ -262,6 +262,6 @@ Now, all jobs which were pointing to machine Test1 or machine Test2 are mapped t
 
 Transformation rules may be selected from the window in the Build Options and Summary screen. Clicking on a transformation rule from the list opens another window — View Transformation Rules. The fields in this table are not editable:
 
-![View Transformation Rules](/img/view-transformation-rules.png)
+![View Transformation Rules](../../static/img/view-transformation-rules.png)
 
 

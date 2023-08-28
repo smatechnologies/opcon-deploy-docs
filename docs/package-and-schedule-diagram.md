@@ -41,7 +41,7 @@ Job dependencies are indicated by the various color pointers. If a job is depend
 
 The diagram also shows resource and threshold dependencies and indicates the dependency requirement on the pointer.
 
-![Complete Package Diagram](/img/complete-package-diagram.png)
+![Complete Package Diagram](../static/img/complete-package-diagram.png)
 
 The next figure, Schedule Diagram, shows an example of a schedule diagram that shows the capabilities provided by the Schedule Diagram capability.
 
@@ -53,7 +53,7 @@ If the job is a container job, the sub-schedule name is included and a 'blue' li
 
 Job dependencies are indicated by the various color pointers. If a job is dependent on a job in a schedule not part of the extracted definitions, the external job appears in a light blue box that includes the schedule name and type in a light blue' folder shape. The job is shown as a light blue' box shape with the job name.
 
-![Schedule Diagram](/img/schedule-diagram.png)
+![Schedule Diagram](../static/img/schedule-diagram.png)
 
 ## Header Diagram
 
@@ -67,7 +67,7 @@ The header diagram is only available when a package is selected and provides the
 * If there are dependencies between jobs in the schedules and jobs in external schedules, the schedule will appear in a ‘light blue’ box with the schedule name and schedule type Schedule appearing in a ‘light blue’ folder shape. The dependencies are shown by a line between the schedule folder shapes.
 
 
-![Header Package Diagram](/img/header-package-diagram.png)
+![Header Package Diagram](../static/img/header-package-diagram.png)
 
 
 

@@ -11,7 +11,7 @@ The current version is **22.4**.
 
 ## Overview
 
-![General Overview](/img/deploy-general-overview.png)
+![General Overview](../static/img/deploy-general-overview.png)
 
 When implementing OpCon Deploy, the schedule definitions must be imported into the central repository before they can be deployed to OpCon systems within the environment. When a schedule definition is imported into the central repository and an entry for the schedule definition already exists, a new version of the schedule definition is created. This means that it is possible to deploy older versions of the schedule definition as a definition is never updated in the repository.
 
@@ -57,4 +57,4 @@ The batch process provides the capability to deploy or simulate deployments of s
 
 The delete process removes a package or schedule from the selected OpCon system.
 
-![Release Management Process](/img/release-management-process.png)
+![Release Management Process](../static/img/release-management-process.png)

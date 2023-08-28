@@ -10,7 +10,7 @@ The Packages functions support the capabilities required to manage package defin
 
 The Manage function allows packages to be managed in the OpCon Deploy system. It is possible to Add or Update (Save) package information.
 
-![Package Management Dialog Image](/img/package-management-dialog.png)
+![Package Management Dialog Image](../static/img/package-management-dialog.png)
 
 ### Select Package Section
 
@@ -26,7 +26,7 @@ Updating the Schedule Versions of a package
 
 Clicking the Update Schedule Versions button will bring up the Update Schedule Versions confirmation message:
 
-![Update Package Schedule Versions Confirmation Message](/img/update-package-schedule-versions-confirmation.png)
+![Update Package Schedule Versions Confirmation Message](../static/img/update-package-schedule-versions-confirmation.png)
 
 Confirming the message will update the version of schedules associated with the package to the latest version of the schedule in the Deploy database. If the schedule version is the already the latest version, no changes are made.
 
@@ -38,17 +38,17 @@ Deleting a Package
 
 Clicking the Delete button to delete a package will bring up the Delete Package confirmation message:
 
-![Delete Package Confirmation Message Image](/img/delete-package-confirmation.png)
+![Delete Package Confirmation Message Image](../static/img/delete-package-confirmation.png)
 
 Return to the View or Edit Packages screen by selecting Cancel.
 
 If a user wants to continue with deleting a package and the package selected has versions in production, a secondary confirmation message will prompt the user to cross-reference with active packages and schedules:
 
-![Delete Package 2nd Confirmation Message](/img/delete-package-second-confirmation.png)
+![Delete Package 2nd Confirmation Message](../static/img/delete-package-second-confirmation.png)
 
 Clicking "Yes" displays the list of schedules used in active packages for cross-referencing:
 
-![Cross-Reference for Package](/img/cross-reference-for-package.png)
+![Cross-Reference for Package](../static/img/cross-reference-for-package.png)
 
  The user can close this menu to return to the previous confirmation window.
 
@@ -56,7 +56,7 @@ From the 2nd Confirmation Message window, select Force Delete to complete deleti
 
 Once a package is deleted, the package entry in the Deployment Browser will no longer allow users to select "Rollback this deployment" or "Delete this deployment". These options will now be grayed out:
 
-![Deployment Browser](/img/deployment-browser.png)
+![Deployment Browser](../static/img/deployment-browser.png)
 
 However, Batch deployments in progress may still be canceled in this window. If they are not canceled, the Batch Deploy job will fail when the Deploy CLI cannot find the package.
 
@@ -90,31 +90,31 @@ When adding default transformation rules to the server, select the Edit button a
 
 To add a transformation rule, either double-click or select the rule in the upper table and then select the include arrow. To remove a transformation rule, either double-click or select the rule in the lower table and the select the remove arrow.
 
-![Package Default Transformation Rule Selection Dialog](/img/package-default-transformation-rule.png)
+![Package Default Transformation Rule Selection Dialog](../static/img/package-default-transformation-rule.png)
 
 To view the transformation rule definitions, perform a right-click on the definition in the list (upper or lower tables) and View Definition will appear. Then, select this to view the JSON definition.
 
 If transformation rules exist for a package deployment, but the server settings don't allow for transformation rules, a warning message stating "The selected server does not allow transformation rules: this deployment will fail" will appear.
 
-![Package Deployment Transformation Rules not allowed](/img/package-deployment-fail.png)
+![Package Deployment Transformation Rules not allowed](../static/img/package-deployment-fail.png)
 
 The package transformation rules will appear, but will not be selectable and the deployment cannot be completed. You may choose to go back to the previous screen, simulate a deployment, or cancel the current deployment. The Batch OpCon Deploy and OpCon Deploy buttons will be disabled.
 
 It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
 
-![Viewing Transformation Rule Definitions from Package Dialog](/img/view-transformation-rule-package-definition.png)
+![Viewing Transformation Rule Definitions from Package Dialog](../static/img/view-transformation-rule-package-definition.png)
 
 When adding default schedules to the package, select the Edit button and the Select one or more Schedules dialog will appear.
 
 To add a schedule, either double-click or select the schedule in the upper table and then select the include arrow. To remove a schedule, either double-click or select the schedule in the lower table and the select the remove arrow.
 
-![Package Schedule Selection Dialog](/img/package-schedule-selection.png)
+![Package Schedule Selection Dialog](../static/img/package-schedule-selection.png)
 
 To view the Schedule definitions, perform a right-click on the definition in the list (upper or lower tables) and View Definition will appear. Then, select this to view the JSON definition.
 
 It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
 
-![Viewing Schedule Definitions from Package Dialog](/img/view-schedule-package-definition.png)
+![Viewing Schedule Definitions from Package Dialog](../static/img/view-schedule-package-definition.png)
 
 
 

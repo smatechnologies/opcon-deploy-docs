@@ -10,7 +10,7 @@ For access to OpCon systems, the user definition is mapped to an OpCon user. It 
 
 The Users functions allows users to be managed in the OpCon Deploy. It is possible to Add, Delete, or Update (Save) user information.
 
-![Admin Dialog Image](/img/admin-user-dialog.png)
+![Admin Dialog Image](../../static/img/admin-user-dialog.png)
 
 ## Select User Section
 
@@ -70,7 +70,7 @@ The role of the user
 
 :::info Note
 
-Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. Please refer to the Deployments subtopic, [Schedule Deployment](/deployments/#schedule-deployment), for more information.
+Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. Please refer to the Deployments subtopic, [Schedule Deployment](../deployments/#schedule-deployment), for more information.
 
 :::
 

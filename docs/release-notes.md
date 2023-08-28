@@ -4,6 +4,14 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.4
+
+2023 August
+
+:eight_spoked_asterisk: **OPCDEPLOY-1354**: Fixed an issue where certain updates to the OpCon API in newer versions (like 22.7.0) resulted in an error in Deploy because it found unrecognized fields being returned by the API, instead of simply ignoring them.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1355**: Fixed an issue where sub-schedule names containing spaces prevented diagram from being created as diagram node name containing spaces was not supported.
+ 
 ## Version 22.3
 
 2023 April

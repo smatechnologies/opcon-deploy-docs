@@ -7,7 +7,7 @@ sidebar_label: 'OpCon Deploy'
 
 OpCon Deploy is a separate application working on a central repository that contains the schedule definitions, transformation rules, and all the required configuration information to deploy the schedule definitions between OpCon environments in a controlled and consistent manner.
 
-The current version is **22.3**.
+The current version is **22.4**.
 
 ## Overview
 
@@ -35,7 +35,7 @@ If the schedule definition exists in the central repository, a new version is cr
 
 The Deploy process consists of selecting a schedule definition from the central repository and inserting it into the selected target OpCon environment.
 
-During the deployment process, it is possible to transform the schedule definition by using Transformation Rules. This allows a single schedule definition to be deployed to multiple OpCon systems instead of creating a schedule definition for each target OpConsystem.
+During the deployment process, it is possible to transform the schedule definition by using Transformation Rules. This allows a single schedule definition to be deployed to multiple OpCon systems instead of creating a schedule definition for each target OpCon system.
 
 During the deployment process if the target system is defined as a Production system, a check is performed to determine if the definition on the system matches the definition that was deployed. For other systems, a check is made to see if the schedule definition exists on the target system.
 

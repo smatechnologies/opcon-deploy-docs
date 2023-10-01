@@ -4,6 +4,14 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.5
+
+2023 September
+
+:eight_spoked_asterisk: **OPCDEPLOY-1353**: Fixed a performance issue with large databases when browsing records (schedules, transformation rules, scripts, deployments, and packages). 
+Previously, all records were retrieved from the database and then added to the selection lists when performing a request. Now, the user is required to enter a text string in the filter field and the filter text is used to retrieve only matched records from the database. User can still input an asterisk (*) as the filter text to fetch all records. 
+The filter does not support wild cards. For example, enter 'test' as the filter text to get records whose name includes 'test',
+
 ## Version 22.4
 
 2023 August

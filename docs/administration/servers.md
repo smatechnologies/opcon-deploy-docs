@@ -67,9 +67,13 @@ The port of the OpCon RestAPI server (default 9010)
 
 Indicates if the connection to the OpCon RestAPI server uses TLS
 
-When adding default transformation rules to the server, select the Edit button and the Select one or more rules dialog will appear.
+When adding default transformation rules to the server, select the Edit button and the **Select one or more rules** dialog will appear.
 
 ![Default Transformation Rule Image](../../static/img/transformation-rule-selection-dialog.png)
+
+The Select one or more rules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific transformation rule records or use the displayed default value of asterix (*) to retrieve all transformation rule records. If there are any records previously entered, they will be displayed in the selection and selected sections of the dialog. Once the text string has been entered select the **Refresh** button and the transformation rule information will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected transformation rules. Transformation rules selected in the lower table, will remain in the upper selection screen after a reset.
+
+It must be noted that wild cards are not supported, instead the text entered in the **Filter** field is checked against the transformation rule name in the transformation rule record (i.e. HP will return all script records that contain the character sequence in the name).
 
 To add a transformation rule, either double-click on the rule in the upper table or select the rule in upper table then click the Include arrow. To remove a transformation rule, either double-click or select the rule in the lower table and the click the Remove arrow.
 

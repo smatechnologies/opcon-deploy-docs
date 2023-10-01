@@ -46,9 +46,18 @@ OpCon Deploy requires that each OpCon system participating in the OpCon Deploy e
 
 ![Deploy Scripts Invalid Image](../static/img/scripts-invalid-license.png)
 
-To start the OpCon Deploy process, select the Script OpCon Deploy function. The Script Deployment (Select Scripts) dialog appears and you will need to select a specific version to deploy. If the list of available versions is not visible, then click on the > indicator to the left of the script name and the list of versions will appear. To select a version either double-click on the version or select it and use the down arrow.
+To start the OpCon Deploy process, select the Script OpCon Deploy function. The Script Deployment (Select Scripts) dialog appears and you will need to select a specific version to deploy. 
+
+The Select Scripts dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific scripts records or use the displayed default value of asterix (*) to retrieve all script records.
+Once the text string has been entered select the **Refresh** button and the script information will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected scripts. 
+
+Scripts selected in the lower table, will remain in the upper selection screen after a reset.
+
+It must be noted that wild cards are not supported, instead the text entered in the **Filter** field is checked against the script name in the script record (i.e. HP will return all script records that contain the character sequence in the name).
 
 ![Scripts Select Image](../static/img/scripts-select-scripts.png)
+
+If the list of available versions is not visible, then click on the > indicator to the left of the script name and the list of versions will appear. To select a version either double-click on the version or select it and use the down arrow.
 
 Once the scripts have been selected, select the Next button to select the OpCon system to which to deploy the scripts.
 
@@ -72,9 +81,13 @@ Click Close to return to the Script Deployment screen.
 
 This function provides the opportunity to display information about script definitions in the repository.
 
-![Browse Script Definition Image](../static/img/browse-script-definition.png)
+The Browse Imported Scripts dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific scripts records or use the displayed default value of asterix (*) to retrieve all script records.
+Once the text string has been entered select the **Refresh** button and the script information will be displayed. Subsequent requests will result in the new selection being displayed. 
 
-The Browse and filter Scripts imported dialog presents a list of all script records. This next table describes the information displayed in the dialog.
+It must be noted that wild cards are not supported, instead the text entered in the value in the **Filter** field is checked against the script name in the script record (i.e. HP will return all script records that contain the character sequence in the name).
+
+
+![Browse Script Definition Image](../static/img/browse-script-definition.png)
 
 To update the list of scripts displayed in the Browse and filter Scripts imported window, click Refresh, located in the bottom right corner of the window next to the Close button.
 

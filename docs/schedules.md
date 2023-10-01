@@ -53,9 +53,18 @@ To insert the definition in the repository, select the OK button. A message will
 
 The Browse function provides the opportunity to display information about schedule definitions in the repository.
 
+The Browse and filter Schedules imported dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific schedule records or use the displayed default value of asterix (*) to retrieve all schedule records.
+Once the text string has been entered select the **Refresh** button and the schedule information will be displayed. Subsequent requests will result in the new selection being displayed. 
+
+It must be noted that wild cards are not supported, instead the text entered in the value in the **Filter** field is checked against the schedule name in the schedule record (i.e. GV will return all schedule records that contain the character sequence in the name).
+
 ![Browse Schedule Definition](../static/img/browse-schedule-definition.png)
 
-The Browse and filter Schedules imported dialog presents a list of all schedule records. This next table describes the information displayed in the dialog.
+Browse and filter Schedules imported dialog presents a list of selected schedule records.
+
+![Browse Schedule Definition](../static/img/browse-schedule-definition1.png)
+
+ This next table describes the information displayed in the dialog.
 
 To update the schedule list in the Browse and filter Schedules imported window, click the Refresh button.
 

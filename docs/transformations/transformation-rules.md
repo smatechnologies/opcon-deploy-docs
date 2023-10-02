@@ -82,15 +82,20 @@ Other important points to note:
 
 * The Browse function provides the opportunity to display information about the transformation rule as well as the definitions associated with the rule.
 
+The Browse Transformation Rules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific transformation rule records or use the displayed default value of asterix (*) to retrieve all transformation rule records.
+Once the text string has been entered select the **Refresh** button and the transformation rule information will be displayed. Subsequent requests will result in the new selection being displayed. 
+
+It must be noted that wild cards are not supported, instead the text entered in the value in the **Filter** field is checked against the transformation rule name in the transformation rule record (i.e. PM will return all script records that contain the character sequence in the name).
+
 ![Transformation Rules Browse Image](../../static/img/transformation-rule-browse.png)
 
 * To update the list of transformation rules displayed in this window, click the Refresh button.
 
-### Browse and Filter Transformation Rules
+### Browse Transformation Rules
 
 * This allows the information associated with a transformation rule to be displayed as well as the definitions associated with the transformation rule.
 
-* The Browse and filter Transformation rules dialog presents a list of all transformation records. This next table describes the information displayed in the dialog.
+* The Browse Transformation Rules dialog presents a list of the filtered transformation records. This next table describes the information displayed in the dialog.
 
 | Column | Description |
 | ------ | ----------- |

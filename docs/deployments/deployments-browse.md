@@ -1,10 +1,21 @@
 # Deployments - Browse
 
-The Browse function can be used to examine the contents of a deployment record as well as submit a rollback request. When browse is selected, the View deployment records dialog appears.
+The Browse function can be used to examine the contents of a deployment record as well as submit a rollback request. 
 
-[View Deployment Records Dialog](View Deployment Records Dialog)
+The View Deployment Records dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific deployment records or use the displayed default value of asterix (*) to retrieve all deployment records.
+Once the text string has been entered select the **Refresh** button and the deployment information will be displayed. 
+Subsequent requests will result in the new selection being displayed. 
 
-To update the list of records displayed in the View Deployment Records window, click Refresh, located in the bottom right corner of the window next to the Close button.
+It must be noted that wild cards are not supported, instead the text entered in the **Name** field is checked against the deployment name in the deployment record (i.e. Test will return all deployment records that contain the character sequence in the name).
+
+The Filter deployment records selection list is automatically updated with the selection list after each selection.
+
+
+![Browse Deployment Definition](../../static/img/browse-deployment-definition.png)
+
+
+
+![Browse Deployment Definition](../../static/img/browse-deployment-definition1.png)
 
 ## Browse Actions
 

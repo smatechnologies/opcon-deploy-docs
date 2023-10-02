@@ -10,6 +10,11 @@ The Packages functions support the capabilities required to manage package defin
 
 The Manage function allows packages to be managed in the OpCon Deploy system. It is possible to Add or Update (Save) package information.
 
+TheView or Edit Packages dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific package records or use the displayed default value of asterix (*) to retrieve all package records.
+Once the text string has been entered select the **Refresh** button and the package information will be displayed. Subsequent requests will result in the new selection being displayed. 
+
+It must be noted that wild cards are not supported, instead the text entered in the value in the **Filter** field is checked against the package name in the package record (i.e. GV will return all package records that contain the character sequence in the name).
+
 ![Package Management Dialog Image](../static/img/package-management-dialog.png)
 
 ### Select Package Section
@@ -86,7 +91,12 @@ This table contains descriptions of each field in the View/edit package section 
 | Default transformation rules | It is possible to define a set of transformation rules that will always be applied when the Package is selected during deployment |
 | Schedules | Select the schedules that form part of this package - A schedule can only belong to a single package |
 
-When adding default transformation rules to the server, select the Edit button and the Select one or more rules dialog will appear.
+When adding default transformation rules to the server, select the Edit button and the **Select one or more rules** dialog will appear.
+
+The Select one or more rules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific transformation rule records or use the displayed default value of asterix (*) to retrieve all transformation rule records.
+Once the text string has been entered select the **Refresh** button and the transformation rule records will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected transformation rule records.
+
+Transformation rules selected in the lower table, will remain in the upper selection screen after a reset.
 
 To add a transformation rule, either double-click or select the rule in the upper table and then select the include arrow. To remove a transformation rule, either double-click or select the rule in the lower table and the select the remove arrow.
 
@@ -104,7 +114,12 @@ It is possible to search for a value in the JSON by entering the required value 
 
 ![Viewing Transformation Rule Definitions from Package Dialog](../static/img/view-transformation-rule-package-definition.png)
 
-When adding default schedules to the package, select the Edit button and the Select one or more Schedules dialog will appear.
+When adding default schedules to the package, select the Edit button and the **Select one or more Schedules** dialog will appear.
+
+The Select one or more schedules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific schedule records or use the displayed default value of asterix (*) to retrieve all schedule records.
+Once the text string has been entered select the **Refresh** button and the schedule records will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected schedule records. 
+
+Schedules selected in the lower table, will remain in the upper selection screen after a reset.
 
 To add a schedule, either double-click or select the schedule in the upper table and then select the include arrow. To remove a schedule, either double-click or select the schedule in the lower table and the select the remove arrow.
 

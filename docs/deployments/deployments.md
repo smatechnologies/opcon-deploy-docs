@@ -30,17 +30,21 @@ The deployment process begins with the selection of the type of deployment. Foll
 
 To deploy a schedule, select the Schedule icon. The Select a Schedule to deploy dialog appears and you will need to select the schedule definition.
 
+The Select a Schedule to deploy dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific schedule records or use the displayed default value of asterix (*) to retrieve all schedule records.
+Once the text string has been entered select the **Refresh** button and the schedule information will be displayed. Subsequent requests will be added to the existing list. It must be noted that wild cards are not supported, instead the text entered in the 
+**Name** field is checked against the schedule name in the schedule record (i.e. test will return all schedule records that contain the character sequence in the name).
+
+![Deployment Schedule Selection Dialog](../../static/img/deployment-schedule-selection.png)
+
 A list of schedule names appears in the upper portion of the dialog. When a schedule is selected, a list of versions available for the schedule appears in the lower table.
+
+Once a schedule has been selected, select the Next button.
 
 :::caution
 
 Once a schedule has been included in a package, it can no longer be deployed as a separate entity. If a user with administration privileges is logged in, a list of all schedules will be displayed, as there may be exceptional circumstances when a schedule of a package needs to be updated.
 
 :::
-
-Once a schedule has been selected, select the Next button.
-
-![Deployment Schedule Selection Dialog](../../static/img/deployment-schedule-selection.png)
 
 Once the schedule has been selected, the next task is to select the target OpCon system to which the schedule will be deployed. It should be noted that the user role of the user will define what OpCon systems are present in the drop-down list. For example, if the user role is Production, then only Production OpCon systems will appear in the list.
 
@@ -58,6 +62,10 @@ Once a target OpCon system has been selected, the user has four options (Next, S
 | Deploy | Select Deploy to deploy the schedule to the target OpCon system immediately (This is the default option) |
 
 When Next is selected, it will be possible to add transformation rules to the deployment process. It should be noted that it is possible to add a set of transformation rules to a server that will be used for every deployment to that server.
+
+The Select transformation rules dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific transformation rule records or use the displayed default value of asterix (*) to retrieve all transformation rule records.
+Once the text string has been entered select the **Refresh** button and the transformation rule information will be displayed. Subsequent requests will be added to the existing list. It must be noted that wild cards are not supported, instead the text entered in the 
+**Name** field is checked against the transformation rule name in the transformation rule record (i.e. test will return all transformation rule records that contain the character sequence in the name).
 
 ![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-transformation-rule-selection.png)
 
@@ -200,13 +208,17 @@ If the deployment errors, a message will be displayed informing the user why the
 
 To deploy a package, select the Package icon. The Select a Package to deploy dialog appears and you will need to select the package definition.
 
+The Select a Package to deploy dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific package records or use the displayed default value of asterix (*) to retrieve all package records.
+Once the text string has been entered select the **Refresh** button and the package information will be displayed. Subsequent requests will be added to the existing list. It must be noted that wild cards are not supported, instead the text entered in the 
+**Name** field is checked against the package name in the package record (i.e. test will return all package records that contain the character sequence in the name).
+
+![Deployment Package Selection Dialog](../../static/img/deployment-package-selection.png)
+
 A list of package names appears in the upper portion of the dialog. When a package is selected, a list of versions available for the package appears in the lower table.
 
 Once a package has been selected, select the Next button.
 
-![Deployment Package Selection Dialog](../../static/img/deployment-package-selection.png)
-
-One the package has been selected, the next task is to select the target OpCon system to which the package will be deployed. It should be noted that the user role of the user will define what OpCon systems are present in the drop-down list. For example, if the user role is Production, then only Production OpCon systems will appear in the list.
+Once the package has been selected, the next task is to select the target OpCon system to which the package will be deployed. It should be noted that the user role of the user will define what OpCon systems are present in the drop-down list. For example, if the user role is Production, then only Production OpCon systems will appear in the list.
 
 ![Deployment Server Selection Dialog](../../static/img/deployment-server-selection.png)
 
@@ -237,7 +249,7 @@ If transformation rules are selected, the result of the deployment depends on th
 
 During deployment, once a server that allows transformation rules has been selected, transformation rules can be selected in the Transformation Rules Selection Dialog (seen below). The Build options and Summary screen includes the list of transformation rules that will be applied during the deployment. It should be noted that it is possible to add a set of transformation rules to a server that will be used for deployment to that server.
 
-![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-transformation-rule-selection-dialog.png)
+![Deployment Transformation Rule Selection Dialog](../../static/img/deployment-package-transformation-rule.png)
 
 As noted in the [Transformation Rules](../transformations/transformation-rules) topic, the rules are listed in the order of what is applied before initiating deployment. This means the transformation rules will be applied as follows:
 

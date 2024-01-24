@@ -46,3 +46,7 @@ When this rule is set and a package is deployed, the package name will be added 
 ### Delete Schedule from Development System after Import
 
 If this rule is enabled, the definition will be deleted when a schedule from an OpCon system that has been designated as a Development system is imported into the repository.
+
+### Package update unchanged Schedules
+
+During package deployment, a check is made to see if the schedule version of the target schedule within the package matches the schedule version of the schedule to be deployed. If the versions match, only the schedule deployment information is updated on the target schedule. If this rule is selected, the target schedule contents will be overwritten. 

@@ -179,6 +179,16 @@ It must be noted that wild cards are not supported, instead the text entered in 
     * Schedule_Named_Instance
     * Script_Name
     * Threshold_Name
+    * SQL_DTExec_Server
+    * SQL_DTExec_Package_Path
+    * SQL_DTExec_User
+    * SQL_Job_Server
+    * SQL_Job_Jobname
+    * SQL_Job_User
+    * SQL_Script_Server
+    * SQL_Script_Database
+    * SQL_Script_User
+    * SQL_Script_Filename
     * Unix_GroupId_UserId
     * Unix_Group_Id
     * Unix_User_Id

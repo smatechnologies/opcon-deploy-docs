@@ -4,6 +4,29 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 22.6
+
+2024 January
+
+:eight_spoked_asterisk: **OPCDEPLOY-1360**: Fixed a problem when transformation rule is Schedule_Instance_Property and the job type is Windows Embedded script and there are no script arguments. An attempt is made to check the arguments for the schedule instance property and it fails with a NPE as there are no arguments. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1361**: Implemented new transformation rules for MS SQL job definitions. The following rules have been included
+
+    * SQL_Script_Server         used to transform the server name field of the MS SQL Script Job Action.
+    * SQL_Script_Database       used to transform the database name field of the MS SQL Script Job Action.
+    * SQL_Script_User           used to transform the user name field of the MS SQL Script Job Action.
+    * SQL_Script_Filename       used to transform the script file name field of the MS SQL Script Job Action.
+    * SQL_Job_Server            used to transform the server name field of the MS SQL JOB Job Action.
+    * SQL_Job_Jobname           used to transform the jobname field of the MS SQL JOB Job Action.
+    * SQL_Job_User              used to transform the user name field of the MS SQL JOB Job Action.
+    * SQL_DTExec_Server         used to transform the server name field of the MS SQL DTExec Job Action.
+    * SQL_DTExec_Package_Path   used to transform the package field of the MS SQL DTExec Job Action.
+    * SQL_DTExec_User           used to transform the user name field of the MS SQL DTExec Job Action.
+
+    PLEASE NOTE This feature requires matching OpCon fix OPCON-22789 included in OpCon Releases 23.0.0, 21.0.25 & 22.0.13. If required before release dates, a OpCon ImpEx2 patch for OpCon release 21.0 and 22.0 can be requested from support. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1367**: Implemented new global rule **Package update unchanged Schedules**. During package deployment, a check is made to see if the schedule version of the target schedule within the package matches the schedule version of the schedule to be deployed. If the versions match, only the schedule deployment information is updated on the target schedule. If this rule is selected, the target schedule contents will be overwritten. 
+
 ## Version 22.5
 
 2023 September

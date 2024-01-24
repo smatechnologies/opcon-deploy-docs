@@ -897,6 +897,206 @@ This tag is used to change the script name value of the script definition. The s
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
+### SQL_DTExec_Server
+
+This tag is used to change the server name of the job MS SQL DTEXec job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the Server in the MS SQL DTEXec job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_DTExec_Package_Path
+
+This tag is used to change the package value of the job MS SQL DTEXec job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the package in the MS SQL DTEXec job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_DTExec_User
+
+This tag is used to change the user name of the job MS SQL DTEXec job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the user in the MS SQL DTEXec job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Job_Server
+
+This tag is used to change the server name of the job MS SQL JOB job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the server in the  MS SQL JOB job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Job_Jobname
+
+This tag is used to change the job name of the MS SQL JOB job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the MS SQL job in the  MS SQL JOB job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Job_User
+
+This tag is used to change the user name of the MS SQL JOB job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the MS SQL user in the  MS SQL JOB job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Script_Server
+
+This tag is used to change the server name of the MS SQL Script job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the server name in the MS SQL Script job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+ 
+### SQL_Script_Database
+
+This tag is used to change the database name of the MS SQL Script job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the database name in the MS SQL Script job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Script_User
+
+This tag is used to change the user name of the MS SQL Script job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains theuser name in the MS SQL Script job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### SQL_Script_Filename
+
+This tag is used to change the file name of the MS SQL Script job action definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the file name in the MS SQL Script job definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
 ### Threshold_Name
 
 This tag is used to change the threshold name value of the threshold definition. The threshold name is changed in events as well as dependencies and supports the following tags:

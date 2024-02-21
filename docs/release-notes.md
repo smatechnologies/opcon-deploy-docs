@@ -4,6 +4,16 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 23.0
+
+2024 February
+
+:eight_spoked_asterisk: **OPCDEPLOY-1374**: Fixed a NPE encountered during File Transfer job transformation when the File_Transfer_Destination_Machine tag is used and a Machine Group is defined instead of a Primary Machine.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1375**: Fixed a NPE encountered during package simulation when transformation is used and the package is a new version that has a removed a schedule from the previous version.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1376**: Fixed the missing backslash (\\) problem encountered during Windows job partial transformation when the Windows_Command_Line or Windows_Working_Directory tags are used.
+
 ## Version 22.6
 
 2024 January

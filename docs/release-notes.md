@@ -4,6 +4,21 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+## Version 23.1
+
+2024 May
+
+:eight_spoked_asterisk: **OPCDEPLOY-843**: Fixed a problem when transformation rule names are queries using case sensitivity.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1301**: Implemented new transformation rules for machine group name to machine name definitions. The following rules have been included
+
+   * Job_Machine_Group_Name_to_Machine_Name  used to transform a machine group name to a machine name.
+   * Job_Machine_Name_to_Machine_Group_Name  used to transform a machine name to a machine group name.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1365**: Fixed a problem displaying all versions of a selected item in the selection view when creating / editing packages.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1378**: Implemented support for new GuideWireCloud and ACS job types. Compatibility check implemented to ensure these job types can only be deployed to OpCon versions 23.o or greater. Requires updated ImpEx2 OpCon versions for OpCon versions 24.2.0 or 23.0.4. 
+
 ## Version 23.0
 
 2024 February

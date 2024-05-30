@@ -403,8 +403,27 @@ This tag is used to change the job instance property name value of the job insta
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
-
 ### Job_Machine_Group_Name
+
+This tag is used to change the machine group value of the job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+ * currentValue	
+
+    * (*Required*): Contains the name of the value of the machine group in the job definition.
+
+ * newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### Job_Machine_Group_Name_to_Machine_Name
 
 This tag is used to change the machine group value of the job definition and supports the following tags:
 
@@ -427,6 +446,26 @@ This tag is used to change the machine group value of the job definition and sup
 ### Job_Machine_Name
 
 This tag is used to change the Primary, Alternate Machine 1, Alternate Machine 2, Alternate Machine 3, File Transfer Source, and Destination Host values of the job definition. The Job_Machine_Name tag supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+
+* currentValue	
+
+    * (*Required*): Contains the name of the machine in the job definition.
+
+* newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### Job_Machine_Name_to_Machine_Group_Name
+
+This tag is used to change the Primary Machine name to a Machine Group name. The Job_Machine_Name_to_Machine_Group_Name tag supports the following tags:
 
 * jobName	
 

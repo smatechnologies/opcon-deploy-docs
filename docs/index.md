@@ -7,7 +7,7 @@ sidebar_label: 'OpCon Deploy'
 
 OpCon Deploy is a separate application working on a central repository that contains the schedule definitions, transformation rules, and all the required configuration information to deploy the schedule definitions between OpCon environments in a controlled and consistent manner.
 
-The current version is **23.0**.
+The current version is **23.1**.
 
 ## Overview
 

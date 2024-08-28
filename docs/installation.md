@@ -136,7 +136,7 @@ Complete the procedures in this section to install a new OpCon Deploy Server:
    * Select the X (This feature will not be available.) option from the drop-down.
 11. Click Next.
 12. Enter the definitions for the ImpEx2 Server:
-   * OpCon database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>```)
+   * OpCon database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>```, if TLS for database connection, add ***;TrustServerCertificate=True*** name)
    * OpCon database name
    * OpCon database login ID
    * OpCon database login ID password
@@ -368,6 +368,28 @@ system.debug=false
 #
 opcon.server.name=EC2AMAZ-2QV0RKO
 opcon.db.name=OPCONXPS
+opcon.db.user=opconsam
+opcon.db.password=sYnk3bzpZybGPbSOrhsr4g==
+opcon.db.using.winauth=true
+opcon.db.connection.max=10
+#
+# REST server configuration
+#
+web.port=9001
+#
+# Logger configuration
+#
+system.debug=false
+
+```
+### Sample Deploy Server Configuration File using TLS SQL Server connection
+
+```
+#
+# OpCon server connection information
+#
+opcon.server.name=EC2AMAZ-2QV0RKO
+opcon.db.name=OPCONXPS;TrustServerCertificate=True
 opcon.db.user=opconsam
 opcon.db.password=sYnk3bzpZybGPbSOrhsr4g==
 opcon.db.using.winauth=true

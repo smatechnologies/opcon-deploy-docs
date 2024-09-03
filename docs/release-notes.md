@@ -4,6 +4,29 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
+The Deploy Client is not paired with a specific OpCon Release. 
+
+There are no Deploy patch releases as corrections are applied to the main software and a new version is released on a regular basis.  
+
+Deploy contains compatibility checks to ensure that features supported in newer OpCon Releases are not deployed to older opCon Releases.
+
+The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. The ImpEx2 
+server for each release are patched and released within the OpCOn release cycles.   
+
+## Version 23.2
+
+2024 August
+
+:eight_spoked_asterisk: **OPCDEPLOY-1380**: Fixed a problem during deployment when checking if the deployment has a previous deployment failure.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1382**: Fixed a problem during package creation when newly selected schedule versions are removed from the selection list when the Refresh button is selected to search for schedule versions to include in the package.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1383**: Updated database scripts to support SQL-Azure.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1384**: Added a .l4j.ini file for the Deploy client increasing the JVM heap size to prevent heap memory thrashing when very large definitions are being deployed. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1385**: Fixed a partial update of resource/threshold names during transformation of Threshold Update resources.. 
+
 ## Version 23.1
 
 2024 May

@@ -155,7 +155,9 @@ It must be noted that wild cards are not supported, instead the text entered in 
     * IBMi_Inquiry_Message_Reply
     * Job_Instance_Property
     * Job_Machine_Group_Name
+    * Job_Machine_Group_Name_to_Machine_Name
     * Job_Machine_Name
+    * Job_Machine_Name_to_Machine_Group_Name
     * Job_Name
     * Job_Tag
     * MCP_Arguments

@@ -13,6 +13,14 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. The ImpEx2 
 server for each release are patched and released within the OpCOn release cycles.   
 
+## Version 23.3
+
+2024 October
+
+:eight_spoked_asterisk: **OPCDEPLOY-1387**: Fixed a problem during deployment ensuring script versions are placed in the version list in ascending order to prevent problems inserting versions into OpCOn database.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1388**: Fixed a problem during package creation when schedule versions are retained in the selection list causing duplicates when a refresh is performed and the schedules are part of the subsequent selection..
+
 ## Version 23.2
 
 2024 August
@@ -25,7 +33,9 @@ server for each release are patched and released within the OpCOn release cycles
 
 :eight_spoked_asterisk: **OPCDEPLOY-1384**: Added a .l4j.ini file for the Deploy client increasing the JVM heap size to prevent heap memory thrashing when very large definitions are being deployed. 
 
-:eight_spoked_asterisk: **OPCDEPLOY-1385**: Fixed a partial update of resource/threshold names during transformation of Threshold Update resources.. 
+:eight_spoked_asterisk: **OPCDEPLOY-1385**: Fixed a partial update of resource/threshold names during transformation of Threshold Update resources. 
+
+:eight_spoked_asterisk: **OPCDEPLOY-1386**: Fixed the setting of the reset AutoBuild and AutoDelete flags from only for reset to when selected when creating the importRules object. 
 
 ## Version 23.1
 

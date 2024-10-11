@@ -17,7 +17,7 @@ server for each release are patched and released within the OpCOn release cycles
 
 2024 October
 
-:eight_spoked_asterisk: **OPCDEPLOY-1387**: Fixed a problem during deployment ensuring script versions are placed in the version list in ascending order to prevent problems inserting versions into OpCOn database.
+:eight_spoked_asterisk: **OPCDEPLOY-1387**: Fixed a problem during deployment ensuring script versions are placed in the version list in ascending order to prevent problems inserting versions into OpCon database.
 
 :eight_spoked_asterisk: **OPCDEPLOY-1388**: Fixed a problem during package creation when schedule versions are retained in the selection list causing duplicates when a refresh is performed and the schedules are part of the subsequent selection..
 

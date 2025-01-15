@@ -4,14 +4,68 @@ sidebar_label: 'Release notes'
 
 # OpCon Deploy Release Notes
 
-The Deploy Client is not paired with a specific OpCon Release. 
+The Deploy Client is not generally paired with a specific OpCon Release. 
+If specific OpCon versions are required, they are noted in the release information.
 
 There are no Deploy patch releases as corrections are applied to the main software and a new version is released on a regular basis.  
 
 Deploy contains compatibility checks to ensure that features supported in newer OpCon Releases are not deployed to older opCon Releases.
 
-The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. The ImpEx2 
-server for each release are patched and released within the OpCOn release cycles.   
+The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
+server for each release is patched and released within the OpCon release cycles.   
+
+## Version 25.0
+
+2025 January
+
+**Migration COnsiderations**
+
+This release of Deploy requires matching OpCon versions 25.0.0, version 23.0.8, version 22.0.19.
+
+New rule **Exclude scripts from schedule deployment** separates the deployment of schedules and scripts. The default value for the rule is false, so it will not have an
+impact on existing installations. Once this rule is enabled, the script definitions will no longer be included in the schedule definitions in the **scriptList** section. 
+
+* If the **Exclude scripts from schedule deployment** rule is not selected, the appropriate script / version will be created as part of the schedule deployment process. 
+* If the **Exclude scripts from schedule deployment** rule is selected, the appropriate script / version will need to be created before the schedule deployment process.   
+
+Transformation **Environment** changes have been added to facilitate the duplication of schedules within a single OpCon system to create a unique execution environment.
+The defined environment value will now be prefixed to the machine name as well as the script name. This means that a unique instance of the script will be created during the deployment process.
+
+**New Features**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1390**: Implemented new transformation rules for Job, OS2200 Element Name and OS2200 Runid definitions. The additional rules support the changing of names using masking (wild cards ? and * - P* to change first character of name, P?????N to change the first and last characters of the name). 
+The following rules have been included
+
+    * Job_Name_Mask           used to transform the Job Name using a mask.
+    * OS2200_Elementname_Mask used to transform the OS2200 Elementname using a mask.
+    * OS2200_Runid_Mask       used to transform the OS2200 Runid using a mask.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1392**: Implemented new a new feature to split the importing and deployment of schedules and scripts. 
+When this feature is enabled, scripts are no longer included in the schedule import and deployment processes. 
+Scripts must therefore be imported and deployed using the Deploy **Scripts Import / Deploy** processes. 
+It should be noted that individual Script deployment does not currently support transformation.
+ 
+  * When specific script versions are required during the schedule deployment process, the script version must be available on the target system.
+  * When using the **Script Name** transformation during Schedule / Package deployment, the script name must already exist on the target OpCon System. 
+  * Simulation has been updated to include the checking for scripts and versions.
+
+For more information see **Exclude Script from Schedule Deployment** rule in **settings** section.
+
+To enable this feature, select the **Exclude scripts from schedule deployment** rule using the **Settings** section. The default value of this rule is false (not enabled).  
+
+**Fixes**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1389**: Fixed a problem when deploying scripts, roles are not set correctly. During Import process extracts role names and inserts them into the deploy_script tables.
+During deployment, role names are included in deployment object, resulting in script having the required roles assigned. 
+  
+  * This change has database updates adding a new column roles to the deploy_script table (Null values are allowed so there is no impact to existing records).
+
+:eight_spoked_asterisk: **OPCDEPLOY-1393**: Fixed a problem when importing a script which has a new version and additional roles, the additional roles are not added to the deploy_script table. 
+
+**OpCon Fixes**
+:eight_spoked_asterisk: **OPCON-25833**: Fixed a problem during the script extract process to include a list of roles associated with the script. Fixed a problem during the script deployment process to assign the roles associated with the script.
+
+:eight_spoked_asterisk: **OPCON-25933**: Made enhancements to Windows and Unix job import to support splitting Deploy script and schedule / package deployments. Import routines need to check local OpCon database for script information (script, script type, runner ids) as the script information is no longer part of the OpConExtract object.
 
 ## Version 23.3
 
@@ -75,7 +129,7 @@ server for each release are patched and released within the OpCOn release cycles
     * SQL_Script_User           used to transform the user name field of the MS SQL Script Job Action.
     * SQL_Script_Filename       used to transform the script file name field of the MS SQL Script Job Action.
     * SQL_Job_Server            used to transform the server name field of the MS SQL JOB Job Action.
-    * SQL_Job_Jobname           used to transform the jobname field of the MS SQL JOB Job Action.
+    * SQL_Job_Jobname           used to transform the job name field of the MS SQL JOB Job Action.
     * SQL_Job_User              used to transform the user name field of the MS SQL JOB Job Action.
     * SQL_DTExec_Server         used to transform the server name field of the MS SQL DTExec Job Action.
     * SQL_DTExec_Package_Path   used to transform the package field of the MS SQL DTExec Job Action.

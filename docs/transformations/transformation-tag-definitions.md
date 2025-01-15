@@ -499,6 +499,22 @@ This tag is used to change the Job Name value of the job definition and is chang
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
+### Job_Name_Mask
+
+This tag is used to change the Job Name value of the job definition using a mask that supports wild card characters (? and *). When using the mask ? characters indicates which character in the name should not be changed, while the * characters indicates all following characters should not be changed. 
+To change the first character of the name the currentValue should be T* and newValue should be P*. To change the first and last characters of the name, the currentValue should be T?????A and the newValue should be P????B. The Job_Name_Mask tag supports the following tags:
+
+* currentValue	
+
+    * (*Required*): Contains the value to check .
+
+* newValue	
+
+    * (*Required*): Contains the new value to be applied.
+
+* partialUpdate	
+
+    * Not used.
 
 ### Job_Tag
 
@@ -664,6 +680,23 @@ This tag is used to change the value of an OS2200 element associated with the jo
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
+### OS2200_Elementname_Mask
+
+This tag is used to change the OS2200 Element Name value of the job definition using a mask that supports wild card characters (? and *). When using the mask ? characters indicates which character in the name should not be changed, while the * characters indicates all following characters should not be changed. 
+To change the first character of the name the currentValue should be T* and newValue should be P*. To change the first and last characters of the name, the currentValue should be T?????A and the newValue should be P????B. The Job_Name_Mask tag supports the following tags:
+
+* currentValue	
+
+    * (*Required*): Contains the value to check .
+
+* newValue	
+
+    * (*Required*): Contains the new value to be applied.
+
+* partialUpdate	
+
+    * Not used.
+
 ### OS2200_Filename
 
 This tag is used to change the value of OS2200 file name associated with the job and supports the following tags:
@@ -743,6 +776,23 @@ This tag is used to change the value of an OS2200 Runid associated with the job 
 * partialUpdate	
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
+### OS2200_Runid_Mask
+
+This tag is used to change the OS2200 Runid value of the job definition using a mask that supports wild card characters (? and *). When using the mask ? characters indicates which character in the name should not be changed, while the * characters indicates all following characters should not be changed. 
+To change the first character of the name the currentValue should be T* and newValue should be P*. To change the first and last characters of the name, the currentValue should be T?????A and the newValue should be P????B. The Job_Name_Mask tag supports the following tags:
+
+* currentValue	
+
+    * (*Required*): Contains the value to check .
+
+* newValue	
+
+    * (*Required*): Contains the new value to be applied.
+
+* partialUpdate	
+
+    * Not used.
 
 ### OS2200_Userid
 

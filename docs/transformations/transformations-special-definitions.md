@@ -14,7 +14,7 @@ Within OpCon, a schedule name must be unique within an OpCon instance. There may
 
 **environment**	
 
-(*Required*): This tag is defined in the Transformations object and consists of a value that will be prefixed to schedule, property, resource, and threshold definitions.
+(*Required*): This tag is defined in the Transformations object and consists of a value that will be prefixed to schedule, property, resource, threshold machines and script definitions.
 
 ![Environment Sample](../../static/img/environment-sample.png)
 

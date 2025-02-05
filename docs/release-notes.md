@@ -20,7 +20,7 @@ server for each release is patched and released within the OpCon release cycles.
 
 **Migration COnsiderations**
 
-This release of Deploy requires matching OpCon versions 25.0.0, version 23.0.8, version 22.0.19.
+This release of Deploy requires matching OpCon versions 25.0.0 and version 23.0.9 and 22.0.20. A special ImpEx2 patch for opCon 22.0.19 can be requested from support.
 
 New rule **Exclude scripts from schedule deployment** separates the deployment of schedules and scripts. The default value for the rule is false, so it will not have an
 impact on existing installations. Once this rule is enabled, the script definitions will no longer be included in the schedule definitions in the **scriptList** section. 

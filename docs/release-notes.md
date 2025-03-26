@@ -14,11 +14,42 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
 
+## Version 25.1
+
+2025 March
+
+**Migration Considerations**
+
+New rule **Exclude calendars from schedule deployment** removes calendar updates during the deployment process. The default value for the rule is false, so it will not have an impact on existing installations. Once this rule is enabled, the calendar definitions will no longer be included in the schedule definitions in the **calendarList** section.
+
+**New Features**
+
+:eight_spoked_asterisk: **OC-325**: Support new job type RPA. Due to the specific nature of the RPA scripts being associated with specific agents, the deploy process does not include the scripts in the deployment process.
+
+This requires 25.1.0 or greater.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1398**: Added new fields on 'CheckInSummary' screen during schedule Import process to allow for the creation of a package from the selected schedules. The existing checkbox **Include Sub-Schedules** can be used to extract all sub-schedules associated with the selected schedules and included in the package.
+- **Create Package from Schedules** When selected creates a package from the list of imported schedules (requires Package Name).
+- **Package Name**                  The name of  the package to create.  
+
+:eight_spoked_asterisk: **OPCDEPLOY-1403**: Implemented new a new feature to prevent the update of calendars during the deployment process. 
+When this feature is enabled, calendars are no longer included in the schedule import and deployment processes. 
+
+For more information see **Exclude calendars from Schedule Deployment** rule in **settings** section.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1405**: Added new argument '-noi' to Devops.SMAOpConDeployClient.exe client for the schedule and script EXPORT action. This option will prevent the exported schedule or script from being inserted into the Deploy database during the EXPORT action.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1406**: Added new argument '-iss' to Devops.SMAOpConDeployClient.exe client for the schedule EXPORT action. This option will include all sub-schedules associated with the named schedule creating a single definition file containing all the schedules.
+
+**Fixes**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1404**: Fixed a problem when using the Devops.SMAOpConDeployClient.exe client to deploy a schedule containing embedded scripts. During the deployment process the schedule and scripts are inserted into the Deploy database. When inserting the scripts into the Deploy database, a check for missing script versions is performed causing the NPE as there is no source OpCon system (source is DevOps repository). 
+
 ## Version 25.0
 
 2025 January
 
-**Migration COnsiderations**
+**Migration Considerations**
 
 This release of Deploy requires matching OpCon versions 25.0.0 and version 23.0.9 and 22.0.20. A special ImpEx2 patch for opCon 22.0.19 can be requested from support.
 

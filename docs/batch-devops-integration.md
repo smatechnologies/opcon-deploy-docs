@@ -100,6 +100,13 @@ Devops.SMAOpConDeployClient.exe supports the following arguments:
 
 * Optional argument required for script EXPORT action. Defines the version of the script to export.
 
+**-iss**	
+
+* Optional argument for schedule EXPORT action. Extracts all sub-schedules associated with the named schedule and creates a single definition file containing all schedule definitions.
+
+**-noi**	
+
+* Optional argument for schedule and script EXPORT action. When present does not insert the exported definition into the Deploy database.
 
 ## Examples
 

@@ -57,10 +57,16 @@ When enabled, this rule will split the deployment of schedules and scripts.
 * Script definitions are no longer imported into the Deploy database during schedule import.
 * Script definitions are no longer deployed along with schedules / packages.
 
-When using this rule, script definitions must be imported and deployed separately using the SCripts Menu. Schedule definitions will only contain a reference to an embedded script in job definition.
+When using this rule, script definitions must be imported and deployed separately using the Scripts Menu. Schedule definitions will only contain a reference to an embedded script in job definition.
 There is also no attempt made to ensure that version numbers are consistent across OpCon systems.
 It is therefore up to the users to ensure that a script and its version is available during the deployment process. If the script, runner or version is not available in the target OpCOn database, the deployment will terminate with an appropriate error message.
 
 As the version numbering may be inconsistent across OpCon systems, it is suggested that the 'Latest Version' is used in the embedded script job definition.
 
 When the Script_Name transformation rule is used, the users must ensure that the required script is available in the script repository of target OpCon database. 
+
+### Exclude calendars from Schedule Deployment
+
+When enabled, this rule will prevent calendar updates during the deployment of schedules / packages. 
+* Calendar definitions are no longer imported into the Deploy database during schedule import.
+* Calendar definitions are no longer deployed along with schedules / packages.

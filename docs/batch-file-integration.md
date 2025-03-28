@@ -63,27 +63,27 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
 ## Examples
 
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "EXPORT" -t "SCHEDULE" - tn "SCH001" -v 5 -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "EXPORT" -t "SCHEDULE" -tn "SCH001" -v 5 -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
  
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "OEXPORT" -t "SCHEDULE" - tn "SCH001" -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "OEXPORT" -t "SCHEDULE" -tn "SCH001" -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
  
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "EXPORT" -t "SCRIPT" - tn "scripta" -v 5 -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "EXPORT" -t "SCRIPT" -tn "scripta" -v 5 -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
  
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "OEXPORT" -t "SCRIPT" - tn "scripta" -v 5 -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "OEXPORT" -t "SCRIPT" -tn "scripta" -v 5 -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "IMPORT" -t "SCHEDULE" - tn "SCHD001" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "IMPORT" -t "SCHEDULE" -tn "SCHD001" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 
 ```
-C:\test\deploy\File.SMAOpConDeployClient.exe -a "IMPORT" -t "SCRIPT" - tn "scripta" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\File.SMAOpConDeployClient.exe -a "IMPORT" -t "SCRIPT" -tn "scripta" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 
 The above examples show how the File.SMAOpConDeployClient program can be used to export / import definitions:

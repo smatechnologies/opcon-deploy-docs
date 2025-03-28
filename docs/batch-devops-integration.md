@@ -111,33 +111,33 @@ Devops.SMAOpConDeployClient.exe supports the following arguments:
 ## Examples
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "EXPORT" -t "SCHEDULE" - tn "SCH001" -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "EXPORT" -t "SCHEDULE" -tn "SCH001" -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 In the above example, schedule SCH001 is extracted from OpCon system OPCONDEV, inserted into the Deploy repository and written into file c:\test\data\SCH001.json. For schedule definitions, the .json extension is added to the schedule name.
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "EXPORT" -t "SCRIPT" - tn "scripta" -v 5 -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "EXPORT" -t "SCRIPT" -tn "scripta" -v 5 -o "OPCONDEV" -di "c:\test\data" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 In the above example, version 5 of script scripta is extracted from OpCon system OPCONDEV, inserted into the Deploy repository (if script record not found, a script record is created) and written into file c:\test\data\scripta. 
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "DEPLOY" -t "SCHEDULE" - tn "SCH001" -f "c:\test\data\SCH001.json" -o "OPCONTST" -d "REL 22.0.1" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "DEPLOY" -t "SCHEDULE" -tn "SCH001" -f "c:\test\data\SCH001.json" -o "OPCONTST" -d "REL 22.0.1" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 In the above example, the schedule definition in the file c:\test\data\SCH001.json is deployed to the OpCon System OPCONTST. Before deploying the schedule to the opCon system OPCONTST, the schedule definition is first saved in the Deploy repository and the description "REL 22.0.1" is inserted as a comment. When deploying the schedule definition, the comment "REL 22.0.1" is attached to the Deployment record as well as the Deployment Information of the schedule.
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "DEPLOY" -t "SCRIPT" - tn "scripta" -f "c:\test\data\scripta" -o "OPCONTST" -d "REL 22.0.1" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "DEPLOY" -t "SCRIPT" -tn "scripta" -f "c:\test\data\scripta" -o "OPCONTST" -d "REL 22.0.1" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 In the above example, the script definition in the file c:\test\data\scripta is deployed to the OpCon System OPCONTST as a new version of script scripta. This means that a script definition for scripta must exist in the Deploy environment.
 Before deploying the script version to the opCon system OPCONTST, the script version is first saved in the Deploy repository and the description "REL 22.0.1" is inserted as a comment.  
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "REPO" -t "SCHEDULE" - tn "SCHD001.json" -pj "TSG" -r "SCHEDULE_DEF" -b "develop" -ip "src/schedules" -o "OPCONTST" -d "DEVTEST 1.0" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "REPO" -t "SCHEDULE" -tn "SCHD001.json" -pj "TSG" -r "SCHEDULE_DEF" -b "develop" -ip "src/schedules" -o "OPCONTST" -d "DEVTEST 1.0" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 In the above example, the schedule definition in the /src/schedules location of the develop branch of the SCHEDULE_DEF repository is deployed to the OpCon System OPCONTST. Before deploying the schedule to the opCon system OPCONTST,
 the schedule definition is first saved in the Deploy repository and the description "DEVTEST 1.0" is inserted as a comment. When deploying the schedule definition, the comment "DEVTEST 1.0" is attached to the Deployment record as well as the Deployment Information of the schedule. This function requires additional configuration information in the config.ini file. 
 
 ```
-C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "REPO" -t "SCRIPT" - tn "scripta" -pj "TSG" -r "SCHEDULE_DEF" -b "develop" -ip "src/scripts" -o "OPCONTST" -d "DEVTEST 1.0" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\Deploy\Client\Devops.SMAOpConDeployClient.exe -a "REPO" -t "SCRIPT" -tn "scripta" -pj "TSG" -r "SCHEDULE_DEF" -b "develop" -ip "src/scripts" -o "OPCONTST" -d "DEVTEST 1.0" -u admin -p lBsC5ohnSf2P7/Ku81FiGw==
 ``` 
 In the above example, the script definition in the /src/scripts location of the develop branch of the SCHEDULE_DEF repository is deployed to the OpCon System OPCONTST as new script version for scripta. Before deploying the script version to the opCon system OPCONTST, the definition is first saved in the Deploy repository as a new script version for the script scripta. The description "DEVTEST 1.0" is inserted as a comment. This function requires additional configuration information in the config.ini file. 

@@ -31,8 +31,8 @@ module.exports = {
           breadcrumbs: false,
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/smatechnologies/opcon-deploy-docs/blob/main',
+//          editUrl:
+//            'https://github.com/smatechnologies/opcon-deploy-docs/blob/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

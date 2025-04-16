@@ -1,6 +1,6 @@
 # User Interface
 
-When starting the client software, the user must log in to gain access to the application by entering an appropriate user code and password. After installation, a default Administration user Admin with a password of admin can be used to access the SMA OpCon Deploy database initially. The password of the Admin user should then be changed.
+When starting the client software, the user must log in to gain access to the application by entering an appropriate user code and password. After installation, a default Administration user Admin with a preset initial password (contact SMA support for needed password information) can be used to access the SMA OpCon Deploy database initially. The initial password should be changed after login.
 
 ![Login Image](../static/img/login-image.png)
 

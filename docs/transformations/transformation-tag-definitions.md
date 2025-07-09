@@ -858,6 +858,38 @@ This tag is used to change the value of an OS2200 userid associated with the job
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
 
+### Role_Add
+
+* This tag is used to add a Role Name to the list of role definitions. 
+
+* currentValue	
+
+    * (*Required*): Contains the name of the role to add to the list of roles.
+
+* newValue	
+
+    * (*Required*): Use the same name as the currentValue.
+
+* partialUpdate	
+
+    * not used.
+
+### Role_Name
+
+* This tag is used to change the Role Name value of the role definition. The role name is changed in schedule role list as well.
+
+* currentValue	
+
+    * (*Required*): Contains the name of the role in the definition.
+
+* newValue	
+
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+
 ### Schedule_Auto_Build_Time
 
 This tag is used to change the Schedule auto build time for schedules that have the auto build option enabled.

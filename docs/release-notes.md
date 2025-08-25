@@ -14,6 +14,34 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
 
+## Version 25.2
+
+2025 August
+
+**Migration Considerations**
+
+New rule **Merge Schedule Instance Properties** indicates if schedule instance properties should be merged if rule **Update Schedule instance properties allowed** is not selected during the deployment process. The default value for the rule is false, so it will not have an impact on existing installations. 
+
+**New Features**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1407**: Implemented new a new feature to correctly implement the merging of Schedule Instance Properties when the rule **Update Schedule instance properties allowed** is not selected. 
+
+This requires matching OpCon ImpEx2 versions
+- Cloud 25.3.0
+- OnPrem  25.0.4 / 23.0.12 / 22.0.22
+
+For more information see **Merge Schedule Instance Properties** rule in **settings** section.
+
+**Fixes**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1400**: Fixed a problem during package creation when all versions selected when doing a schedule selection refresh.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1409**: Fixed an External Dependencies loss problem during transformation when Schedule_Named_Instance transformation rule is defined.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1411**: Fixed a problem when Job_Machine_Name transformation rule is defined and the machine names are not transformed in the Roles machineInfoList field.
+
+:eight_spoked_asterisk: **OPCDEPLOY-1413**: Fixed a problem when transforming system properties using the Environment attribute and the system property has a date offset value.
+
 ## Version 25.1
 
 2025 March

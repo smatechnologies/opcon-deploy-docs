@@ -16,7 +16,7 @@ server for each release is patched and released within the OpCon release cycles.
 
 ## Version 25.2
 
-2025 August
+2025 October
 
 **Migration Considerations**
 

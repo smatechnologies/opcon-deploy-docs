@@ -42,6 +42,8 @@ For more information see **Merge Schedule Instance Properties** rule in **settin
 
 :eight_spoked_asterisk: **OPCDEPLOY-1413**: Fixed a problem when transforming system properties using the Environment attribute and the system property has a date offset value.
 
+:eight_spoked_asterisk: **OPCDEPLOY-1414**: Fixed a problem with archive_status constraint of the deploy_deployment_archive table by adding the Failed status to the constraint.
+
 ## Version 25.1
 
 2025 March

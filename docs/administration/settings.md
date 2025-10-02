@@ -70,3 +70,10 @@ When the Script_Name transformation rule is used, the users must ensure that the
 When enabled, this rule will prevent calendar updates during the deployment of schedules / packages. 
 * Calendar definitions are no longer imported into the Deploy database during schedule import.
 * Calendar definitions are no longer deployed along with schedules / packages.
+
+### Merge Schedule Instance Instance Properties
+
+This rule only works when **Update Schedule instance properties allowed** is not selected.
+
+When enabled, this rule will merge schedule instance properties only adding the new schedule instance properties to the existing schedule instance properties.
+ 

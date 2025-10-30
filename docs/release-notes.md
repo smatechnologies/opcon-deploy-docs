@@ -14,6 +14,21 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
 
+## Version 25.3 (OpCon Cloud)
+
+2025 October
+
+This is an OpCon Cloud version only as it supports the new OpCon long user passwords. 
+
+**Migration Considerations**
+
+**New Features**
+
+:eight_spoked_asterisk: **OPCDEPLOY-1412**: Included support for log OpCon user passwords.
+
+This requires matching OpCon ImpEx2 versions
+- Cloud 25.3.0
+
 ## Version 25.2
 
 2025 October
@@ -27,7 +42,6 @@ New rule **Merge Schedule Instance Properties** indicates if schedule instance p
 :eight_spoked_asterisk: **OPCDEPLOY-1407**: Implemented new a new feature to correctly implement the merging of Schedule Instance Properties when the rule **Update Schedule instance properties allowed** is not selected. 
 
 This requires matching OpCon ImpEx2 versions
-- Cloud 25.3.0
 - OnPrem  25.0.4 / 23.0.12 / 22.0.22
 
 For more information see **Merge Schedule Instance Properties** rule in **settings** section.

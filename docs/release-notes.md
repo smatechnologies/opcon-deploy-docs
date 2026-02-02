@@ -14,6 +14,37 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
 
+## Version 26.0.0
+
+2026 February
+
+**Migration Considerations**
+
+Deploy 26.0 is matched with OpCon Cloud 25.3 or greater or OpCon Data Center 26.0. It contains the newer OpCon login libraries that support the longer OpCon user passwords.
+Deploy 26.0 can also communicate with previous OpCon versions, but Deploy 25.2 or lower cannot communicate with OpCon 25.3 or 26.0 systems.
+
+When performing an upgrade, it is best to first upgrade test environments and Deploy. 
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
+
+:eight_spoked_asterisk: **CON-632**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
+
+:eight_spoked_asterisk: **CON-777**: Support OpConMFT Archive Files and Reprocess Files field types during export and import of OpConMFT job types. Requires matching ImpEx2 26.0.x or 26.1.x versions.
+
+## Version 25.2.1
+
+2025 January
+
+**Migration Considerations**
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
+
+:eight_spoked_asterisk: **CON-635**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
+
 ## Version 25.3 (OpCon Cloud)
 
 2025 October
@@ -25,6 +56,8 @@ This is an OpCon Cloud version only as it supports the new OpCon long user passw
 **New Features**
 
 :eight_spoked_asterisk: **OPCDEPLOY-1412**: Included support for log OpCon user passwords.
+:eight_spoked_asterisk: **CON-631**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
+
 
 This requires matching OpCon ImpEx2 versions
 - Cloud 25.3.0

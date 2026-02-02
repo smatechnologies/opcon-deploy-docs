@@ -126,6 +126,8 @@ Machine feature checks are also performed during Deployment Simulations. For mor
 
 ## Simulate Deployment
 
+When simulation is selected and the configuration value **diagramDirectory** is defined, the Deploy definition will be written to this field. This provides a mechanism that allows a visual verification of any transformation rules applied during the deployment.
+
 When Simulate is selected, the following checks are completed for production systems:
 
 * A check is made to see if the existing schedule definition on the target system matches the definition that was saved during the previous deployment process. This is done to see if local changes have been made to the definition since the previous deployment.

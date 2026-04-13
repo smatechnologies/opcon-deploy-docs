@@ -1,13 +1,25 @@
-# Batch File Integration
+---
+title: Batch file integration
+description: "Reference for exporting and importing schedule and script definitions to and from files using the OpCon Deploy command-line interface."
+tags:
+  - Reference
+  - Automation Engineer
+  - Schedules
+---
+
+# Batch file integration
+
+**Theme:** Build  
+**Who Is It For?** Automation Engineer
 
 File integration provides the following capabilities.
 
-* Export a specific schedule from an OpCon System to a file.
-* Export a specific script version from an OpCon System to a file.
-* Export a specific schedule version from the Deploy database to a file.
-* Export a specific script version from the Deploy database to a file.
-* Import a schedule definition into the Deploy database from a file.
-* Import a new version of an existing script into the Deploy database from a file.
+* Export a specific schedule from an OpCon System to a file
+* Export a specific script version from an OpCon System to a file
+* Export a specific schedule version from the Deploy database to a file
+* Export a specific script version from the Deploy database to a file
+* Import a schedule definition into the Deploy database from a file
+* Import a new version of an existing script into the Deploy database from a file
  
 File Integration is performed using a command-line interface (CLI). 
 
@@ -15,18 +27,18 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
 
 **-a**
 
-* Required argument that indicates the action to be performed.
+* Required argument that indicates the action to be performed
     * IMPORT   import a schedule (new or new version) or a new script version into the Deploy database from a file 
     * EXPORT   export a specific schedule version or a specific script version from the Deploy database into a file
     * OEXPORT  export a schedule or a specific script version from and OpCon system (defined in Deploy Server configuration) into a file 
 
 **-di**	
 
-* Required argument that indicates the directory where the extracted information will be placed for EXPORT & OEXPORT actions and where the information can be read for IMPORT actions. 
+* Required argument that indicates the directory where the extracted information will be placed for EXPORT & OEXPORT actions and where the information can be read for IMPORT actions
 
 **-o**	
 
-* Optional argument used for OEXPORT action and defines the OpCon system that the object must be extracted from. The value is the name of a server definition in the Deploy database. 
+* Optional argument used for OEXPORT action and defines the OpCon system that the object must be extracted from. The value is the name of a server definition in the Deploy database
 
 **-p**	
 
@@ -41,7 +53,7 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
 	
 **-tn**	
 
-* Required argument that indicates the name of the schedule or script associated with the action. 
+* Required argument that indicates the name of the schedule or script associated with the action
     * schedule EXPORT/OEXPORT   contains the name of the schedule to export. The value is used to create the filename along with a .json extension 
     * script EXPORT/OEXPORT     contains the name of the script to export. The value is used to create the filename
     * schedule IMPORT           contains the name of the schedule to import. The value is used to create the filename along with a .json extension
@@ -55,7 +67,7 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
 
 **-v**	
 
-* Optional argument that defines the version of the schedule or script to export.
+* Optional argument that defines the version of the schedule or script to export
     * EXPORT action    defines the version of the schedule or script to extract from the Deploy datatabase 
     * OEXPORT action   defines the version of the script to extract from the OpCon system
 
@@ -92,5 +104,26 @@ The above examples show how the File.SMAOpConDeployClient program can be used to
 * In the second example, schedule SCH001 is extracted from OpCon system OPCONDEV written into a file c:\test\data\SCH001.json
 * In the third example, version 5 of script scripta is extracted from the Deploy database and written into a file c:\test\data\scripta
 * In the fourth example, version 5 of script scripta is extracted from OpCon system OPCONDEV written into a file c:\test\data\scripta
-* In the fifth example, the definition contained in file c:\test\data\SCH001.json is imported into the Deploy database. If schedule SCH001 exists, a new version is created.
-* In the sixth example, the definition contained in file c:\test\data\scripta is imported into the Deploy database creating a version of the script.
+* In the fifth example, the definition contained in file c:\test\data\SCH001.json is imported into the Deploy database. If schedule SCH001 exists, a new version is created
+* In the sixth example, the definition contained in file c:\test\data\scripta is imported into the Deploy database creating a version of the script
+
+## Exception handling
+
+| Error or symptom | Meaning | How to fix it |
+|---|---|---|
+| File not found when using `-di` directory for IMPORT action | The file path supplied via `-di` does not contain a file matching the name derived from `-tn` (plus `.json` for schedules) | Verify the directory path given to `-di` and confirm a file named `<tn>.json` (schedule) or `<tn>` (script) exists in that directory |
+| Import fails with JSON validation error | The file read from the `-di` directory is not valid JSON and cannot be parsed as a schedule or transformation rule definition | Check the file contents for formatting errors; re-export the definition to regenerate a valid file |
+| IMPORT action fails because no matching schedule record exists in the repository | The schedule named in `-tn` does not exist in the Deploy database and the import cannot create a new version | Verify the schedule name matches an existing Deploy repository record, or perform an initial EXPORT from an OpCon system to create the record first |
+
+## Key terms
+
+**Import File function** — the IMPORT action of `File.SMAOpConDeployClient.exe` that reads a schedule or script definition from a file in the specified directory and inserts it into the Deploy repository, creating a new version if the record already exists.
+
+**Export function** — the EXPORT action that extracts a specific version of a schedule or script from the Deploy repository and writes it to a file in the specified directory; the related OEXPORT action performs the same extraction directly from a live OpCon system rather than from the repository.
+
+**Transformation rule file** — a JSON file containing a transformation rule definition that can be imported into the Deploy repository using the IMPORT action with the `-tf` argument, making the rule available for use in subsequent deployments.
+
+**Related topics:**
+
+- [Batch processing](batch-processing)
+- [DevOps integration](batch-devops-integration)

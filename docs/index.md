@@ -1,60 +1,131 @@
 ---
 slug: '/'
 sidebar_label: 'OpCon Deploy'
+hide_table_of_contents: true
+displayed_sidebar: null
 ---
 
-# Getting started
+# OpCon Deploy
 
-OpCon Deploy is a separate application working on a central repository that contains the schedule definitions, transformation rules, and all the required configuration information to deploy the schedule definitions between OpCon environments in a controlled and consistent manner.
+OpCon Deploy manages schedule definitions across OpCon environments in a controlled, versioned manner.
 
-The current version is **25.2**.
+<div style={{display: 'flex', gap: '0.75rem', alignItems: 'flex-start', flexWrap: 'wrap', marginTop: '1rem'}}>
 
-## Overview
+<div style={{flex: '1', minWidth: '160px', display: 'flex', flexDirection: 'column', gap: '0.6rem'}}>
 
-![General Overview](../static/img/deploy-general-overview.png)
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-When implementing OpCon Deploy, the schedule definitions must be imported into the central repository before they can be deployed to OpCon systems within the environment. When a schedule definition is imported into the central repository and an entry for the schedule definition already exists, a new version of the schedule definition is created. This means that it is possible to deploy older versions of the schedule definition as a definition is never updated in the repository.
+### Overview
 
-The objective is never to update the schedule definitions directly on production OpCon systems, but rather to deploy the schedule definition to a development system, make and test the changes, then import a new schedule definition to create a new version and then deploy the new version to the running OpCon system.
+- [Getting Started](./getting-started.md)
+- [Release Notes](./release-notes.md)
+- [Using OpCon Deploy](./using-opcon-deploy.md)
+- [User Interface](./user-interface.md)
 
-To communicate with OpCon systems, user and server definitions are required. Each OpCon Deploy user is mapped to an OpCon user and the OpCon Deploy server is mapped to an OpCon system. User roles define the capabilities of the user within OpCon Deploy and Server roles define the capabilities of the OpCon systems.
+</div>
 
-All actions performed within the OpCon Deploy system are audited so it is possible to determine who did what and when by examining the audit records.
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-## Processes
+### Installation
 
-The OpCon Deploy system provides the following processes:
+- [Installation](./installation.md)
 
-### Import
+</div>
 
-The import process consists of extracting a schedule definition from the source OpCon environment and storing it in the central repository for future deployment.
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-If the schedule definition exists in the central repository, a new version is created.
+### Diagrams and archiving
 
-### Deploy
+- [Package and Schedule Diagram](./package-and-schedule-diagram.md)
+- [Database Archiving](./database-archiving.md)
 
-The Deploy process consists of selecting a schedule definition from the central repository and inserting it into the selected target OpCon environment.
+</div>
 
-During the deployment process, it is possible to transform the schedule definition by using Transformation Rules. This allows a single schedule definition to be deployed to multiple OpCon systems instead of creating a schedule definition for each target OpCon system.
+</div>
 
-During the deployment process if the target system is defined as a Production system, a check is performed to determine if the definition on the system matches the definition that was deployed. For other systems, a check is made to see if the schedule definition exists on the target system.
+<div style={{flex: '1', minWidth: '160px', display: 'flex', flexDirection: 'column', gap: '0.6rem'}}>
 
-It is also possible to deploy a package which consists of a set of schedules that are deployed and managed in a consistent manner.
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-### Simulation
+### Schedules
 
-The simulation process performs a deployment check without updating the schedule definition on the target OpCon system.
+- [Import](./schedules.md#import)
+- [Import File](./schedules.md#import-file)
+- [Browse](./schedules.md#browse)
 
-### Rollback
+</div>
 
-The rollback process performs a restore of a schedule definition from the backup taken during the deploy process.
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-### Batch
+### Packages
 
-The batch process provides the capability to deploy or simulate deployments of schedules or packages at specific times or perform individual or mass imports of schedule definitions.
+- [Manage](./packages.md)
 
-### Delete
+</div>
 
-The delete process removes a package or schedule from the selected OpCon system.
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
 
-![Release Management Process](../static/img/release-management-process.png)
+### Scripts
+
+- [Script Management](./script-management.md)
+- [Import and Deploy](./scripts.md)
+
+</div>
+
+</div>
+
+<div style={{flex: '1', minWidth: '160px', display: 'flex', flexDirection: 'column', gap: '0.6rem'}}>
+
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
+
+### Deployments
+
+- [Deploy](./deployments/deployments.md)
+- [Browse](./deployments/deployments-browse.md)
+- [Transformation Rules Tree](./deployments/transformation-rules-tree.md)
+- [SAP Jobs](./deploy-sap-jobs.md)
+
+</div>
+
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
+
+### Transformations
+
+- [Transformation Rules](./transformations/transformation-rules.md)
+- [Tag Definitions](./transformations/transformation-tag-definitions.md)
+- [Tag Examples](./transformations/transformation-tag-examples.md)
+- [Special Definitions](./transformations/transformations-special-definitions.md)
+
+</div>
+
+</div>
+
+<div style={{flex: '1', minWidth: '160px', display: 'flex', flexDirection: 'column', gap: '0.6rem'}}>
+
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
+
+### Administration
+
+- [Users](./administration/users.md)
+- [Servers](./administration/servers.md)
+- [Audits](./administration/audits.md)
+- [Settings](./administration/settings.md)
+
+</div>
+
+<div style={{background: 'var(--ifm-card-background-color)', border: '1px solid var(--ifm-color-emphasis-400)', borderRadius: '10px', padding: '0.75rem 1rem'}}>
+
+### Batch Processing
+
+- [Batch Processing](./batch-processing.md)
+- [Scheduled Batch Deployment](./scheduled-batch-deployment.md)
+- [Batch Deployment Implementation](./batch-deployment-implementation.md)
+- [Batch File Integration](./batch-file-integration.md)
+- [Batch DevOps Integration](./batch-devops-integration.md)
+- [Batch Diagram Processing](./batch-diagram-processing.md)
+
+</div>
+
+</div>
+
+</div>

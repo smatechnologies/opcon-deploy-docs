@@ -1,4 +1,26 @@
+---
+title: Installation
+description: "Install and configure the OpCon Deploy client, database, and server components on Windows systems that participate in the OpCon Deploy environment."
+tags:
+  - Procedural
+  - System Administrator
+  - Installation
+---
+
 # Installation
+
+**Theme:** Configure  
+**Who Is It For?** System Administrator
+
+## What is it?
+
+OpCon Deploy is installed across three components: the client software, the database, and the server software. Each participates in the OpCon Deploy environment with a distinct role.
+
+* Install when setting up OpCon Deploy for the first time across multiple OpCon systems
+* Install the client on any Windows machine where deployments need to be performed
+* Install the server component on each OpCon system that participates in the deployment environment
+* Install the database once on a SQL Server instance shared across all participating systems
+* Upgrade any component independently when a new version is released
 
 ## Requirements
 
@@ -7,12 +29,12 @@
 * Microsoft SQL Server version 2012 SP3 or higher
 * OpCon Server version 18.3 minimum
 * OpCon RestAPI must be active for each OpCon system participating in OpCon Deploy
-* To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org).
-* To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete.
-* To implement Windows Authentication for the OpCon Impex Server requires OpCon versions 21.0.10, 20.0.15 or greater and manual configuration after the installation is complete.
-* Version 22.2 requires matching SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, opCon 21.0.14 or greater and OpCon 20.0.20 or greater). 
+* To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org)
+* To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete
+* To implement Windows Authentication for the OpCon Impex Server requires OpCon versions 21.0.10, 20.0.15 or greater and manual configuration after the installation is complete
+* Version 22.2 requires matching SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, OpCon 21.0.14 or greater and OpCon 20.0.20 or greater)
 
-## Deploy Installation
+## Deploy installation
 
 The OpCon Deploy installation process consists of three basic steps: the installation of the client software, the installation of the database, and the installation of the server software.
 
@@ -22,130 +44,154 @@ The database should only be installed once on a SQL Server environment. It can b
 
 The server software must be installed on each OpCon system that participates in the OpCon Deploy environment. Each participating OpCon system must have a valid OpCon Deploy license and the OpCon RestAPI must be active on each system as OpCon Deploy uses the OpCon RestAPI to perform the license check.
 
-One OpCon server in the OpCon Deploy environment should be designated the BatchScheduleServer which will be used to schedule Batch Deployments, archive tasks, and database backups. This server does not require an OpCon Deploy license, but must have the OpCon RestAPI active so requests can be passed for processing. The client software should be installed on the server and the SMADeployPath global property should be set to the installation directory.
+One OpCon server in the OpCon Deploy environment should be designated the BatchScheduleServer which will be used to schedule Batch Deployments, archive jobs, and database backups. This server does not require an OpCon Deploy license, but must have the OpCon RestAPI active so requests can be passed for processing. The client software should be installed on the server and the SMADeployPath global property should be set to the installation directory.
 
 A single software installer provides the installation for the three options:
 * The installation of the client software
 * The installation of the database
 * The installation of the server software
 
-## Deploy New or Upgrade Installation
+## Deploy new or upgrade installation
 
-Complete the procedures in this section to install or upgrade all components:
+To install or upgrade all OpCon Deploy components, complete the following steps:
 
 1. Log in to the Windows machine as a local Administrator.
 2.  Download the files from the [https://smatechnologies.files.com/](https://smatechnologies.files.com/) site.
-3. Enter your valid username and password and click Login.
-4. Navigate to the ```/OpCon Releases/Deploy``` folder.
-5. Download the software.
-6. Double-click the SMA OpCon Deploy.exe. The Select Language screen appears.
-7. Select the desired language for the installation screens and click OK. The Welcome screen displays.
-8. Click Next.
-9. To change the default installation directory, click Change, enter a new directory, and then click Next. [OR] To select the default installation directory, click Next. The Custom Setup screen display.
-10. By default, all items will be installed.
-11. Click Next.
-12. Enter the OpCon Deploy database connection information for the client:
+3. In the **Username** field, enter your username.
+4. In the **Password** field, enter your password.
+5. Select the **Login** button.
+6. Go to the ```/OpCon Releases/Deploy``` folder.
+7. Download the software.
+8. Select the **SMA OpCon Deploy.exe** installer to open it. The Select Language screen appears.
+9. In the **Language** list, select the desired installation language.
+10. Select **OK**. The Welcome screen is displayed.
+11. Select the **Next** button.
+12. Select one of the following options:
+   - To change the default installation directory: Select the **Change** button, enter a new directory, and select the **Next** button.
+   - To use the default installation directory: Select the **Next** button.
+   The Custom Setup screen is displayed.
+13. By default, all items will be installed.
+14. Select the **Next** button.
+15. Enter the OpCon Deploy database connection information for the client:
    * OpCon Deploy database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>)```
    * SQL Server login ID
    * SQL Server login ID password
    * Database name (default: SMAOpConDeploy)
-13. Click Next.
-14. Enter the definitions for the ImpEx2 Server:
+16. Select the **Next** button.
+17. Enter the definitions for the ImpEx2 Server:
    * OpCon database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>)```
    * OpCon database name
    * OpCon database login ID
    * OpCon database login ID password
    * The port number to be used for the ImpEx2 server (default 9001 for non-TLS, 9011 for TLS)
    * Select if the connection uses TLS
-15. Click Next.
-16. Click Done.
+18. Select the **Next** button.
+19. Select the **Done** button.
 
-## Deploy Client New Installation
+## Deploy client new installation
 
-Complete the procedures in this section to install a new OpCon Deploy Client:
+To install the OpCon Deploy client, complete the following steps:
 
 1. Log in to the Windows machine as a local Administrator.
 2. Download the files from the [https://smatechnologies.files.com/](https://smatechnologies.files.com/) site.
-3. Enter your valid username and password and click Login.
-4. Navigate to the ```/OpCon Releases/Deploy``` folder.
-5. Download the software.
-6. Double-click the SMA OpCon Deploy.exe. The Select Language screen appears.
-7. Select the desired language for the installation screens and click OK. The Welcome screen displays.
-8. Click Next.
-9. To change the default installation directory, click Change, enter a new directory, and then click Next. [OR] To select the default installation directory, click Next. The Custom Setup screen display.
-10. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Client should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
-   * Click on the icon to the left of the SMA OpCon Deploy Database item.
-   * Select the X (This feature will not be available.) option from the drop-down list.
-   * Click on the icon to the left of the SMA OpCon Deploy Server item.
-   * Select the X (This feature will not be available.) option from the drop-down.
-11. Click Next.
-12. Enter the OpCon database connection information for the client:
+3. In the **Username** field, enter your username.
+4. In the **Password** field, enter your password.
+5. Select the **Login** button.
+6. Go to the ```/OpCon Releases/Deploy``` folder.
+7. Download the software.
+8. Select the **SMA OpCon Deploy.exe** installer to open it. The Select Language screen appears.
+9. In the **Language** list, select the desired installation language.
+10. Select **OK**. The Welcome screen is displayed.
+11. Select the **Next** button.
+12. Select one of the following options:
+   - To change the default installation directory: Select the **Change** button, enter a new directory, and select the **Next** button.
+   - To use the default installation directory: Select the **Next** button.
+   The Custom Setup screen is displayed.
+13. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Client should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
+   * Select the button to the left of the SMA OpCon Deploy Database item
+   * Select the X (This feature will not be available.) option from the list
+   * Select the button to the left of the SMA OpCon Deploy Server item
+   * Select the X (This feature will not be available.) option from the list
+14. Select the **Next** button.
+15. Enter the OpCon database connection information for the client:
    * OpCon Deploy database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>```)
    * SQL Server login ID
    * SQL Server login ID password
    * Database name (default: SMAOpConDeploy)
-13. Click Next.
-14. Click Done.
+16. Select the **Next** button.
+17. Select the **Done** button.
 
-## Deploy Database New Installation
+## Deploy database new installation
 
-Complete the procedures in this section to install a new OpCon Deploy Database:
+To install the OpCon Deploy database, complete the following steps:
 
 1. Log in to the Windows machine as a local Administrator.
 2. Download the files from the [https://smatechnologies.files.com/](https://smatechnologies.files.com/) site.
-3. Enter your valid username and password and click Login.
-4. Navigate to the ```/OpCon Releases/Deploy``` folder.
-5. Download the software.
-6. Double-click the SMA OpCon Deploy.exe. The Select Language screen appears.
-7. Select the desired language for the installation screens and click OK. The Welcome screen displays.
-8. Click Next.
-9. To change the default installation directory, click Change, enter a new directory, and then click Next. [OR] To select the default installation directory, click Next. The Custom Setup screen display.
-10. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Database should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
-   * Click on the icon to the left of the SMA OpCon Deploy Client item.
-   * Select the X (This feature will not be available.) option from the drop-down list.
-   * Click on the icon to the left of the SMA OpCon Deploy Server item.
-   * Select the X (This feature will not be available.) option from the drop-down.
-11. Click Next.
-12. Enter the OpCon Deploy database connection information for the client:
+3. In the **Username** field, enter your username.
+4. In the **Password** field, enter your password.
+5. Select the **Login** button.
+6. Go to the ```/OpCon Releases/Deploy``` folder.
+7. Download the software.
+8. Select the **SMA OpCon Deploy.exe** installer to open it. The Select Language screen appears.
+9. In the **Language** list, select the desired installation language.
+10. Select **OK**. The Welcome screen is displayed.
+11. Select the **Next** button.
+12. Select one of the following options:
+   - To change the default installation directory: Select the **Change** button, enter a new directory, and select the **Next** button.
+   - To use the default installation directory: Select the **Next** button.
+   The Custom Setup screen is displayed.
+13. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Database should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
+   * Select the button to the left of the SMA OpCon Deploy Client item
+   * Select the X (This feature will not be available.) option from the list
+   * Select the button to the left of the SMA OpCon Deploy Server item
+   * Select the X (This feature will not be available.) option from the list
+14. Select the **Next** button.
+15. Enter the OpCon Deploy database connection information for the client:
    * OpCon Deploy database server name (If a named MS SQL instance is being used, enter ```<servername>\<instancename>```)
-   * In the "Connect using:" section of the screen, you may elect to use either Windows authentication or SQL Server authentication by selecting the corresponding radio button.
+   * In the "Connect using:" section of the screen, you may elect to use either Windows authentication or SQL Server authentication by selecting the corresponding option
    * If you select SQL Server authentication, then you must enter:
       * SQL Server login ID
       * SQL Server login ID password
    * Database name (default: SMAOpConDeploy)
-13. Click Next.
-14. Click Done.
+16. Select the **Next** button.
+17. Select the **Done** button.
 
-## Deploy Server New Installation
+## Deploy server new installation
 
-Complete the procedures in this section to install a new OpCon Deploy Server:
+To install the OpCon Deploy server, complete the following steps:
 
 1. Log in to the Windows machine as a local Administrator.
 2. Download the files from the [https://smatechnologies.files.com/](https://smatechnologies.files.com/) site.
-3. Enter your valid username and password and click Login.
-4. Navigate to the ```/OpCon Releases/Deploy``` folder.
-5. Download the software.
-6. Double-click the SMA OpCon Deploy.exe. The Select Language screen appears.
-7. Select the desired language for the installation screens and click OK. The Welcome screen displays.
-8. Click Next.
-9. To change the default installation directory, click Change, enter a new directory, and then click Next. [OR] To select the default installation directory, click Next. The Custom Setup screen display.
-10. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Server should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
-   * Click on the icon to the left of the SMA OpCon Deploy Client item.
-   * Select the X (This feature will not be available.) option from the drop-down list.
-   * Click on the icon to the left of the SMA OpCon Deploy Database item.
-   * Select the X (This feature will not be available.) option from the drop-down.
-11. Click Next.
-12. Enter the definitions for the ImpEx2 Server:
+3. In the **Username** field, enter your username.
+4. In the **Password** field, enter your password.
+5. Select the **Login** button.
+6. Go to the ```/OpCon Releases/Deploy``` folder.
+7. Download the software.
+8. Select the **SMA OpCon Deploy.exe** installer to open it. The Select Language screen appears.
+9. In the **Language** list, select the desired installation language.
+10. Select **OK**. The Welcome screen is displayed.
+11. Select the **Next** button.
+12. Select one of the following options:
+   - To change the default installation directory: Select the **Change** button, enter a new directory, and select the **Next** button.
+   - To use the default installation directory: Select the **Next** button.
+   The Custom Setup screen is displayed.
+13. By default, all items will be installed. For this installation, only the SMA OpCon Deploy Server should be installed. Follow these steps to deselect the other items from the list so that they are not installed:
+   * Select the button to the left of the SMA OpCon Deploy Client item
+   * Select the X (This feature will not be available.) option from the list
+   * Select the button to the left of the SMA OpCon Deploy Database item
+   * Select the X (This feature will not be available.) option from the list
+14. Select the **Next** button.
+15. Enter the definitions for the ImpEx2 Server:
    * OpCon database server name (If a MS SQL instance is being used, enter ```<servername>\<instancename>```, if TLS for database connection, add ***;TrustServerCertificate=True*** name)
    * OpCon database name
    * OpCon database login ID
    * OpCon database login ID password
    * The port number to be used for the ImpEx2 server (default 9001 for non-TLS, 9011 for TLS)
    * Select if the connection uses TLS
-13. Click Next.
-14. Click Done.
+16. Select the **Next** button.
+17. Select the **Done** button.
 
-## Deploy Client Configuration
+## Deploy client configuration
 
 The config.ini file contains the configuration statements that provide the connection to the OpCon Deploy database. After installation, the config.ini file can be found in the c:\ProgramData\OpConxps\Deploy\client directory.
 
@@ -209,7 +255,7 @@ Used with DevOps integration and consists of the Organization name.
 
 Used with DevOps integration and consists of the PAT (Personal Access Token) of the user that is allowed to access the data in the DevOps repository.
 
-## Sample Deploy Client Configuration File
+## Sample Deploy client configuration file
 
 ```
 
@@ -259,7 +305,7 @@ devOpsToken=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ```
 
-## Sample Deploy Client Configuration File using Windows Authentication
+## Sample Deploy client configuration file using Windows Authentication
 
 ```
 
@@ -309,22 +355,25 @@ devOpsToken=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ```
 
-## OpCon Deploy Server Configuration
+## OpCon Deploy server configuration
 
 The config.ini file contains the configuration statements that provide the connection to the local OpCon system. After installation, the config.ini file can be found in the ```c:\ProgramData\OpConxps\Deploy\Server``` directory.
 
 ### Configuring Windows Authentication
 
-When using Windows Authentication, **the SMA OpCon Impex2 RestAPI** service must be executed using a Windows Domain user.
+When using Windows Authentication, **the SMA OpCon Impex2 RestAPI** service must run using a Windows Domain user.
 
-- Stop the **the SMA OpCon Impex2 RestAPI** service.
-- Set the opcon.db.using.winauth property to true.
-- Change the service to execute under a specific account (***Properties -> Log On*** not ***Local System Account***).
-- Ensure the chosen account is registered with SQL Server.
-- While the db user and password entered during installation are not used, they should not be removed from the config.ini file. 
-- Restart the **the SMA OpCon Impex2 RestAPI** service.
+To configure Windows Authentication, complete the following steps:
 
-### Deploy Server Configuration Statement Descriptions
+1. Stop the **SMA OpCon Impex2 RestAPI** service.
+2. Set the `opcon.db.using.winauth` property to `true`.
+3. Change the service to run under a specific account (**Properties** > **Log On**, not **Local System Account**).
+4. Ensure the chosen account is registered with SQL Server.
+5. Restart the **SMA OpCon Impex2 RestAPI** service.
+
+The db user and password entered during installation are not used for Windows Authentication, but they should not be removed from the config.ini file.
+
+### Deploy server configuration statement descriptions
 
 | Tag Name | Description |
 | -------- | ----------- |
@@ -333,11 +382,11 @@ When using Windows Authentication, **the SMA OpCon Impex2 RestAPI** service must
 | opcon.db.user | The name of a valid user who has privileges on the database named in the opcon.db.name definition (e.g., opconsam) |
 | opcon.db.password | The password of the user named in the opcon.db.user definition |
 | opcon.db.using.winauth | Indicates if the connection to the OpCon Database should use Windows Authentication (values true or false) |
-| opcon.db.connection.max | The maximum number fo simultaneous database connections allowed to the OpCon database |
+| opcon.db.connection.max | The maximum number of simultaneous database connections allowed to the OpCon database |
 | web.port | The port number used by the OpCon Deploy RESTFul server (default 9001) |
 | system.debug | Set to true or false - Should only be set to true at SMA Technologies' request |
 
-### Sample Deploy Server Configuration File
+### Sample Deploy server configuration file
 
 ```
 #
@@ -360,7 +409,7 @@ system.debug=false
 
 ```
 
-### Sample Deploy Server Configuration File using Windows Authentication
+### Sample Deploy server configuration file using Windows Authentication
 
 ```
 #
@@ -382,7 +431,7 @@ web.port=9001
 system.debug=false
 
 ```
-### Sample Deploy Server Configuration File using TLS SQL Server connection
+### Sample Deploy server configuration file using TLS SQL Server connection
 
 ```
 #
@@ -404,10 +453,42 @@ web.port=9001
 system.debug=false
 
 ```
-## Deploy Database Backup Scripts
+## Deploy database backup scripts
 
 When implementing a production environment, it is necessary to take regular backups of the OpCon Deploy database.
 
 The scripts in ```<program data>/SMAOpConDeploy\Utilities\Database``` directory can be used to implement database and transaction log backups.
 
-A schedule (DEPLOY_UTILITIES.json) containing the task definitions for the backup process is available in the templates directory of the client software. The machine name, directory, frequency, and user code that the tasks run under need to be transformed to match the target environment. The global property SMADeployDataPath should be set to the client program data directory so the programs can be executed.
+A schedule (DEPLOY_UTILITIES.json) containing the job definitions for the backup process is available in the templates directory of the client software. The machine name, directory, frequency, and user code that the jobs run under need to be transformed to match the target environment. The global property SMADeployDataPath should be set to the client program data directory so the programs can be run.
+
+## Key terms
+
+**OpCon Deploy Client** — the Windows application used to perform deployments, imports, and administration tasks.
+
+**OpCon Deploy Database** — the central SQL Server database that stores all schedule definitions, transformation rules, deployment records, and configuration.
+
+**OpCon Deploy Server (ImpEx2)** — the service installed on each participating OpCon system that provides the API used to import and deploy schedule definitions.
+
+**BatchScheduleServer** — a designated OpCon system used to schedule batch deployments, archive jobs, and perform database backups.
+
+**config.ini** — the configuration file used by the OpCon Deploy Client to establish a connection to the OpCon Deploy database.
+
+## FAQs
+
+**Can the OpCon Deploy client software be installed on more than one machine?**
+
+Yes. The client software may be installed as many times as required on any Windows system. Each client installation connects to the same central OpCon Deploy database, so all clients share the same repository of schedule definitions, transformation rules, and deployment records.
+
+**What is the BatchScheduleServer and does it need an OpCon Deploy license?**
+
+The BatchScheduleServer is a designated OpCon system used to schedule batch deployments, archive jobs, and perform database backups. Unlike other participating OpCon systems, it does not require an OpCon Deploy license. However, the OpCon RestAPI must be active on it so that requests can be passed for processing, and the OpCon Deploy client software should be installed on it.
+
+**What is the SMADeployPath global property used for?**
+
+The `SMADeployPath` global property should be set to the installation directory on the BatchScheduleServer. This allows the batch deployment jobs and utility scripts — such as the database backup schedule (DEPLOY_UTILITIES.json) provided in the templates directory — to locate the programs they need to run. A related property, `SMADeployDataPath`, should be set to the client program data directory for the backup scripts.
+
+**Related topics:**
+
+- [Getting started](getting-started)
+- [Servers](administration/servers)
+- [Users](administration/users)

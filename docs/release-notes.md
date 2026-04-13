@@ -1,15 +1,21 @@
 ---
 sidebar_label: 'Release notes'
+title: OpCon Deploy release notes
+description: "Version history and change details for OpCon Deploy, including new features, improvements, and bug fixes."
+tags:
+  - Reference
+  - System Administrator
+  - Automation Engineer
 ---
 
-# OpCon Deploy Release Notes
+# OpCon Deploy release notes
 
 The Deploy Client is not generally paired with a specific OpCon Release. 
 If specific OpCon versions are required, they are noted in the release information.
 
 There are no Deploy patch releases as corrections are applied to the main software and a new version is released on a regular basis.  
 
-Deploy contains compatibility checks to ensure that features supported in newer OpCon Releases are not deployed to older opCon Releases.
+Deploy contains compatibility checks to ensure that features supported in newer OpCon releases are not deployed to older OpCon releases.
 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
@@ -29,7 +35,7 @@ When performing an upgrade, it is best to first upgrade test environments and De
 
 :eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
 
-:eight_spoked_asterisk: **CON-632**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
+:eight_spoked_asterisk: **CON-632**: During a simulation task, the created schedule definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
 
 :eight_spoked_asterisk: **CON-777**: Support OpConMFT Archive Files and Reprocess Files field types during export and import of OpConMFT job types. Requires matching ImpEx2 26.0.x or 26.1.x versions.
 
@@ -43,7 +49,7 @@ When performing an upgrade, it is best to first upgrade test environments and De
 
 :eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
 
-:eight_spoked_asterisk: **CON-635**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
+:eight_spoked_asterisk: **CON-635**: During a simulation task, the created schedule definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
 
 ## Version 25.3 (OpCon Cloud)
 
@@ -105,7 +111,7 @@ New rule **Exclude calendars from schedule deployment** removes calendar updates
 
 This requires 25.1.0 or greater.
 
-:eight_spoked_asterisk: **OPCDEPLOY-1398**: Added new fields on 'CheckInSummary' screen during schedule Import process to allow for the creation of a package from the selected schedules. The existing checkbox **Include Sub-Schedules** can be used to extract all sub-schedules associated with the selected schedules and included in the package.
+:eight_spoked_asterisk: **OPCDEPLOY-1398**: Added new fields on 'CheckInSummary' screen during schedule Import process to allow for the creation of a package from the selected schedules. The existing **Include Sub-Schedules** option can be used to extract all sub-schedules associated with the selected schedules and included in the package.
 - **Create Package from Schedules** When selected creates a package from the list of imported schedules (requires Package Name).
 - **Package Name**                  The name of  the package to create.  
 
@@ -128,7 +134,7 @@ For more information see **Exclude calendars from Schedule Deployment** rule in 
 
 **Migration Considerations**
 
-This release of Deploy requires matching OpCon versions 25.0.0 and version 23.0.9 and 22.0.20. A special ImpEx2 patch for opCon 22.0.19 can be requested from support.
+This release of Deploy requires matching OpCon versions 25.0.0 and version 23.0.9 and 22.0.20. A special ImpEx2 patch for OpCon 22.0.19 can be requested from support.
 
 New rule **Exclude scripts from schedule deployment** separates the deployment of schedules and scripts. The default value for the rule is false, so it will not have an
 impact on existing installations. Once this rule is enabled, the script definitions will no longer be included in the schedule definitions in the **scriptList** section. 
@@ -151,7 +157,7 @@ The following rules have been included
 :eight_spoked_asterisk: **OPCDEPLOY-1392**: Implemented new a new feature to split the importing and deployment of schedules and scripts. 
 When this feature is enabled, scripts are no longer included in the schedule import and deployment processes. 
 Scripts must therefore be imported and deployed using the Deploy **Scripts Import / Deploy** processes. 
-It should be noted that individual Script deployment does not currently support transformation.
+Individual script deployment does not currently support transformation.
  
   * When specific script versions are required during the schedule deployment process, the script version must be available on the target system.
   * When using the **Script Name** transformation during Schedule / Package deployment, the script name must already exist on the target OpCon System. 
@@ -252,7 +258,7 @@ During deployment, role names are included in deployment object, resulting in sc
 2023 September
 
 :eight_spoked_asterisk: **OPCDEPLOY-1353**: Fixed a performance issue with large databases when browsing records (schedules, transformation rules, scripts, deployments, and packages). 
-Previously, all records were retrieved from the database and then added to the selection lists when performing a request. Now, the user is required to enter a text string in the filter field and the filter text is used to retrieve only matched records from the database. User can still input an asterisk (*) as the filter text to fetch all records. 
+Previously, all records were retrieved from the database and then added to the selection lists when performing a request. Now, you are required to enter a text string in the filter field and the filter text is used to retrieve only matched records from the database. You can still input an asterisk (*) as the filter text to fetch all records. 
 The filter does not support wild cards. For example, enter 'test' as the filter text to get records whose name includes 'test',
 
 ## Version 22.4
@@ -276,8 +282,8 @@ of each schedule is displayed in the results view. The message reporting that th
 
 2023 March
 
-:eight_spoked_asterisk: **OPCDEPLOY-1338**: Separated reset AutoBuild days and AutoDelete days into two separate rules. Therefore it is now possible to reset either AutoBuild days or AutoDelete days.
-it should be noted that this implementation requires matched SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, opCon 21.0.14 or greater and OpCon or greater 20.0.20). 
+:eight_spoked_asterisk: **OPCDEPLOY-1338**: Separated reset AutoBuild days and AutoDelete days into two separate rules. AutoBuild days and AutoDelete days can now be reset independently.
+This implementation requires matched SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, OpCon 21.0.14 or greater, and OpCon 20.0.20 or greater). 
 
 ## Version 22.1
 
@@ -333,7 +339,7 @@ not updated.
 2022 February
 
 :white_check_mark: **OPCDEPLOY-1315**: Added more informational logging when working with SAP jobs.
-:white_check_mark: **OPCDEPLOY-1309**: Added Auto Build Reset capabilities during Deployment of schedules and packages. When setting the auto build options, first select the Auto Build checkbox and then set the values for Days In Advance and Days. When selecting the Auto Build checkbox, the values are initially set to 1. When not selected, the values are set to 0. To reset the Auto Build and Auto Delete values, select the Auto Build checkbox and set the Days in Advance and Days values to 0. This will remove the the Auto Build and Auto Delete values.
+:white_check_mark: **OPCDEPLOY-1309**: Added Auto Build Reset capabilities during Deployment of schedules and packages. When setting the auto build options, first select the **Auto Build** option and then set the values for Days In Advance and Days. When selecting the **Auto Build** option, the values are initially set to 1. When not selected, the values are set to 0. To reset the Auto Build and Auto Delete values, select the **Auto Build** option and set the Days in Advance and Days values to 0. This will remove the the Auto Build and Auto Delete values.
 
 :eight_spoked_asterisk: **OPCDEPLOY1311**: Deploy now allows role names to be part of the transformation, to map them to the names on the target system. Role_Add: This tag is used to add a Role during deployment. The Role name will be added in Role, schedules, scripts and departments. The new Role name must be defined in the target system. This tag supports the following: newValue: Required: Contains the name of the Role to add. All other fields are disabled.
 
@@ -407,7 +413,7 @@ not updated.
 
 :white_check_mark: **OPCDEPLOY-1253**: Fixed an issue where Deploy UI could not handle different resolution scales on some screens like Build Options
 
-:white_check_mark: **OPCDEPLOY-1125**: Fixed an issue in Deploy client where if a user typed a regular expression character in a filter text box it threw a Pattern Syntax Exception.
+:white_check_mark: **OPCDEPLOY-1125**: Fixed an issue in Deploy client where if a user typed a regular expression character in a filter field it threw a Pattern Syntax Exception.
 
 :white_check_mark: **OPCDEPLOY-1111**: Fixed an issue where a new version of a schedule with modifications to schedule documentation could not be imported
 
@@ -489,7 +495,7 @@ not updated.
 
 :eight_spoked_asterisk:	**OPCDEPLOY-741**: Added the ability to grant read-only access to the audit logs for non-Admin Deploy users.
 
-:eight_spoked_asterisk:	**OPCDEPLOY-739**: Added a check box to the User management screen to allow an administrator to choose whether a user should have access to the audit logs or not. The default setting is True (Checked).
+:eight_spoked_asterisk:	**OPCDEPLOY-739**: Added an option to the User management screen to allow an administrator to choose whether a user should have access to the audit logs or not. The default setting is True (selected).
 
 :eight_spoked_asterisk:	**OPCDEPLOY-671**: Added support for Windows Server 2019 to OpCon Deploy.
 
@@ -557,7 +563,7 @@ not updated.
 
 :white_check_mark: **OPCDEPLOY-597**: Fixed an issue where the deployment process stopped if the user selected "Cancel" on the Deploy or Batch Deploy confirmation dialog.
 
-:white_check_mark: **OPCDEPLOY-596**: Fixed a layout issue with the Deployment records window where long character strings in the "Filter deployment records" drop-down lists caused the Filter frame to expand too widely and the records table did not display fully or was hidden completely.
+:white_check_mark: **OPCDEPLOY-596**: Fixed a layout issue with the Deployment records window where long character strings in the "Filter deployment records" lists caused the Filter frame to expand too widely and the records table did not display fully or was hidden completely.
 
 :white_check_mark: **OPCDEPLOY-593**: Added a Refresh button on following windows:
 * Audit records
@@ -576,3 +582,7 @@ not updated.
 :white_check_mark: **OPCDEPLOY-505**: Fixed an issue where environment variables used in a schedule were not transferred during an export/import.
 
 :white_check_mark: **OPCDEPLOY-452**: Fixed an issue where the OpCon Deploy client process sometimes stays open after window closes.
+
+**Related topics:**
+
+- [Getting started](getting-started)

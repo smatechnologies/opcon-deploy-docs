@@ -1,6 +1,7 @@
 ---
 title: Deployments
 description: "Deploy schedule definitions and packages from the OpCon Deploy central repository to registered OpCon systems, with options for simulation, scheduled deployment, and rollback."
+slug: /deployments/deployments
 tags:
   - Procedural
   - Automation Engineer

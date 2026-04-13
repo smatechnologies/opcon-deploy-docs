@@ -64,7 +64,7 @@ Production systems include Pre-Production, Production and Training servers. Test
 | **Test** | Test systems | Test systems |
 
 :::note
-Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. For more information, see [Schedule deployment](../deployments/#schedule-deployment).
+Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. For more information, see [Schedule deployment](../deployments/deployments#schedule-deployment).
 :::
 
 

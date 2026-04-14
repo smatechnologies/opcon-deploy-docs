@@ -30,7 +30,7 @@ Deploy 26.0 is matched with OpCon Cloud 25.3 or greater or OpCon Data Center 26.
 When performing an upgrade, upgrade test environments and Deploy first.
 :::
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
 
@@ -38,7 +38,7 @@ When performing an upgrade, upgrade test environments and Deploy first.
 
 :eight_spoked_asterisk: **CON-777**: Support OpConMFT Archive Files and Reprocess Files field types during export and import of OpConMFT job types. Requires matching ImpEx2 26.0.x or 26.1.x versions.
 
-#### Why this matters
+### Why this matters
 
 SAP job transformations become more granular, deployment simulations now produce verifiable output files that can be reviewed before go-live, and OpConMFT file management covers a wider range of field types — together reducing pre-deployment validation effort across all environments.
 
@@ -56,13 +56,13 @@ This is an OpCon Cloud-only version. It supports the new OpCon long user passwor
 Cloud 25.3.0
 :::
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1412**: Included support for long OpCon user passwords.
 
 :eight_spoked_asterisk: **CON-631**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
 
-#### Why this matters
+### Why this matters
 
 Cloud deployments now support the longer, more secure user passwords introduced in OpCon 25.3, keeping Deploy fully compatible as the platform evolves to stronger credential requirements.
 
@@ -78,13 +78,13 @@ New rule **Merge Schedule Instance Properties** indicates whether schedule insta
 OnPrem 25.0.4 / 23.0.12 / 22.0.22
 :::
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1407**: Implemented new feature to correctly merge Schedule Instance Properties when the rule **Update Schedule instance properties allowed** is not selected.
 
 For more information see the **Merge Schedule Instance Properties** rule in the [Settings](administration/settings) section.
 
-#### Why this matters
+### Why this matters
 
 Teams can now fine-tune how schedule instance properties are merged during deployment, preventing unintended overwrites of target-environment values while still allowing targeted updates where needed.
 
@@ -108,7 +108,7 @@ Teams can now fine-tune how schedule instance properties are merged during deplo
 New rule **Exclude calendars from schedule deployment** removes calendar updates during the deployment process. The default value is false, so existing installations are not affected. Once enabled, calendar definitions will no longer be included in the schedule definitions in the `calendarList` section.
 :::
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OC-325**: Support new job type RPA. Due to the specific nature of the RPA scripts being associated with specific agents, the deploy process does not include the scripts in the deployment process. Requires OpCon 25.1.0 or greater.
 
@@ -125,7 +125,7 @@ For more information see the **Exclude calendars from Schedule Deployment** rule
 
 :eight_spoked_asterisk: **OPCDEPLOY-1406**: Added new argument `-iss` to `Devops.SMAOpConDeployClient.exe` for the schedule EXPORT action. This option includes all sub-schedules associated with the named schedule, creating a single definition file containing all the schedules.
 
-#### Why this matters
+### Why this matters
 
 RPA automation joins the roster of deployable job types; package creation now happens directly from the import workflow in a single step; and calendar and script exclusion rules give CI/CD pipelines precise control over what each deployment touches — reducing both manual effort and unintended side-effects in target environments.
 
@@ -148,7 +148,7 @@ New rule **Exclude scripts from schedule deployment** separates the deployment o
 Transformation **Environment** changes have been added to facilitate the duplication of schedules within a single OpCon system to create a unique execution environment. The defined environment value will now be prefixed to the machine name and the script name, creating a unique instance of the script during the deployment process.
 :::
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1390**: Implemented new transformation rules for Job, OS2200 Element Name, and OS2200 Runid definitions. The following rules support name changes using masking (wildcards `?` and `*`):
 
@@ -164,7 +164,7 @@ Transformation **Environment** changes have been added to facilitate the duplica
 
 For more information see the **Exclude Script from Schedule Deployment** rule in the [Settings](administration/settings) section.
 
-#### Why this matters
+### Why this matters
 
 Scripts and schedules can now be deployed independently, allowing teams to manage script versioning and promotion on a separate cadence from schedule changes — critical for environments with strict change-control boundaries where a script update should not force a full schedule re-deployment.
 
@@ -212,7 +212,7 @@ Scripts and schedules can now be deployed independently, allowing teams to manag
 
 2024 May
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-843**: Fixed a problem when transformation rule names are queried using case sensitivity.
 
@@ -225,7 +225,7 @@ Scripts and schedules can now be deployed independently, allowing teams to manag
 
 :eight_spoked_asterisk: **OPCDEPLOY-1378**: Implemented support for new GuideWireCloud and ACS job types. Compatibility check implemented to ensure these job types can only be deployed to OpCon versions 23.0 or greater. Requires updated ImpEx2 OpCon versions for OpCon versions 24.2.0 or 23.0.4.
 
-#### Why this matters
+### Why this matters
 
 Machine group and machine name transformations can now be swapped bidirectionally during deployment, and two new cloud-native job types — GuideWireCloud and ACS — are fully supported, expanding the range of workloads Deploy can manage across environments.
 
@@ -245,7 +245,7 @@ Machine group and machine name transformations can now be swapped bidirectionall
 
 2024 January
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1360**: Fixed a problem when the transformation rule is Schedule_Instance_Property and the job type is Windows embedded script and there are no script arguments. An attempt is made to check the arguments for the schedule instance property and it fails with a NPE as there are no arguments.
 
@@ -268,7 +268,7 @@ This feature requires matching OpCon fix OPCON-22789, included in OpCon releases
 
 :eight_spoked_asterisk: **OPCDEPLOY-1367**: Implemented new global rule **Package update unchanged Schedules**. During package deployment, a check is made to see if the schedule version of the target schedule within the package matches the schedule version of the schedule to be deployed. If the versions match, only the schedule deployment information is updated on the target schedule. If this rule is selected, the target schedule contents will be overwritten.
 
-#### Why this matters
+### Why this matters
 
 Ten new MS SQL transformation rules cover all major job action fields, making it straightforward to promote MS SQL jobs across environments without manual edits. The new package rule also prevents unnecessary schedule overwrites when the deployed version is unchanged, reducing both deployment risk and time.
 
@@ -292,13 +292,13 @@ Previously, all records were retrieved from the database and then added to the s
 
 2023 April
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1341**: Added new **Include sub-schedules** option on the Check In Summary page that recursively adds sub-schedules found during a schedule import to the import process. The import result of each schedule is displayed in the results view. The message reporting that the schedule version already exists has been changed to a WARNING message with a dark yellow color.
 
 :eight_spoked_asterisk: **OPCDEPLOY-1343**: Added **Update Schedule Versions** button to the Package dialog. When selected, the schedules associated with the package are updated to the latest version of the schedule in the Deploy database.
 
-#### Why this matters
+### Why this matters
 
 Sub-schedules can now be automatically discovered and included during import rather than requiring separate imports for each, and package schedule versions can be bulk-updated to the latest in a single click — reducing the manual effort of keeping packages current as schedules evolve.
 
@@ -306,7 +306,7 @@ Sub-schedules can now be automatically discovered and included during import rat
 
 2023 March
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1338**: Separated reset AutoBuild days and AutoDelete days into two separate rules. AutoBuild days and AutoDelete days can now be reset independently.
 
@@ -314,7 +314,7 @@ Sub-schedules can now be automatically discovered and included during import rat
 This implementation requires matched SMA OpCon ImpEx2 versions: OpCon 22.1 or greater, OpCon 22.0.2 or greater, OpCon 21.0.14 or greater, and OpCon 20.0.20 or greater.
 :::
 
-#### Why this matters
+### Why this matters
 
 AutoBuild and AutoDelete behavior can now be configured independently per environment, giving operations teams precise control over schedule build windows without inadvertently resetting deletion policies at the same time.
 
@@ -336,7 +336,7 @@ AutoBuild and AutoDelete behavior can now be configured independently per enviro
 
 2022 December
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1319**: Deploy now provides a new batch process `File.SMAOpConDeployClient`, which supports extraction of schedules and scripts from either an OpCon system or the Deploy repository. It also supports inserting schedule definitions or script versions from files into the Deploy repository.
 
@@ -346,7 +346,7 @@ AutoBuild and AutoDelete behavior can now be configured independently per enviro
 
 :eight_spoked_asterisk: **OPCDEPLOY-1322**: Added script name change transformation rule. During environment transformation, a prefix is now added to the script to create a unique instance of the script for the defined environment.
 
-#### Why this matters
+### Why this matters
 
 Deploy can now participate fully in DevOps and CI/CD pipelines: schedules and scripts can be extracted from and deployed to OpCon directly from a source-control branch, enabling automated promotion workflows without manual intervention through the Deploy UI.
 
@@ -378,7 +378,7 @@ Deploy can now participate fully in DevOps and CI/CD pipelines: schedules and sc
 
 2022 February
 
-#### What's new
+### What's new
 
 :eight_spoked_asterisk: **OPCDEPLOY-1311**: Deploy now allows role names to be part of the transformation, to map them to the names on the target system. Role_Add: This tag is used to add a Role during deployment. The Role name will be added in Role, schedules, scripts, and departments. The new Role name must be defined in the target system. This tag supports the following: `newValue` (required): Contains the name of the Role to add. All other fields are disabled.
 
@@ -386,7 +386,7 @@ Deploy can now participate fully in DevOps and CI/CD pipelines: schedules and sc
 
 :eight_spoked_asterisk: **OPCDEPLOY-1309**: Added Auto Build Reset capabilities during deployment of schedules and packages. When setting the auto build options, first select the **Auto Build** option and then set the values for Days In Advance and Days. When selecting the **Auto Build** option, the values are initially set to 1. When not selected, the values are set to 0. To reset the Auto Build and Auto Delete values, select the **Auto Build** option and set the Days in Advance and Days values to 0. This removes the Auto Build and Auto Delete values.
 
-#### Why this matters
+### Why this matters
 
 Role names can now be added or remapped as part of deployment transformation, so schedules that reference environment-specific roles deploy correctly to target systems without manual post-deployment edits. Auto Build reset is also now fully controllable during deployment.
 

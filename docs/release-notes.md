@@ -14,6 +14,21 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 The ImpEx2 Server portion of Deploy is paired with each specific OpCon release and is part of the OpCon Release. Therefore the ImpEx2 
 server for each release is patched and released within the OpCon release cycles.   
 
+## Version 26.0.1
+
+2026 February
+
+**Migration Considerations**
+
+Deploy 26.0.1 requires matching ImpEx2 versions when SAP jobs in use.
+OpCon 26.1.0, OpCon 26.0.2, OpCon 25.0.6.
+
+**New Features**
+
+**Fixes**
+
+:eight_spoked_asterisk: **CON-.800**: Fixed a problem supporting SAP Machine Groups when working with SAP jobs. When using this capability, the OpCon SAP Machine group name is used when defining a SAP system connection. The software detects that a machine group is defined and will then retrieve the first active OpCon SAP Agent associated with the machine group and use this to provide the connection to the SAP system. Requires matching ImpEx2 xxxxx version. 
+
 ## Version 26.0.0
 
 2026 February
@@ -33,18 +48,6 @@ When performing an upgrade, it is best to first upgrade test environments and De
 
 :eight_spoked_asterisk: **CON-777**: Support OpConMFT Archive Files and Reprocess Files field types during export and import of OpConMFT job types. Requires matching ImpEx2 26.0.x or 26.1.x versions.
 
-## Version 25.2.1
-
-2025 January
-
-**Migration Considerations**
-
-**New Features**
-
-:eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
-
-:eight_spoked_asterisk: **CON-635**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
-
 ## Version 25.3 (OpCon Cloud)
 
 2025 October
@@ -61,6 +64,18 @@ This is an OpCon Cloud version only as it supports the new OpCon long user passw
 
 This requires matching OpCon ImpEx2 versions
 - Cloud 25.3.0
+
+## Version 25.2.1
+
+2025 January
+
+**Migration Considerations**
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
+
+:eight_spoked_asterisk: **CON-635**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
 
 ## Version 25.2
 

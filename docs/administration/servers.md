@@ -1,4 +1,20 @@
+---
+title: Servers
+description: "Add, update, and delete OpCon system definitions in OpCon Deploy, including connection settings, server roles, and default transformation rules."
+tags:
+  - Reference
+  - System Administrator
+  - System Configuration
+---
+
 # Servers
+
+**Theme:** Configure  
+**Who Is It For?** System Administrator
+
+## What is it?
+
+The Servers function lets you register and manage the OpCon systems that participate in the OpCon Deploy environment. Each server definition stores the connection details needed to reach that system's ImpEx2 RESTful server and OpCon RestAPI, assigns the server a type (such as Development, Test, or Production) that governs who can deploy to it, and optionally attaches default transformation rules that are applied automatically to every deployment targeting that server. A server must be defined here before it can be used as a source for imports or a target for deployments.
 
 When working with the OpCon Deploy, each OpCon system that is used to import schedules from or deploy schedules to must be defined.
 
@@ -12,74 +28,50 @@ The Servers function allows servers to be managed in OpCon Deploy. It is possibl
 
 ![Server Management Image](../../static/img/admin-server-dialog.png)
 
-## Select Server Section
+## Select server section
 
-When working with the View or edit servers dialog, the information of an existing server can be displayed by selecting the server from the Select server drop-down list. Once the server has been selected, the information is displayed in the View/edit server section. Password values are not displayed.
+When working with the View or edit servers dialog, the information of an existing server can be displayed by selecting the server from the **Select server** list. Once the server has been selected, the information is displayed in the View/edit server section. Password values are not displayed.
 
 Once the server information has been displayed, the server can be removed from the application by selecting the Delete button. Before deleting the record, a confirmation message will be displayed.
 
 If changes are made to the server information, then the Save and Cancel buttons will be enabled.
 
-## View/Edit Server Section
+## Configuration options
 
-This list contains descriptions of each field in the View/edit server section of the View or edit servers dialog.
+| Field | What it does | Default | Notes |
+|-------|-------------|---------|-------|
+| **Server Name** | The unique name for this OpCon system within OpCon Deploy | — | Must be unique; this name appears in import and deployment dialogs |
+| **Server Type** | Classifies the server as production or non-production, controlling deployment checks and user access | — | Production types: Pre-production, Production, Training. Non-production types: Development, Integration, Quality Assurance, System Test, Test |
+| **Allow Transformation Rules** | When selected, transformation rules can be applied to deployments targeting this server | Selected | If cleared, deployments with transformation rules selected will fail when the global **Fail if Transformation Rules Present and Transformation Disabled** rule is enabled |
+| **Default Transformation Rules** | A set of transformation rules that are automatically applied to every deployment targeting this server | — | Select using the **Edit** button; rules apply in addition to any deployment-level rules selected at deploy time |
+| **Server Address** | IP address or DNS name of the ImpEx2 RESTful server for this OpCon system | — | — |
+| **Server Port** (ImpEx2) | Port of the ImpEx2 RESTful server | — | Use `9001` for non-TLS, `9011` for TLS |
+| **Using TLS** (ImpEx2) | Indicates whether the ImpEx2 connection uses TLS | — | Must match the ImpEx2 server configuration |
+| **OpCon API Port** | Port of the OpCon RestAPI server | `9010` | — |
+| **Using TLS** (OpCon API) | Indicates whether the OpCon RestAPI connection uses TLS | — | Must match the OpCon RestAPI server configuration |
 
-### Server Name
+### SAP server fields
 
-The name of the OpCon system
-* This must be a unique name within the OpCon Deploy system.
-
-### Server Type
-
-The type of server
-* The type of server is used to determine what action to take when deploying a schedule and the schedule already exists on the target system. This value is also used in conjunction with the user role value and determines which OpCon systems a user may access to import and deploy schedules.
-* During deployment, if the target server is a production server, a comparison is made between the current deployed schedule and the value saved in the previous deployment record.
-* For all other deployments, a check is made to see if the schedule exists on the target system.
-Production servers include: Pre-production, Production and Training server types.
-* Non-production server types are listed as the following: Development, Integration, Quality Assurance, System Test, Test.
-
-### Allow Transformation Rules
-
-When selected, this option allows the transformation of the schedule definitions
-* If not selected and transformation rules are specified, a deployment operation will fail if the Fail if Transformation Rules present and Transformation disabled global rule is enabled.
-
-### Default Transformation Rules
-
-It is possible to define a set of transformation rules that will always be applied when the server is selected as a target during deployment
-
-### Server Address
-
-The address (IP address or DNS) of the OpCon Impex RESTFul server associated with the OpCon system
-
-### Server Port
-
-The port of the OpCon Impex RESTFul server (9001 for non-TLS, 9011 for TLS)
-
-### Using TLS
-
-Indicates if the connection to the Impex RESTFul server uses TLS
-
-### OpCon API Port
-
-The port of the OpCon RestAPI server (default 9010)
-
-### Using TLS
-
-Indicates if the connection to the OpCon RestAPI server uses TLS
+| Field | What it does | Default | Notes |
+|-------|-------------|---------|-------|
+| **SAP Server Name** | The name of the SAP R3 Agent on the OpCon system | — | Must match the SAP Agent definition in OpCon |
+| **SAP Language** | The language used by the SAP system | — | Examples: `EN` for English, `F` for French |
+| **SAP User** | The SAP user with rights to access the SAP system through the XBP interface | — | Must match the user defined in the SAP Agent definition |
+| **SAP Password** | The password for the SAP user | — | Enter in plain text; the software encrypts the value before storing it |
 
 When adding default transformation rules to the server, select the Edit button and the **Select one or more rules** dialog will appear.
 
 ![Default Transformation Rule Image](../../static/img/transformation-rule-selection-dialog.png)
 
-The Select one or more rules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific transformation rule records or use the displayed default value of asterix (*) to retrieve all transformation rule records. If there are any records previously entered, they will be displayed in the selection and selected sections of the dialog. Once the text string has been entered select the **Refresh** button and the transformation rule information will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected transformation rules. Transformation rules selected in the lower table, will remain in the upper selection screen after a reset.
+The Select one or more rules dialog presents a screen and a **Select** capability that allows you to enter a text string in the **Filter** field to retrieve specific transformation rule records or use the displayed default value of asterisk (*) to retrieve all transformation rule records. If there are any records previously entered, they will be displayed in the selection and selected sections of the dialog. Once the text string has been entered select the **Refresh** button and the transformation rule information will be displayed. Subsequent requests will be added to the existing list. The **Clear** button can be used to reset the list of previously selected transformation rules. Transformation rules selected in the lower table, will remain in the upper selection screen after a reset.
 
-It must be noted that wild cards are not supported, instead the text entered in the **Filter** field is checked against the transformation rule name in the transformation rule record (i.e. HP will return all script records that contain the character sequence in the name).
+Wildcards are not supported. The text entered in the **Filter** field is checked against the transformation rule name in the record — for example, entering `HP` returns all records with that character sequence in the name.
 
-To add a transformation rule, either double-click on the rule in the upper table or select the rule in upper table then click the Include arrow. To remove a transformation rule, either double-click or select the rule in the lower table and the click the Remove arrow.
+To add a transformation rule, select the rule in the upper table and then select the **Include** button. To remove a transformation rule, select the rule in the lower table and select the **Remove** button.
 
-To view the Transformation Rule definitions, perform a right-click on the definition in the list (upper or lower tables) and View Definition will appear. Select this to view the JSON definition, as shown in the Viewing Transformation Rules Definitions from Server graphic.
+To view the transformation rule definitions, right-click the definition in the list (upper or lower tables) and select **View Definition** to view the JSON definition, as shown in the Viewing Transformation Rules Definitions from Server graphic.
 
-It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
+To search for a value in the JSON, enter the required value in the search field above the definition and select a search direction using the forward or backward buttons. Selecting the X will remove the search result from the definition and the search field.
 
 ![Viewing Transformation Rule Definitions Image](../../static/img/transformation-rules-definition.png)
 
@@ -93,20 +85,47 @@ To add a new SAP server, select the + button and the Create or edit an SAP Serve
 
 This list contains descriptions of each field in the Create or edit an SAP Server dialog.
 
-### SAP Server Name
+### SAP server name
 
 The name of the SAP R3 Agent on the OpCon system, or the name of a SAP machine group. When defining a machine group, the associated SAP information is the values required to connect to the SAP system associated with the machine group. During processing the OpCon SAP Machine Group will be accessed to find the first available OpCon SAP Agent within the group,. This will then be used to provide the connection to the SAP system. 
 
-### SAP Language
+### SAP language
 
 The language used by the SAP system (example **EN** for English, **F** for French)
 
-### SAP User
+### SAP user
 
 The name of the SAP user who has the rights to access the SAP system through the XBP interface
-* It is the same user defined within the SAP Agent definition.
+* It is the same user defined within the SAP Agent definition
 
-### SAP Password
+### SAP password
 
 The password of the SAP user
-* The password is entered in plain text as the software will encrypt the password value before storing it in the database.
+* The password is entered in plain text as the software will encrypt the password value before storing it in the database
+
+## Exception handling
+
+| Error or symptom | Meaning | How to fix it |
+|---|---|---|
+| Save fails when adding a new server | The server name entered already exists in OpCon Deploy — server names must be unique | Choose a different server name; use the **Select server** list to check which names are already in use |
+| Import or deploy operation fails with a connection or license error | The ImpEx2 RESTful server on the source or target OpCon system is unreachable, or the OpCon license on that system does not permit the requested operation | Verify the **Server Address**, **Server Port**, and **Using TLS** settings match the ImpEx2 server configuration; confirm the OpCon system's license is valid and that the ImpEx2 service is running |
+| Deployment fails with a transformation rule error on the target server | The target server has **Allow Transformation Rules** cleared, preventing transformation rules from being applied | Enable **Allow Transformation Rules** on the server definition, or remove the transformation rules from the deployment before proceeding |
+
+## FAQs
+
+**What is the difference between a production and a non-production server type?**
+
+The server type controls which deployment checks are applied and which users can target the server. Production types (Pre-production, Production, and Training) trigger a mismatch check during deployment — OpCon Deploy compares the schedule on the target system against the version from the previous deployment record to detect local changes. Non-production types (Development, Integration, Quality Assurance, System Test, and Test) only check whether the schedule already exists on the target, not whether it matches a specific prior version. The server type also determines which user roles can deploy to it: users with the Production role can only deploy to production-type servers.
+
+**Do default transformation rules defined on a server replace the rules selected at deployment time, or do they combine?**
+
+They combine. Server-level default transformation rules are applied in addition to any rules selected at the package or deployment level, not instead of them. The order of application is: server transformation rules first, then package transformation rules, then deployment-specific transformation rules. If a rule at a higher level already transforms a value, a lower-level rule targeting the original value will be ignored, but a lower-level rule can still overlap a value that was introduced by a higher-level rule.
+
+**What port values should I use for the ImpEx2 server connection?**
+
+Use port `9001` for a non-TLS connection and port `9011` for a TLS connection. These are the default values noted in the Server Port field description and in the installation documentation. Ensure the **Using TLS** toggle matches the TLS setting configured on the ImpEx2 server itself.
+
+**Related topics:**
+
+- [Users](users)
+- [Settings](settings)

@@ -1,8 +1,25 @@
+---
+title: Schedules
+description: "Import schedule definitions from OpCon systems or files into the OpCon Deploy central repository, and browse stored versions for deployment."
+tags:
+  - Procedural
+  - Automation Engineer
+  - Schedules
+---
+
 # Schedules
 
-The Schedules functions support the capabilities required to import and view schedule definitions.
+**Theme:** Build  
+**Who Is It For?** Automation Engineer
 
-Before a schedule definition can be deployed to a target OpCon system, it must be registered with the OpCon Deploy system. Once registered, it can be included in a package for deployment or it can be deployed to target OpCon systems.
+## What is it?
+
+The Schedules functions support the capabilities required to import and view schedule definitions. Before a schedule definition can be deployed to a target OpCon system, it must be registered with OpCon Deploy.
+
+* Register a new schedule with OpCon Deploy for the first time before it can be deployed
+* Capture updated versions when a schedule definition has been modified
+* Every import creates a new version — if the definition matches the latest version already in the repository, the import is stopped to prevent duplicates
+* Browse and review previously imported versions of any schedule definition
 
 ## Import
 
@@ -16,15 +33,19 @@ OpCon Deploy requires that each OpCon system participating in the OpCon Deploy e
 
 ![Schedule Import Invalid License Image](../static/img/schedule-import-invalid-license.png)
 
-## Import Selection Phase
+## Import selection phase
 
-The import process begins with the selection of the OpCon system to import the schedule from. Following that, various dialogs will be presented leading the user through the process.
+:::note "Prerequisites"
+The OpCon system to import from must be defined as a server in OpCon Deploy and must have a valid OpCon Deploy license. See [Servers](administration/servers).
+:::
 
-To start the Import, select the Schedules Import function. The Schedule Import (Select a server) dialog appears and you will need to select, from the drop-down list, the OpCon system from which to import the schedule and then select the Next button. It should be noted that only OpCon systems defined in the SMAOpconDeploy database will appear in the list.
+The import process begins with the selection of the OpCon system to import the schedule from. Following that, various dialogs will be presented leading you through the process.
+
+To start the Import, select the Schedules Import function. The Schedule Import (Select a server) dialog appears and you will need to select, from the list, the OpCon system from which to import the schedule and then select the Next button. Only OpCon systems defined in the SMAOpconDeploy database will appear in the list.
 
 ![Schedule Import Source Image](../static/img/schedule-import-source-system.png)
 
-Once Next has been selected, the list of schedules will be retrieved from the chosen OpCon system and displayed in the schedules list of the Schedule Import (Select a Schedule to import) dialog. Once the schedule list has been created, it is possible to filter the schedule names on the list by entering a value in the Filter by Schedule Name field. It is possible to select multiple schedules to import from the source OpCon system by selecting the schedule names and then using the > arrow to move the schedules names to the right-hand list. Once schedule(s) has been selected, select the Next or Finish button.
+Once Next has been selected, the list of schedules will be retrieved from the chosen OpCon system and displayed in the schedules list of the Schedule Import (Select a Schedule to import) dialog. Once the schedule list has been created, you can filter the schedule names on the list by entering a value in the Filter by Schedule Name field. You can select multiple schedules to import from the source OpCon system by selecting the schedule names and then using the **>** button to move the schedule names to the right-hand list. Once schedule(s) has been selected, select the Next or Finish button.
 
 ![Schedule Import Schedule Selection Image](../static/img/schedule-import-schedule-selection.png)
 
@@ -40,7 +61,7 @@ If the schedule(s) has been inserted successfully into the repository, you will 
 
 ![Schedule Import Success Image](../static/img/schedule-import-success-message.png)
 
-## Import File
+## Import file
 
 The Import File function is used to register a schedule definition (contents must be in .JSON format) with the OpCon Deploy system from a file. During the process, the file is selected using the Browse... function. When the file is read in, a check is automatically performed to see if the format is valid.
 
@@ -54,10 +75,10 @@ To insert the definition in the repository, select the OK button. A message will
 
 The Browse function provides the opportunity to display information about schedule definitions in the repository.
 
-The Browse and filter Schedules imported dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific schedule records or use the displayed default value of asterix (*) to retrieve all schedule records.
+The Browse and filter Schedules imported dialog presents a screen and a **Select** capability that allows you to enter a text string to retrieve specific schedule records or use the displayed default value of asterisk (*) to retrieve all schedule records.
 Once the text string has been entered select the **Refresh** button and the schedule information will be displayed. Subsequent requests will result in the new selection being displayed. 
 
-It must be noted that wild cards are not supported, instead the text entered in the value in the **Filter** field is checked against the schedule name in the schedule record (i.e. GV will return all schedule records that contain the character sequence in the name).
+Wildcards are not supported. The text entered in the **Filter** field is checked against the schedule name in the record — for example, entering `GV` returns all schedule records with that character sequence in the name.
 
 ![Browse Schedule Definition](../static/img/browse-schedule-definition.png)
 
@@ -67,9 +88,9 @@ Browse and filter Schedules imported dialog presents a list of selected schedule
 
  This next table describes the information displayed in the dialog.
 
-To update the schedule list in the Browse and filter Schedules imported window, click the Refresh button.
+To update the schedule list in the Browse and filter Schedules imported window, Select the **Refresh** button.
 
-### Browse and Filter Schedules Imported Columns
+### Browse and filter schedules imported columns
 
 | Column | Description |
 | ------ | ----------- |
@@ -85,12 +106,47 @@ To update the schedule list in the Browse and filter Schedules imported window, 
 
 The high-level entry in the table will indicate which version is deployed to production and when the versions of the entry are examined, a check mark will indicate which version is deployed to production.
 
-To view the schedule definitions, perform a right-click on the definition in the list and View Definition will appear then select this to view the JSON definition.
+To view the schedule definitions, right-click the definition in the list and select **View Definition** to view the JSON definition.
 
-It is possible to search for a value in the JSON by entering the required value in the search field above the definition and selecting a search direction (forward or backward arrow). Selecting the X will remove the search result from the definition and the search field.
+To search for a value in the JSON, enter the required value in the search field above the definition and select a search direction using the forward or backward buttons. Selecting the X will remove the search result from the definition and the search field.
 
 ![View of Schedule Definition Saved in Central Repository](../static/img/view-schedule-definition-repository.png)
 
-## Create Diagram
+## Create diagram
 
-To create a diagram of the Schedule definition, right-click on the definition in the list. Create Definition will appear and you will select this to create the diagram. The diagram will then be displayed in a PDF form. Please refer to the topic [Package and Schedule Diagram](package-and-schedule-diagram) for more information.
+To create a diagram of the Schedule definition, right-click the definition in the list and select **Create Diagram** to create the diagram. The diagram will then be displayed in a PDF form. For more information, see [Package and schedule diagram](package-and-schedule-diagram).
+
+## Exception handling
+
+| Error or symptom | Meaning | How to fix it |
+|---|---|---|
+| Invalid license message displayed | The source OpCon system does not have a valid OpCon Deploy license | Verify that the OpCon Deploy license is installed and active on the source OpCon system |
+| "New definition matches an existing version" error | The schedule definition being imported is identical to the latest version already in the repository | No action needed — the definition is already current. Make changes to the schedule before reimporting. |
+
+## Key terms
+
+**Schedule definition** — the JSON representation of a schedule, including all job definitions, frequencies, and dependencies, stored in the central repository.
+
+**Import** — the process of extracting a schedule definition from a source OpCon system and storing it as a new version in the central repository.
+
+**Version** — a numbered snapshot of a schedule definition. A new version is created each time the schedule is successfully imported.
+
+## FAQs
+
+**What happens if I try to import a schedule that hasn't changed since the last import?**
+
+The import is stopped and an error message is displayed indicating that the new definition matches an existing version. No duplicate version is created in the repository. You do not need to take any action — the existing version is already current. Make changes to the schedule in OpCon before attempting to reimport.
+
+**Are sub-schedules automatically included when I import a schedule that contains container jobs?**
+
+Not by default. On the Schedule Import (Summary) dialog, you must select the **Include Sub-Schedules** option. When selected, any sub-schedule referenced by a container job is included in the import process. Sub-schedules are checked recursively, and each one is imported as a separate schedule. The results of all imports are displayed in the completion message.
+
+**How can I find a version of a schedule that was imported previously?**
+
+Use the Browse function. Enter all or part of the schedule name in the Filter field and select Refresh to display matching schedule records. Expand the entry to see all versions. The Current Production column indicates which version is currently deployed to a production system. You can right-click any version and select View Definition to inspect the stored JSON.
+
+**Related topics:**
+
+- [Packages](packages)
+- [Deployments](deployments/deployments)
+- [Transformation rules](transformations/transformation-rules)

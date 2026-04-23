@@ -1,97 +1,96 @@
+---
+title: Users
+description: "Add, update, and delete OpCon Deploy user accounts and assign roles that control which systems each user can import from and deploy to."
+tags:
+  - Reference
+  - System Administrator
+  - System Configuration
+---
+
 # Users
 
-When working with the OpCon Deploy, users are required as each function performed by the user is audited in the Audited table by category, date and time, and user. Therefore, it is important to allocate individual users instead of using a generic user.
+**Theme:** Configure  
+**Who Is It For?** System Administrator
+
+## What is it?
+
+The Users function lets you create and manage the user accounts that control access to OpCon Deploy. Each user is assigned a role that defines which OpCon systems they can import from and deploy to — for example, a Production role restricts a user to deploying only to production systems. Every action performed in OpCon Deploy is recorded in the audit log against the individual user, so assigning unique accounts rather than shared credentials is essential for traceability.
+
+When working with the OpCon Deploy, users are required because each function you perform is audited in the Audited table by category, date and time, and user. Therefore, it is important to allocate individual users instead of using a generic user.
 
 Users are associated with roles that limit their capability within the application.
 
 When entering Windows users, the domain and username should be defined (i.e., domain/username). It is not necessary to enter a password when defining a Windows user.
 
-For access to OpCon systems, the user definition is mapped to an OpCon user. It should be noted that the OpCon user associated with the user definition must be defined on all OpCon systems to which the user has access.
+For access to OpCon systems, the user definition is mapped to an OpCon user. The OpCon user associated with the user definition must be defined on all OpCon systems to which you have access.
 
 The Users functions allows users to be managed in the OpCon Deploy. It is possible to Add, Delete, or Update (Save) user information.
 
 ![Admin Dialog Image](../../static/img/admin-user-dialog.png)
 
-## Select User Section
+## Select user section
 
-When working with the View or edit users dialog, the information of an existing user can be displayed by selecting the user from the Select user drop-down list. Once the user has been selected, the information is displayed in the View/edit user section. Password values are not displayed.
+When working with the View or edit users dialog, the information of an existing user can be displayed by selecting from the **Select user** list. Once selected, the information is displayed in the View/edit user section. Password values are not displayed.
 
-Once the user information has been displayed, the user can be removed from the application by selecting the Delete button. Before deleting the record, a confirmation message will be displayed.
+Once the user information has been displayed, you can remove the user by selecting the **Delete** button. Before deleting the record, a confirmation message will be displayed.
 
 If changes are made to the user information, then the Save and Cancel buttons will be enabled.
 
-## View/Edit User Section
+## Configuration options
 
-This list contains descriptions of each field in the View/edit user section of the View or edit users dialog.
+| Field | What it does | Default | Notes |
+|-------|-------------|---------|-------|
+| **User Name** | The unique name used to log in to OpCon Deploy | — | For Windows Authentication, enter the Windows domain/name in the format `domain/username` |
+| **Password** | The user's login password | — | Stored as an MD5 hash; cannot be decoded. Disabled when Windows Authentication is in use. If forgotten, enter a new password |
+| **Description** | Optional free-text description of the user | — | Not required |
+| **Role** | Controls which OpCon systems the user can import from and deploy to | — | See role descriptions below. Admin users can deploy any schedule; other roles cannot select schedules assigned to a package |
+| **View Audit Messages** | Grants the user read-only access to the audit log | Selected | Automatically selected and disabled for Administrator role users |
+| **OpCon User Name** | The OpCon user account used when performing import and deploy operations | — | Must be defined on all OpCon systems the user will access |
+| **OpCon Password** | Password for the OpCon user account | — | Enter in plain text; the software encrypts the value using OpCon encryption |
 
-### User Name
+### Role descriptions
 
-The name of the user
-* This must be a unique name within OpCon Deploy.
-* If using Windows Authentication, this is the Windows domain/name.
-
-### Password
-
-The user password
-* When a user account is being created or edited, the password field will appear with placeholder text that disappears once the user begins typing the password.
-
-:::info Note 
-
-If Windows Authentication is being used, the password field will be disabled.
+:::note
+Production systems include Pre-Production, Production and Training servers. Test systems include Integration, Quality Assurance, System Test and Test servers. Non-Production systems are all Development and Test server types.
 :::
 
-* A MD5 hash of the user password is stored in the database and it is not possible to decode this value.
-* If using Windows Authentication, no password is required.
-* If a password is forgotten, a new password should be entered.
+| Role | Import access | Deploy access |
+|------|--------------|---------------|
+| **Administration** | All servers | All servers; full access to all application functions |
+| **All** | All servers | All servers |
+| **Production** | All Non-Production systems | Production systems only |
+| **Non-Production** | All Non-Production systems | Non-Production systems only |
+| **Development** | Development systems | Development systems |
+| **Test** | Test systems | Test systems |
 
-### Description
-
-A description associated with the user being defined
-
-### Role
-
-The role of the user
-* The role defines the administration, import, and deployment capabilities of the user.
-* The major aim of the role currently is to define the deployment capabilities of the user. A user that has a role of Production, may only deploy schedules to a production system.
-
-:::info Note
-
- Production systems include Pre-Production, Production and Training servers. Test systems include Integration, Quality Assurance, System Test and Test servers. The Non-Production systems are all Development and Test server types.
-
+:::note
+Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. For more information, see [Schedule deployment](../deployments/deployments#schedule-deployment).
 :::
 
-* Types of roles include:
-    * Administration - This role is allowed full access to all functions in the application.
-    * All - This role is allowed to import schedules from and deploy schedules to all servers.
-    * Production - This role is allowed to import schedules from all Non-Production systems, but only deploy schedules to Production systems.
-    * Non-Production - This role is allowed to import schedules from all Non-Production systems, and deploy schedules to Non-Production systems.
-    * Development - This role is allowed to import schedules from Development systems and deploy schedules to Development Systems.
-    * Test - This role is allowed to import schedules from Test systems and deploy schedules to Test systems.
 
-:::info Note
+## Exception handling
 
-Admin users may deploy any schedule from the Deploy Schedule screen, but other roles will not be able to select schedules that are being used in a package. Please refer to the Deployments subtopic, [Schedule Deployment](../deployments/#schedule-deployment), for more information.
+| Error or symptom | Meaning | How to fix it |
+|---|---|---|
+| Save fails when adding a new user | The user name entered already exists in the OpCon Deploy database — user names must be unique | Choose a different user name; use the **Select user** list to check which names are already in use |
+| Windows Authentication user cannot log in | The Windows domain/username combination entered in the **User Name** field does not match the authenticated Windows identity, or the format is incorrect | Verify the user name is entered in the `domain/username` format exactly as it appears in Windows; no password is required for Windows Authentication users |
+| Import or deploy operation is rejected with a credentials error | The **OpCon User Name** or **OpCon Password** stored in the user definition does not match a valid account on the target OpCon system | Update the **OpCon User Name** and **OpCon Password** fields to match a user defined on every OpCon system the user needs to access, then save the user record |
 
-:::
+## FAQs
 
-### View Audit Messages
+**What role should I assign to a user who needs to deploy to both test and production systems?**
 
-Checking this box gives the user read-only access to the audit logs.
+Assign the **All** role. Users with the All role can import from all servers and deploy to all servers. The Production role restricts deployment to production systems only, and the Non-Production role restricts deployment to non-production systems only. Only the All and Administration roles cover both environments. Note that production system types include Pre-Production, Production, and Training servers, while test systems include Integration, Quality Assurance, System Test, and Test servers.
 
-:::info Note 
+**How do I reset a user's forgotten password?**
 
-The View Audit Messages box is checked by default when opening the User Management screen. Uncheck the box to disallow the user access to the audit logs.
+Open the user record in the View or edit users dialog, enter a new password in the **Password** field, and save the record. Passwords are stored as an MD5 hash and cannot be decoded or retrieved, so entering a new value is the only way to reset access.
 
-:::
+**Does a Windows Authentication user need an OpCon Deploy password?**
 
-* If the user is an Administrator, this box will be checked and disabled.
+No. When a user is configured for Windows Authentication, the **Password** field is disabled and no OpCon Deploy password is required. The user name must be entered in `domain/username` format. However, the **OpCon Password** field — which stores the credentials used to connect to OpCon systems during import and deploy operations — still applies and must be completed for all user types.
 
-### OpCon User Name
+**Related topics:**
 
-The name of a registered OpCon user that will be used when performing schedule Import and Deploy functions
-
-### OpCon Password
-
-The password associated with the OpCon user
-* When creating or changing the user password, enter the password in plain text. The software will encrypt the user password using OpCon encryption.
-
+- [Servers](servers)
+- [Audits](audits)

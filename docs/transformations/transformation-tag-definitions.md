@@ -1,4 +1,16 @@
-# Transformation Tag Definitions
+---
+title: Transformation tag definitions
+description: "Reference for all supported transformation tag types in OpCon Deploy, including the tags each definition supports and how they modify schedule definitions during deployment."
+tags:
+  - Reference
+  - Automation Engineer
+  - System Configuration
+---
+
+# Transformation tag definitions
+
+**Theme:** Configure  
+**Who Is It For?** Automation Engineer, System Administrator
 
 This section provides information on the following tag definitions and associated tags that are supported for each definition:
 
@@ -8,19 +20,19 @@ This tag is used to change the name of the subschedule that the container job re
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the subschedule to change in the container job definition.
+    * (*Required*): Contains the name of the subschedule to change in the container job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Department_Name
 
@@ -28,19 +40,19 @@ This tag is used to change the name of the department in the job definition. Whe
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the department to change in the job definition.
+    * (*Required*): Contains the name of the department to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Event
 
@@ -48,19 +60,19 @@ This tag is used to change the name of schedule or a job in an event definition 
 
 * ```<job_name>```
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
  * ```<current_value>```	
 
-    * (*Required*): Contains the event command to change in the job or schedule definition.
+    * (*Required*): Contains the event command to change in the job or schedule definition
 
 * ```<new_value>```	
 
-    * (*Required*): The value to insert in the definition if the current_value matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the current_value matches the value in the definition
 
 * ```<partial_update>```
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Event_Related_User
 
@@ -68,15 +80,15 @@ This tag is used to change the related OpCon user name that is associated with t
 
 * ```<current_value>```
 
-    * (*Required*): Contains the name of the user to change in the event definition. A value of * will automatically replace the value with the value in the new_value field.
+    * (*Required*): Contains the name of the user to change in the event definition. A value of * will automatically replace the value with the value in the new_value field
 
  * ```<new_value>```
 
-    * (*Required*): The value to insert in the definition if the current_value matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the current_value matches the value in the definition
 
 * ```<partial_update>```
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### File_Transfer_Destination_Machine
 
@@ -84,40 +96,79 @@ This tag is used to change the name of the destination machine in the file trans
 
 * jobName
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the destination host to change in the file transfer job definition.
+    * (*Required*): Contains the name of the destination host to change in the file transfer job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
+### File_Transfer_Destination_User
 
-### File_Transfer_Source_Machine
-
-This tag is used to change the name of the destination machine in the file transfer job definition and supports the following tags:
+This tag is used to change the user name of the destination machine in the file transfer job definition and supports the following tags:
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the destination host to change in the file transfer job definition.
+    * (*Required*): Contains the name of the user user to change in the file transfer job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
+
+### File_Transfer_Source_Machine
+
+This tag is used to change the name of the source machine in the file transfer job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+
+* currentValue	
+
+    * (*Required*): Contains the name of the destination host to change in the file transfer job definition
+
+* newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
+
+### File_Transfer_Source_User
+
+This tag is used to change the user name of the source machine in the file transfer job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+
+* currentValue	
+
+    * (*Required*): Contains the name of the user user to change in the file transfer job definition
+
+* newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Frequency_Name
 
@@ -125,19 +176,19 @@ This tag is used to change the name of the frequency machine in the definition. 
 
 * currentValue	
 
-    * (*Required*): Contains the name of the frequency to change in the definitions.
+    * (*Required*): Contains the name of the frequency to change in the definitions
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Frequency_Use_Existing_Definitions
 
-This tag is a special tag that is used when you want the definition of the frequency on the target system to be used instead of the frequency in the definition. This is typically used when importing a schedule or task on production systems and the real frequency should be used instead of the test frequency.
+This tag is a special tag that is used when you want the definition of the frequency on the target system to be used instead of the frequency in the definition. This is typically used when importing a schedule or job on production systems and the real frequency should be used instead of the test frequency.
 
  An example would be if there is a frequency definition on the target system LWDOM, which is the last working day of the month. During testing, the frequency definition for LWDOM will probably be an all days definition, as you do not want to wait until the last day of the month to perform tests.
 
@@ -145,15 +196,15 @@ The Frequency_Use_Existing_Definitions tag supports the following tags:
 
 * currentValue	
 
-    * (*Not Required*): Leave empty.
+    * (*Not Required*): Leave empty
 
 * newValue	
 
-    * (*Not Required*): Leave empty.
+    * (*Not Required*): Leave empty
 
 * partialUpdate	
 
-    * (*Not Required*): leave default partialUpdate false.
+    * (*Not Required*): leave default partialUpdate false
 
 ### IBMi_Call_Information
 
@@ -161,19 +212,19 @@ This tag is used to change a value in the Call field of the IBM i job definition
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Call field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Call field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Job_Description
 
@@ -181,19 +232,19 @@ This tag is used to change the values in the Job Description field of the IBM i 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in both the Name and Library fields, separated by a comma in the job definition (e.g., *USRPRF,*LIBL).
+    * (*Required*): Contains the name of the value in both the Name and Library fields, separated by a comma in the job definition (e.g., *USRPRF,*LIBL)
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *USRPRF,*CURLIB).
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *USRPRF,*CURLIB)
 
 * partialUpdate	
 
-    * This function does not support partial update, so the value must be set to false.
+    * This function does not support partial update, so the value must be set to false
 
 ### IBMi_Job_Queue
 
@@ -201,19 +252,19 @@ This tag is used to change the values in the Job Queue field of the IBM i job de
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in both the Name and Library fields, separated by a comma in the job definition (e.g., *JOBD,*LIBL).
+    * (*Required*): Contains the name of the value in both the Name and Library fields, separated by a comma in the job definition (e.g., *JOBD,*LIBL)
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *JOBD,*CURLIB).
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *JOBD,*CURLIB)
 
 * partialUpdate	
 
-    * This function does not support partial update, so the value must be set to false.
+    * This function does not support partial update, so the value must be set to false
 
 ### IBMi_Job_Queue_Priority
 
@@ -221,19 +272,19 @@ This tag is used to change a value in the JobQ Priority field of the IBM i job d
 
 * jobName	
 
-    * (*Optional*): When present indicates the job or group of jobs that the rule is associated with. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present indicates the job or group of jobs that the rule is associated with. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue
 
-    * (*Required*): Contains the name of the value in the JobQ Priority field to change in the job definition.
+    * (*Required*): Contains the name of the value in the JobQ Priority field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *JOBD,*CURLIB).
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition (e.g., *JOBD,*CURLIB)
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Library_Current
 
@@ -241,19 +292,19 @@ This tag is used to change a value in the Library Current field of the IBM i job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Library Current field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Library Current field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Library_Init_List
 
@@ -261,19 +312,19 @@ This tag is used to change a value in the Library Current field of the IBM i job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Library Init Lib List field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Library Init Lib List field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Message_Logging_Level
 
@@ -281,19 +332,19 @@ This tag is used to change a value in the Message Logging Level field of the IBM
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Message Logging Level field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Message Logging Level field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Message_Logging_Severity
 
@@ -301,19 +352,19 @@ This tag is used to change a value in the Message Logging Severity field of the 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Message Logging Severity field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Message Logging Severity field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Message_Logging_Text
 
@@ -321,19 +372,19 @@ This tag is used to change a value in the Message Logging Text field of the IBM 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the Message Logging Text field to change in the job definition.
+    * (*Required*): Contains the name of the value in the Message Logging Text field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
  * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### IBMi_Output_Queue
 
@@ -341,19 +392,19 @@ This tag is used to change a value in the Message Logging Text field of the IBM 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in both the Name and Library fields separated by a comma in the job definition (e.g., *JOBD,*LIBL).
+    * (*Required*): Contains the name of the value in both the Name and Library fields separated by a comma in the job definition (e.g., *JOBD,*LIBL)
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition (e.g., *DEV,*CURLIB).
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition (e.g., *DEV,*CURLIB)
 
 * partialUpdate	
 
-    * This function does not support partial update, so the value must be set to false.
+    * This function does not support partial update, so the value must be set to false
 
 ### IBMi_User_ID
 
@@ -361,19 +412,19 @@ This tag is used to change a value in the User ID text field of the IBM i job de
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the User ID text field to change in the job definition.
+    * (*Required*): Contains the name of the value in the User ID text field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Instance_Property
 
@@ -381,27 +432,27 @@ This tag is used to change the job instance property name value of the job insta
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value of the job instance property in the definition if the contents of the property should be changed.
+    * (*Required*): Contains the value of the job instance property in the definition if the contents of the property should be changed
 
 * currentValueContents	
  
-    * (*Optional*): Contains the value of the job instance property in the definition if the contents of the property should be changed.
+    * (*Optional*): Contains the value of the job instance property in the definition if the contents of the property should be changed
  
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * newValueContents	
 
-    * (*Optional*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue.
+    * (*Optional*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Machine_Group_Name
 
@@ -409,19 +460,19 @@ This tag is used to change the machine group value of the job definition and sup
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
  * currentValue	
 
-    * (*Required*): Contains the name of the value of the machine group in the job definition.
+    * (*Required*): Contains the name of the value of the machine group in the job definition
 
  * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Machine_Group_Name_to_Machine_Name
 
@@ -429,19 +480,19 @@ This tag is used to change the machine group value of the job definition and sup
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
  * currentValue	
 
-    * (*Required*): Contains the name of the value of the machine group in the job definition.
+    * (*Required*): Contains the name of the value of the machine group in the job definition
 
  * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Machine_Name
 
@@ -449,19 +500,19 @@ This tag is used to change the Primary, Alternate Machine 1, Alternate Machine 2
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the machine in the job definition.
+    * (*Required*): Contains the name of the machine in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Machine_Name_to_Machine_Group_Name
 
@@ -469,19 +520,19 @@ This tag is used to change the Primary Machine name to a Machine Group name. The
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the machine in the job definition.
+    * (*Required*): Contains the name of the machine in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Name
 
@@ -489,15 +540,15 @@ This tag is used to change the Job Name value of the job definition and is chang
 
 * currentValue	
 
-    * (*Required*): Contains the name of the job in the job definition.
+    * (*Required*): Contains the name of the job in the job definition
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Job_Name_Mask
 
@@ -506,15 +557,15 @@ To change the first character of the name the currentValue should be T* and newV
 
 * currentValue	
 
-    * (*Required*): Contains the value to check .
+    * (*Required*): Contains the value to check 
 
 * newValue	
 
-    * (*Required*): Contains the new value to be applied.
+    * (*Required*): Contains the new value to be applied
 
 * partialUpdate	
 
-    * Not used.
+    * Not used
 
 ### Job_Tag
 
@@ -522,19 +573,19 @@ This tag is used to change the value of a tag on the job or insert a tag value o
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the job tag in the definition or the name of a tag to add to the job.
+    * (*Required*): Contains the name of the job tag in the definition or the name of a tag to add to the job
 
 * newValue	
 
-    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition. When inserting a tag, the value must match the currentValue. The newValue will then be added to the job.
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition. When inserting a tag, the value must match the currentValue. The newValue will then be added to the job
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### MCP_Arguments
 
@@ -542,19 +593,19 @@ This tag is used to change the value of MCP arguments associated with the job an
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### MCP_File_Title
 
@@ -562,19 +613,19 @@ This tag is used to change the value of an MCP file title associated with the jo
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### MCP_Prerun_Arguments
 
@@ -582,19 +633,19 @@ This tag is used to change the value of MCP prerun arguments associated with the
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### MCP_Prerun_File_Title
 
@@ -602,19 +653,19 @@ This tag is used to change the value of MCP prerun file title associated with th
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### MCP_User_Code
 
@@ -622,19 +673,19 @@ This tag is used to change the value of an MCP user associated with the job and 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Move_Schedule_Package
 
@@ -646,19 +697,19 @@ This tag is used to change the value of an OS2200 account associated with the jo
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Elementname
 
@@ -666,19 +717,19 @@ This tag is used to change the value of an OS2200 element associated with the jo
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Elementname_Mask
 
@@ -687,15 +738,15 @@ To change the first character of the name the currentValue should be T* and newV
 
 * currentValue	
 
-    * (*Required*): Contains the value to check .
+    * (*Required*): Contains the value to check 
 
 * newValue	
 
-    * (*Required*): Contains the new value to be applied.
+    * (*Required*): Contains the new value to be applied
 
 * partialUpdate	
 
-    * Not used.
+    * Not used
 
 ### OS2200_Filename
 
@@ -703,19 +754,19 @@ This tag is used to change the value of OS2200 file name associated with the job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Project
 
@@ -723,19 +774,19 @@ This tag is used to change the value of an OS2200 account associated with the jo
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Qualifier
 
@@ -743,19 +794,19 @@ This tag is used to change the value of OS2200 qualifier associated with the job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Runid
 
@@ -763,19 +814,19 @@ This tag is used to change the value of an OS2200 Runid associated with the job 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### OS2200_Runid_Mask
 
@@ -784,15 +835,15 @@ To change the first character of the name the currentValue should be T* and newV
 
 * currentValue	
 
-    * (*Required*): Contains the value to check .
+    * (*Required*): Contains the value to check 
 
 * newValue	
 
-    * (*Required*): Contains the new value to be applied.
+    * (*Required*): Contains the new value to be applied
 
 * partialUpdate	
 
-    * Not used.
+    * Not used
 
 ### OS2200_Userid
 
@@ -800,95 +851,95 @@ This tag is used to change the value of an OS2200 userid associated with the job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to change.
+    * (*Required*): Contains the value in the definition to change
 
 * newValue	
 
-    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to replace in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Property_Name
 
-* This tag is used to change the Property Name value of the property definition as well as the contents of the property. The property name will also be changed in the Events, Expression Dependencies, Job Instance Properties, Complex Expressions, Windows Command Line, Windows Working Directory, Windows Prerun Command Line, Windows Prerun Working Directory, UNIX Start Image, UNIX Parameter, and UNIX Prerun Command fields.
+* This tag is used to change the Property Name value of the property definition as well as the contents of the property. The property name will also be changed in the Events, Expression Dependencies, Job Instance Properties, Complex Expressions, Windows Command Line, Windows Working Directory, Windows Prerun Command Line, Windows Prerun Working Directory, UNIX Start Image, UNIX Parameter, and UNIX Prerun Command fields
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the property in the definition.
+    * (*Required*): Contains the name of the property in the definition
 
 * currentValueContents	
 
-    * (*Optional*): Contains the value of the property in the definition if the contents of the property should be changed.
+    * (*Optional*): Contains the value of the property in the definition if the contents of the property should be changed
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition. If only the content of the property is to be changed, then the newValue matches the currentValue.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition. If only the content of the property is to be changed, then the newValue matches the currentValue
 
 * newValueContents	
 
-    * (*Required*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue.
+    * (*Required*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Resource_Name
 
-* This tag is used to change the Resource Name value of the resource definition. The resource name is changed in events and dependencies as well.
+* This tag is used to change the Resource Name value of the resource definition. The resource name is changed in events and dependencies as well
 
 * currentValue	
 
-    * (*Required*): Contains the name of the resource in the definition.
+    * (*Required*): Contains the name of the resource in the definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Role_Add
 
-* This tag is used to add a Role Name to the list of role definitions. 
+* This tag is used to add a Role Name to the list of role definitions
 
 * currentValue	
 
-    * (*Required*): Contains the name of the role to add to the list of roles.
+    * (*Required*): Contains the name of the role to add to the list of roles
 
 * newValue	
 
-    * (*Required*): Use the same name as the currentValue.
+    * (*Required*): Use the same name as the currentValue
 
 * partialUpdate	
 
-    * not used.
+    * not used
 
 ### Role_Name
 
-* This tag is used to change the Role Name value of the role definition. The role name is changed in schedule role list as well.
+* This tag is used to change the Role Name value of the role definition. The role name is changed in schedule role list as well
 
 * currentValue	
 
-    * (*Required*): Contains the name of the role in the definition.
+    * (*Required*): Contains the name of the role in the definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Schedule_Auto_Build_Time
 
@@ -896,15 +947,15 @@ This tag is used to change the Schedule auto build time for schedules that have 
 
 * scheduleName	
 
-    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name.
+    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name
 
 * currentValue	
 
-    * (*Required*): Schedule auto build time in the format HH:MM.
+    * (*Required*): Schedule auto build time in the format HH:MM
 
 * newValue	
 
-    * (*Required*): New value for schedule auto build time in the format HH:MM.
+    * (*Required*): New value for schedule auto build time in the format HH:MM
 
 ### Schedule_Build_For_All_Machines_In_Group
 
@@ -912,19 +963,19 @@ This tag is used to change the name of the Machine Group in a schedule definitio
 
 * scheduleName	
 
-    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name (e.g., SCHED0100 or SCHED01* for all schedules starting with the characters SCHED01).
+    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name (e.g., SCHED0100 or SCHED01* for all schedules starting with the characters SCHED01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the machine group in the definition.
+    * (*Required*): Contains the name of the machine group in the definition
 
 * ```<newValue>```	
 
-    * (*Required*): The value to be inserted into the definition if the current_value matches the value in the definition.
+    * (*Required*): The value to be inserted into the definition if the current_value matches the value in the definition
 
 * ```<partialUpdate>```	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Schedule_Instance_Property
 
@@ -932,27 +983,27 @@ This tag is used to change the Schedule Instance Property name value of the sche
 
 * scheduleName	
 
-    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name (e.g., SCHED0100 or SCHED01* for all schedules starting with the characters SCHED01).
+    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name (e.g., SCHED0100 or SCHED01* for all schedules starting with the characters SCHED01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the schedule instance property in the definition.
+    * (*Required*): Contains the name of the schedule instance property in the definition
 
 * currentValueContents	
 
-    * (*Optional*): Contains the value of the Schedule Instance Property in the definition if the contents of the property are changed.
+    * (*Optional*): Contains the value of the Schedule Instance Property in the definition if the contents of the property are changed
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition. But, if only the contents of the Schedule Instance Property are changed, then the newValue must match the value in the currentValue.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition. But, if only the contents of the Schedule Instance Property are changed, then the newValue must match the value in the currentValue
 
  * newValueContents	
 
-    * (*Optional*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue.
+    * (*Optional*): The value to insert in the definition if the currentValueContents matches the value in the definition or if the newValue matches the currentValue
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Schedule_Name
 
@@ -960,15 +1011,15 @@ This tag is used to change the Schedule Name value of the schedule definition an
 
 * currentValue	
 
-    * (*Required*): Contains the name of the schedule in the schedule definition.
+    * (*Required*): Contains the name of the schedule in the schedule definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Schedule_Named_Instance
 
@@ -976,15 +1027,15 @@ This tag is used to change the schedule name value of the schedule definition. T
 
 * currentValue	
 
-    * (*Required*): Contains the name of the schedule named instance in the schedule definition.
+    * (*Required*): Contains the name of the schedule named instance in the schedule definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Schedule_Start_Time
 
@@ -992,15 +1043,15 @@ This tag is used to change the schedule start time.
 
 * scheduleName	
 
-    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name.
+    * (*Optional*): When present, this indicates the schedule or group of schedules with which the rule is associated. A group of schedules is defined by using a wild card character in the schedule name
 
 * currentValue	
 
-    * (*Required*). Schedule auto build time in the format HH:MM.
+    * (*Required*). Schedule auto build time in the format HH:MM
 
 * newValue	
 
-    * (*Required*). New value for schedule auto build time in the format HH:MM.
+    * (*Required*). New value for schedule auto build time in the format HH:MM
 
 ### Script_Name
 
@@ -1008,15 +1059,15 @@ This tag is used to change the script name value of the script definition. The s
 
 * currentValue	
 
-    * (*Required*): Contains the name of the script in the script definition.
+    * (*Required*): Contains the name of the script in the script definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_DTExec_Server
 
@@ -1024,19 +1075,19 @@ This tag is used to change the server name of the job MS SQL DTEXec job action d
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the Server in the MS SQL DTEXec job definition.
+    * (*Required*): Contains the name of the Server in the MS SQL DTEXec job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_DTExec_Package_Path
 
@@ -1044,19 +1095,19 @@ This tag is used to change the package value of the job MS SQL DTEXec job action
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the package in the MS SQL DTEXec job definition.
+    * (*Required*): Contains the name of the package in the MS SQL DTEXec job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_DTExec_User
 
@@ -1064,19 +1115,19 @@ This tag is used to change the user name of the job MS SQL DTEXec job action def
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the user in the MS SQL DTEXec job definition.
+    * (*Required*): Contains the name of the user in the MS SQL DTEXec job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Job_Server
 
@@ -1084,19 +1135,19 @@ This tag is used to change the server name of the job MS SQL JOB job action defi
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the server in the  MS SQL JOB job definition.
+    * (*Required*): Contains the name of the server in the  MS SQL JOB job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Job_Jobname
 
@@ -1104,19 +1155,19 @@ This tag is used to change the job name of the MS SQL JOB job action definition 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the MS SQL job in the  MS SQL JOB job definition.
+    * (*Required*): Contains the name of the MS SQL job in the  MS SQL JOB job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Job_User
 
@@ -1124,19 +1175,19 @@ This tag is used to change the user name of the MS SQL JOB job action definition
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the MS SQL user in the  MS SQL JOB job definition.
+    * (*Required*): Contains the name of the MS SQL user in the  MS SQL JOB job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Script_Server
 
@@ -1144,19 +1195,19 @@ This tag is used to change the server name of the MS SQL Script job action defin
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the server name in the MS SQL Script job definition.
+    * (*Required*): Contains the server name in the MS SQL Script job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
  
 ### SQL_Script_Database
 
@@ -1164,19 +1215,19 @@ This tag is used to change the database name of the MS SQL Script job action def
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the database name in the MS SQL Script job definition.
+    * (*Required*): Contains the database name in the MS SQL Script job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Script_User
 
@@ -1184,19 +1235,19 @@ This tag is used to change the user name of the MS SQL Script job action definit
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains theuser name in the MS SQL Script job definition.
+    * (*Required*): Contains theuser name in the MS SQL Script job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### SQL_Script_Filename
 
@@ -1204,19 +1255,19 @@ This tag is used to change the file name of the MS SQL Script job action definit
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the file name in the MS SQL Script job definition.
+    * (*Required*): Contains the file name in the MS SQL Script job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Threshold_Name
 
@@ -1224,15 +1275,15 @@ This tag is used to change the threshold name value of the threshold definition.
 
 * currentValue	
 
-    * (*Required*): Contains the name of the threshold in the definition.
+    * (*Required*): Contains the name of the threshold in the definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Unix_Group_Id
 
@@ -1240,19 +1291,19 @@ This tag is used to change the UNIX Group ID of the job definition and supports 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the UNIX Group ID in the job definition.
+    * (*Required*): Contains the name of the UNIX Group ID in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Unix_GroupId_UserId
 
@@ -1260,19 +1311,19 @@ This tag is used to change the Group ID and User ID of the UNIX job definition. 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value of both fields, separated by a comma in the job definition (e.g., test, user1).
+    * (*Required*): Contains the name of the value of both fields, separated by a comma in the job definition (e.g., test, user1)
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition (e.g., prod, user1).
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition (e.g., prod, user1)
 
 * partialUpdate	
 
-    * This function does not support partial update, so the value must be set to false.
+    * This function does not support partial update, so the value must be set to false
 
 ### Unix_Parameter
 
@@ -1280,19 +1331,19 @@ This tag is used to change a value in the UNIX Parameter field of the UNIX job d
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the parameter field to change in the job definition.
+    * (*Required*): Contains the name of the value in the parameter field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Unix_Script_Arguments
 
@@ -1300,19 +1351,19 @@ This tag is used to change a value in the UNIX Script Argument field of the UNIX
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the "Script Argument" field to change in the job definition.
+    * (*Required*): Contains the name of the value in the "Script Argument" field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Unix_Start_Image
 
@@ -1320,19 +1371,19 @@ This tag is used to change a value in the UNIX Start Image field of the UNIX job
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the "Start Image" field to change in the job definition.
+    * (*Required*): Contains the name of the value in the "Start Image" field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Unix_User_Id
 
@@ -1340,19 +1391,19 @@ This tag is used to change a value in the UNIX User Id field of the UNIX job def
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the Unix User Id in the job definition.
+    * (*Required*): Contains the name of the Unix User Id in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Windows_Command_Line
 
@@ -1360,19 +1411,19 @@ This tag is used to change a value in the Windows Command Line field of the Wind
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the command line field to be changed in the job definition.
+    * (*Required*): Contains the name of the value in the command line field to be changed in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Windows_Script_Arguments
 
@@ -1380,19 +1431,19 @@ This tag is used to change a value in the Windows Script Arguments field of the 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value in the command line field to change in the job definition.
+    * (*Required*): Contains the name of the value in the command line field to change in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Windows_User
 
@@ -1400,19 +1451,19 @@ This tag is used to change the Windows User in the job definition and supports t
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the Windows User in the job definition.
+    * (*Required*): Contains the name of the Windows User in the job definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### Windows_Working_Directory
 
@@ -1420,19 +1471,19 @@ This tag is used to change a value in the Windows Working Directory field of the
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the value to be changed.
+    * (*Required*): Contains the name of the value to be changed
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Batch_User
 
@@ -1440,19 +1491,19 @@ This tag is used to change a value of a z/OS batch user associated with the job 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value that is to be changed in the definition.
+    * (*Required*): Contains the value that is to be changed in the definition
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_DDName
 
@@ -1460,19 +1511,19 @@ This tag is used to change the value of the z/OS ddname associated with the job 
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the name of the definition to change.
+    * (*Required*): Contains the name of the definition to change
 
 * newValue	
 
-    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to insert in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Event_User
 
@@ -1480,19 +1531,19 @@ This tag is used to change the value of an z/OS event user associated with the j
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Member_Name
 
@@ -1500,19 +1551,19 @@ This tag is used to change the value of a z/OS member name associated with the j
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Prerun_File_Dataset_Name
 
@@ -1520,39 +1571,39 @@ This tag is used to change the value of a z/OS prerun file dataset name associat
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Prerun_Job_Task_Name
 
-This tag is used to change the value of an z/OS prerun job task name associated with the job and supports the following tags:
+This tag is used to change the value of a z/OS prerun job name associated with the job and supports the following tags:
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Prerun_System
 
@@ -1560,37 +1611,37 @@ This tag is used to change the value of a z/OS prerun system associated with the
 
 * jobName	
 
-    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### ZOS_Prerun_REXX_Name
 
 * jobName	
 
-* (*Optional*): When present, indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+* (*Optional*): When present, indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false, default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false, default is false)
 
 ### ZOS_Prerun_REXX_DDName
 
@@ -1598,19 +1649,32 @@ This tag is used to change the value of a z/OS prerun REXX ddname associated wit
 
  * jobName	
 
-    * (*Optional*): When present, indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01).
+    * (*Optional*): When present, indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
 
 * currentValue	
 
-    * (*Required*): Contains the value in the definition to be changed.
+    * (*Required*): Contains the value in the definition to be changed
 
 * newValue	
 
-    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition.
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
 
 * partialUpdate	
 
-    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false, default is false).
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false, default is false)
 
+## Key terms
 
+**Tag ID** — the identifier for a specific transformation tag type (for example, `Machine_Name` or `Job_Name`) that determines which field in the schedule definition is targeted for substitution when the transformation rule is applied during deployment.
 
+**currentValue** — the required tag in a transformation rule definition that holds the existing value to match within the schedule definition; when this value is found, it is replaced by the `newValue` during the deployment transformation process.
+
+**newValue** — the required tag in a transformation rule definition that holds the replacement value inserted into the schedule definition wherever the `currentValue` is matched during deployment.
+
+**partialUpdate** — an optional tag (true or false, default false) that controls whether the transformation match must equal the entire field value or may match a substring within it, allowing the rule to target partial strings such as a prefix or embedded name segment.
+
+**Related topics:**
+
+- [Transformation rules](transformation-rules)
+- [Transformation tag examples](transformation-tag-examples)
+- [Transformations — special definitions](transformations-special-definitions)

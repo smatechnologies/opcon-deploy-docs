@@ -1,8 +1,21 @@
-# Batch Processing
+---
+title: Batch processing
+description: "Reference for the Batch.SMAOpConDeployClient.exe command-line application that performs deployments, imports, simulations, and deletions without the OpCon Deploy client UI."
+tags:
+  - Reference
+  - Automation Engineer
+  - System Administrator
+  - Schedules
+---
+
+# Batch processing
+
+**Theme:** Build  
+**Who Is It For?** System Administrator, Automation Engineer
 
 Besides the client software, OpCon Deploy also provides batch processing capability by using the Batch.SMAOpConDeployClient.exe application. This application performs the following functions:
 
-### Batch Processing Functions
+### Batch processing functions
 
 **DEPLOY**
 
@@ -18,16 +31,16 @@ Besides the client software, OpCon Deploy also provides batch processing capabil
 
 **INIT**
 
-* Populates the OpCon Deploy repository from an existing production system.
+* Populates the OpCon Deploy repository from an existing production system
     * All schedule definitions set to version 1 and a deployment record created, marking the version 1 deployment status as active and setting the definition as "Current in production"
     * This should only be used when setting up the OpCon Deploy environment from an existing OpCon production system
 
 
-## Batch Processing Arguments
+## Batch processing arguments
 
 The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
-### Batch Application Arguments
+### Batch application arguments
 
 **-a**	
 
@@ -60,7 +73,7 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 **-fw**
 
-* An argument that defines the filename used with IMPORT or INIT for schedules.
+* An argument that defines the filename used with IMPORT or INIT for schedules
     * The file consists of a list of schedule names to be imported into the OpCon Deploy repository
 
 **-p**	
@@ -109,23 +122,23 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 * An argument that defines the name of the schedule
 
-:::info Note
+:::note
 
-When performing an IMPORT function, either a workflow (-w), a filename for schedules (-fw), or a filename for transformation rules (-tf) argument must be present.
+When performing an IMPORT function, either a schedule name (`-w`), a filename for schedules (`-fw`), or a filename for transformation rules (`-tf`) argument must be present.
 
-When a DEPLOY or SIMULATE function is being performed, either a workflow (-w) or a package (-pkg) argument must be present.
+When a DEPLOY or SIMULATE function is being performed, either a schedule name (`-w`) or a package (`-pkg`) argument must be present.
 
 Also, when performing an INIT function, a filename (-fw) argument must be present.
 
 :::
 
-When using batch processing to deploy schedules or packages, it should be understood that no checking is performed for the existence of the schedule/package or any mismatch between the existing schedule and the version in the previous deployment record. However, a backup of the definitions is made and stored in the current deployment record so that no data will be lost. It is recommended that before performing a batch deployment, a simulation is performed to determine if there could be any problems with the deployment.
+When using batch processing to deploy schedules or packages, no checking is performed for the existence of the schedule/package or any mismatch between the existing schedule and the version in the previous deployment record. However, a backup of the definitions is made and stored in the current deployment record so that no data will be lost. It is recommended that before performing a batch deployment, a simulation is performed to determine if there could be any problems with the deployment.
 
-## Batch Processing Examples
+## Batch processing examples
 
 The examples in this section show how the Batch.SMAOpConDeployClient.exe application can be used to perform DEPLOY, IMPORT, SIMULATE, or INIT functions.
 
-#### Example One
+#### Example one
 
 In this example, the simulation of schedule DUP_TEST version 11 is performed by user "user1" for system OPC170-PROD, using Transformation Rules 5,12, and 17. Example:
 
@@ -133,7 +146,7 @@ In this example, the simulation of schedule DUP_TEST version 11 is performed by 
 C:\test\Batch.SMAOpConDeployClient.exe -a SIMULATE -s OPC170-PROD -w “DUP_TEST” -v 11 -t 5, 12, 17 -u user1 -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 
-#### Example Two
+#### Example two
 
 In this example, the deployment of package PKG001 version 2 to system OPC170-PROD is performed by user "user1". Example:
 
@@ -141,14 +154,14 @@ In this example, the deployment of package PKG001 version 2 to system OPC170-PRO
 C:\test\Batch.SMAOpConDeployClient.exe -a DEPLOY -s OPC170-PROD -pkg “PKG001” -v 2 -u user1 -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 
-#### Example Three
+#### Example three
 In this example, the deployment of schedule SCHED003 version 2 to system OPC170-PROD is performed by user “user1”, with schedule auto build 1 day in advance for 3 days, auto delete 10 days ago, and do not overwrite existing schedule definitions in target system. Example:
 
 ``` 
 C:\test\Batch.SMAOpConDeployClient.exe -a DEPLOY -s OPC170-PROD -u user1 -p lBsC5ohnSf2P7/Ku81FiGw== -w SCHED003 -v 2 -bda 1 -bd 3 -dd 10 -dno
 ```
 
-#### Example Four
+#### Example four
 
 In this example, the import of schedule SCHED005 from system OPC170-DV1 is performed by user “user1”. If the schedule already exists, a new version will be created. If the schedule does not exist, an initial version will be created. Example:
 
@@ -156,7 +169,7 @@ In this example, the import of schedule SCHED005 from system OPC170-DV1 is perfo
 C:\test\Batch.SMAOpConDeployClient.exe -a IMPORT -s OPC170-DV1 -w “SCHED005” -u user1 -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
 
-#### Example Five
+#### Example five
 
 In this example, the import of two schedules from system OPC170-DV1 is performed by user “user1” using definition in file ```C:\test\deploy\import.txt```. The file contains two records, SCHEDEASE01 and SCHEDEASE02. Both schedules will be imported into the repository. If the schedules already exist, new versions will be created. If the schedules do not exist, an initial version will be created. Example:
 
@@ -172,7 +185,7 @@ File C:\test\deploy\import.txt contents
 
 ```SCHEDEASE02```
 
-#### Example Six
+#### Example six
 
 In this example, the import of two transformation rule files is performed by user “user1” using definition in file ```C:\test\deploy\import_rules.txt```. The file contains the full path and name of two transformation rule files, OPCONXPS_T-USERS.json and OPCONXPS_T-MACHINES.json. If the rules already exist, new versions will be created. If the rules do not exist, an initial version will be created. Example:
 
@@ -192,10 +205,47 @@ C:\test\deploy\transformations\OPCONXPS_T-USERS.json
 C:\test\deploy\transformations\OPCONXPS_T-MACHINES.json
 ```
 
-#### Example Seven
+#### Example seven
 
 In this example, the OpCon Deploy repository is populated by user “user1” with schedules from the production system PROD. The list of schedule names can be extracted from the OpCon database using SQL Server Management Studio. Then the list of schedule names to be imported are inserted into the file import_schedules.txt. Example:
 
 ``` 
 C:\test\Batch.SMAOpConDeployClient.exe -a INIT -s PROD -fw “C:\test\deploy\import_schedules.txt” -u user1 -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
+
+## Exception handling
+
+| Error or symptom | Meaning | How to fix it |
+|---|---|---|
+| Batch command fails immediately with a usage or argument error | A required argument (`-a`, `-u`, or `-p`) is missing, or a required pairing (such as `-w` or `-pkg` for DEPLOY/SIMULATE, or `-fw`/`-tf` for IMPORT) is absent | Review the required arguments for the action being performed; ensure `-a`, `-u`, `-p`, and the appropriate name argument (`-w`, `-pkg`, `-fw`, or `-tf`) are all supplied |
+| Batch command fails with a schedule or package not found error | The schedule name supplied via `-w` or the package name supplied via `-pkg` does not exist in the OpCon Deploy repository, or the specified version (`-v`) does not exist | Verify the schedule or package name and version are correct using the OpCon Deploy client; note that no existence check is performed before a DEPLOY action, so a simulation (`-a SIMULATE`) first is recommended |
+| Batch command fails with an authentication or authorization error | The user supplied via `-u` is not registered in the OpCon Deploy repository, the password supplied via `-p` is incorrect or not encrypted with the Enterprise Manager encryption tool, or the user's role does not permit access to the server specified by `-s` | Confirm the user exists in OpCon Deploy, re-encrypt the password using the Enterprise Manager encryption tool, and verify the user's role grants access to the target server |
+
+## FAQs
+
+**Does batch processing perform the same existence and mismatch checks as the UI deployment?**
+
+No. When using batch processing to deploy schedules or packages, no checking is performed for the existence of the schedule or package, nor for any mismatch between the existing schedule on the target and the version in the previous deployment record. However, a backup of the definitions is made and stored in the current deployment record so that no data is lost. It is recommended to run a simulation before performing a batch deployment to identify potential problems in advance.
+
+**How do I encrypt a password for use with the `-p` argument?**
+
+The password must be encrypted using the encryption tool provided by the Enterprise Manager. This is the same tool used to encrypt passwords in other OpCon contexts. The encrypted value is then passed directly as the `-p` argument value. Plain-text passwords are not accepted.
+
+**Can I run a simulation via batch processing before committing to a deployment?**
+
+Yes. The `SIMULATE` action is fully supported by the batch application. Use `-a SIMULATE` along with the same server (`-s`), schedule or package name (`-w` or `-pkg`), version (`-v`), and any transformation rules (`-t`) you intend to use for the actual deployment. The simulation performs the same validation checks as the UI and will report any issues before any changes are made to the target system.
+
+## Key terms
+
+**Batch processing** — the use of the `Batch.SMAOpConDeployClient.exe` command-line application to perform deployments, imports, simulations, and repository initialization without the OpCon Deploy client UI, enabling automation and scripted pipeline integration.
+
+**INIT function** — a batch action that populates the OpCon Deploy repository from an existing production OpCon system by importing all specified schedules as version 1 and creating an active deployment record for each, marking them as "Current in production"; it should only be used when setting up OpCon Deploy for the first time against a live production system.
+
+**SIMULATE function** — a batch action that performs all deployment validation checks — including compatibility, machine availability, and dependency resolution — against a target OpCon system without committing any changes, allowing potential problems to be identified before a live deployment is run.
+
+**Related topics:**
+
+- [Batch deployment implementation](batch-deployment-implementation)
+- [Scheduled batch deployment](scheduled-batch-deployment)
+- [Batch file integration](batch-file-integration)
+- [DevOps integration](batch-devops-integration)

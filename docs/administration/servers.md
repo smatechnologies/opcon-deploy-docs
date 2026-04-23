@@ -87,7 +87,7 @@ This list contains descriptions of each field in the Create or edit an SAP Serve
 
 ### SAP server name
 
-The name of the SAP R3 Agent on the OpCon system
+The name of the SAP R3 Agent on the OpCon system, or the name of a SAP machine group. When defining a machine group, the associated SAP information is the values required to connect to the SAP system associated with the machine group. During processing the OpCon SAP Machine Group will be accessed to find the first available OpCon SAP Agent within the group,. This will then be used to provide the connection to the SAP system. 
 
 ### SAP language
 

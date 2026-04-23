@@ -110,10 +110,29 @@ This tag is used to change the name of the destination machine in the file trans
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
+### File_Transfer_Destination_User
+
+This tag is used to change the user name of the destination machine in the file transfer job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+
+* currentValue	
+
+    * (*Required*): Contains the name of the user user to change in the file transfer job definition
+
+* newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
 ### File_Transfer_Source_Machine
 
-This tag is used to change the name of the destination machine in the file transfer job definition and supports the following tags:
+This tag is used to change the name of the source machine in the file transfer job definition and supports the following tags:
 
 * jobName	
 
@@ -122,6 +141,26 @@ This tag is used to change the name of the destination machine in the file trans
 * currentValue	
 
     * (*Required*): Contains the name of the destination host to change in the file transfer job definition
+
+* newValue	
+
+    * (*Required*): The value to be inserted in the definition if the currentValue matches the value in the definition
+
+* partialUpdate	
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
+
+### File_Transfer_Source_User
+
+This tag is used to change the user name of the source machine in the file transfer job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs with which the rule is associated. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+
+* currentValue	
+
+    * (*Required*): Contains the name of the user user to change in the file transfer job definition
 
 * newValue	
 

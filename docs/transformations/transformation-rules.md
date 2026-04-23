@@ -129,7 +129,9 @@ Wildcards are not supported. The text entered in the **Filter** field is checked
     * Event
     * Event_Related_User
     * File_Transfer_Destination_Machine
+    * File_Transfer_Destination_User
     * File_Transfer_Source_Machine
+    * File_Transfer_Source_User
     * Frequency_Name
     * Frequency_Use_Existing_Definitions
     * IBMi_User_Id

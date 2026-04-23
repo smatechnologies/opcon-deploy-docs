@@ -20,6 +20,29 @@ The ImpEx2 server portion of Deploy is paired with each specific OpCon release a
 
 ## 26
 
+## Version 26.0.1
+
+2026 February
+
+**Migration Considerations**
+
+Deploy 26.0.1 requires matching ImpEx2 versions when SAP jobs in use.
+OpCon 26.1.0, OpCon 26.0.2, OpCon 25.0.6.
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-1131**: Added transformation rule argument to Devops.SMAOpConDeployClient.
+:eight_spoked_asterisk: **CON-1161**: Added transformation tags to allow transformation of file transfer source and destination users.
+
+**Fixes**
+
+:eight_spoked_asterisk: **CON-700**: Fixed a problem supporting SAP Machine Groups when working with SAP jobs. When using this capability, the OpCon SAP Machine group name is used when defining a SAP system connection. The software detects that a machine group is defined and will then retrieve the first active OpCon SAP Agent associated with the machine group and use this to provide the connection to the SAP system.    
+:eight_spoked_asterisk: **CON-1129**: Fixed a problem when importing scripts and invalid value in timestamp of runner table.   
+:eight_spoked_asterisk: **CON-1344**: Completed changes to remove CVE-2022-21724, CVE-2024-1597, CVE-2020-13692 and CVE-2022-31197 PostGres vulnerabilities.
+
+## Version 26.0.0
+=======
+
 ### 26.0.0
 
 2026 February
@@ -42,9 +65,7 @@ When performing an upgrade, upgrade test environments and Deploy first.
 
 SAP job transformations become more granular, deployment simulations now produce verifiable output files that can be reviewed before go-live, and OpConMFT file management covers a wider range of field types — together reducing pre-deployment validation effort across all environments.
 
-## 25
-
-### 25.3 (OpCon Cloud)
+## Version 25.3 (OpCon Cloud)
 
 2025 October
 
@@ -65,6 +86,37 @@ Cloud 25.3.0
 ### Why this matters
 
 Cloud deployments now support the longer, more secure user passwords introduced in OpCon 25.3, keeping Deploy fully compatible as the platform evolves to stronger credential requirements.
+
+## Version 25.2
+
+## Version 25.2.2
+
+2026 April
+
+**Migration Considerations**
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-1131**: Added transformation rule argument to Devops.SMAOpConDeployClient.
+:eight_spoked_asterisk: **CON-1161**: Added transformation tags to allow transformation of file transfer source and destination users.
+
+**Fixes**
+
+:eight_spoked_asterisk: **CON-700**: Fixed a problem supporting SAP Machine Groups when working with SAP jobs. When using this capability, the OpCon SAP Machine group name is used when defining a SAP system connection. The software detects that a machine group is defined and will then retrieve the first active OpCon SAP Agent associated with the machine group and use this to provide the connection to the SAP system.    
+:eight_spoked_asterisk: **CON-1129**: Fixed a problem when importing scripts and invalid value in timestamp of runner table.   
+:eight_spoked_asterisk: **CON-1344**: Completed changes to remove CVE-2022-21724, CVE-2024-1597, CVE-2020-13692 and CVE-2022-31197 PostGres vulnerabilities.
+
+## Version 25.2.1
+
+2026 January
+
+**Migration Considerations**
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-633**: Add new SAP_Step_Param_Name transformation rule supporting the transformation of the param value of the SAP job definition.
+
+:eight_spoked_asterisk: **CON-635**: During a simulation task, the created workflow definition is written out to the defined configuration diagramDirectory in the client config.ini file. This function can be used to check generated transformation rules.
 
 ### 25.2
 

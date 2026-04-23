@@ -102,6 +102,10 @@ Devops.SMAOpConDeployClient.exe supports the following arguments:
     * schedule DEPLOY/REPO  Name of the schedule to deploy. For REPO, it's the full name of the item in the branch
     * script DEPLOY/REPO    Name of the script to deploy. For REPO. it's the full name of the item in the branch
 
+**-tr**	
+
+* Optional argument that defines any deployment level transformation rules to be included in the DEPLOY function
+    * The value consists of the record IDs separated by commas (e.g., 5,10,15)
 **-u**	
 
 * Required argument that defines the user that will perform the action

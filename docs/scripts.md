@@ -53,6 +53,8 @@ When importing scripts, it is not necessary to select a script version as all mi
 
 Once Next has been selected, the selected script(s) will be displayed in the Script Import (Summary) dialog. This provides a summary of your selections, allows a description to be added to the script records.
 
+The **Reset Script Versions** button at the bottom of the screen when selected, will replace all script versions of the associated script in the Deploy database with the script versions retrieved from the selected OpCon system.
+
 ![Script Import Summary Image](../static/img/script-import-summary.png)
 
 If the script(s) has been inserted successfully into the repository, you will get a success message indicating that the script has been inserted for each selected script.
@@ -85,6 +87,8 @@ Once the scripts have been selected, select the Next button to select the OpCon 
 ![Deploy Scripts Select Server Image](../static/img/scripts-select-server.png)
 
 The target OpCon system can be selected from the list. Once the target system has been selected, select either the Next or Finish button. If the Next button is selected, the Script Deployment Summary dialog appears. It is possible to add a description in the comment field, which can be used to describe the reason for the deployment.
+
+The **Reset Script Versions** button at the bottom of the screen when selected, will replace all script versions of the associated script in the OpCon database of  the selected OpCon system with the script versions retrieved from the Deploy database.
 
 ![Deploy Script Summary Image](../static/img/scripts-summary-dialog.png)
 

@@ -23,6 +23,7 @@ The Scripts section covers how OpCon Deploy handles embedded scripts — the reu
 - Configuring whether embedded scripts are included or excluded when schedule definitions are imported
 - Deploying a script to a new OpCon system before deploying schedules that reference it
 - Reviewing which scripts are stored in the OpCon Deploy repository and their version history
+- Resetting the script versions across OpCon systems and Deploy to ensure that the script version numbers are consistent across all system
 - Troubleshooting a deployment failure caused by a missing or mismatched script on a target system
 
 ## What is in this section?

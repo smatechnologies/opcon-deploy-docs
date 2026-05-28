@@ -18,7 +18,48 @@ Deploy contains compatibility checks to ensure that features supported in newer 
 
 The ImpEx2 server portion of Deploy is paired with each specific OpCon release and is part of the OpCon release. The ImpEx2 server for each release is patched and released within the OpCon release cycles.
 
+## Important Notice 
+
+Deploy version 25.2.x has been capped and there will be no more releases for this version. 
+Deploy 25.2.x was introduced duringa transitionary phase when the release of longer OpCon passwords for OpCon 26.0.x required a
+changed ImpEx2 library that could connect to both OpCon 26.x and OpCon 25.x and older system. This transition is now complete and
+Deploy 25.x.x is no longer required.
+
+Deploy users should upgrade to Deploy version 26.0.2 taking into account any paired ImpEx2 versions.
+
 ## 26
+
+## Version 26.0.3
+
+2026 May
+
+Deploy version 26.0.3 implements a new capability to reset the script versions of a script in the Deploy database from a selected OpCon system. The reset versions can then be deployed to other target OpCon systems snychronizing the sctipt versions across OpCon systems.
+
+This Deploy version requires matching OpCon versions, 26.1.3, 26.0.5, 25.0.7 and 23.0.15.
+
+**Migration Considerations**
+
+When implementing the script version reset capability, all OpCon systems should be upgraded to the correct OpCon versions before upgrading the Deploy version to 26.0.3 as Deploy functions will not be possible due to matching software requirements.
+
+If it is not possible to upgrade all OpCon systems and Deploy simultaneously, the Deploy version should be upgraded to 26.0.2 before starting the upgrade process.
+
+1. Upgrade Deploy to version 26.0.2.
+2. Upgrade OpCon ImpEx2 versions to 26.1.3, 26.0.5, 25.0.7 and 23.0.15.
+3. Upgrade Deploy to version 26.0.3.
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-1532*** Adds a new button **Reset Script Versions** to Script Import and Script Deploy Summary screens.
+    When the button is selected on Script Import Summary screen, the script versions in the Deploy database for the selected script will be reset to the versions of the script retrieved from the selected OpCon System.
+    When the button is selected on Script Deploy Summary screen, the script versions in the OpCon database of the selected OpCon system, for the selected script will be reset to the versions of the script retrieved from the Deploy database.
+
+## Version 26.0.2
+
+2026 May
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-1577*** Rebuild software with updated ImpEx2 library to include a change to the ScriptInformation object setting the IgnoreUnknown value to true. 
 
 ## Version 26.0.1
 

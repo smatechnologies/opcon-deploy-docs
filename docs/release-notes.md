@@ -21,7 +21,7 @@ The ImpEx2 server portion of Deploy is paired with each specific OpCon release a
 ## Important Notice 
 
 Deploy version 25.2.x has been capped and there will be no more releases for this version. 
-Deploy 25.2.x was introduced duringa transitionary phase when the release of longer OpCon passwords for OpCon 26.0.x required a
+Deploy 25.2.x was introduced during a transitionary phase when the release of longer OpCon passwords for OpCon 26.0.x required a
 changed ImpEx2 library that could connect to both OpCon 26.x and OpCon 25.x and older system. This transition is now complete and
 Deploy 25.x.x is no longer required.
 

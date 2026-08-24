@@ -29,6 +29,32 @@ Deploy users should upgrade to Deploy version 26.0.2 taking into account any pai
 
 ## 26
 
+## Version 26.0.4
+
+2026 August
+
+Deploy version 26.0.4 implements some new features, fixes as well as upgrades for vulnerabilities.
+
+This Deploy version requires matching OpCon versions, 26.1.3, 26.0.5, 25.0.7 and 23.0.15.
+
+**Migration Considerations**
+
+When implementing this version of Deploy, the Java version is upgraded to Java 17.
+
+**Vulnerabilities**
+
+:eight_spoked_asterisk: **CON-1345*** Upgraded libraries in support of CVE-2025-48924 vulnerability. This is a major library upgrade including EBean (v12.x) and Java (v17.x). 
+
+**New Features**
+
+:eight_spoked_asterisk: **CON-1887*** Add capability to remove schedule prefix previously included by ENV or Move Schedule Package rule during schedule import. 
+
+**Fixes**
+
+:eight_spoked_asterisk: **CON-1867*** Corrected errors when using Move_Schedule_Package transformation rule. 
+:eight_spoked_asterisk: **CON-1735*** Implemented matching character checks for tag names between OpCon and Deploy as package name is used as a tag.
+:eight_spoked_asterisk: **CON-1879*** Corrected various errors with installer including allowing the password for the deploy user to be entered during the installation process.
+
 ## Version 26.0.3
 
 2026 May

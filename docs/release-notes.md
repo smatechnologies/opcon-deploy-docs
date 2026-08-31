@@ -54,6 +54,7 @@ When implementing this version of Deploy, the Java version is upgraded to Java 1
 :eight_spoked_asterisk: **CON-1867*** Corrected errors when using Move_Schedule_Package transformation rule. 
 :eight_spoked_asterisk: **CON-1735*** Implemented matching character checks for tag names between OpCon and Deploy as package name is used as a tag.
 :eight_spoked_asterisk: **CON-1879*** Corrected various errors with installer including allowing the password for the deploy user to be entered during the installation process.
+:eight_spoked_asterisk: **CON-2206*** Corrected node name sanitization when creating a diagram using external dependencies and the schedule name contains spaces.
 
 ## Version 26.0.3
 

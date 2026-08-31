@@ -54,6 +54,7 @@ Supported Import Options:
 - **Refresh SAP Job Definitions** indicates if OpCon SAP R3 jobs are encountered in the schedule, then the SAP server job definitions should be extracted from the SAP server (otherwise, uses values in 13100 and 13101 records).
 - **Include Sub-Schedules** indicates if container jobs are encountered in the schedule, the associated sub-schedule should be included in the import process. The schedules are checked recursively and each sub-schedule is imported as a separate schedule. The result of all schedule imports is displayed in the results message.
 - **Create Package from Schedules** indicates if a Deploy package should be created from the list of schedules. If selected, a package will be created using the **Package Name** field. If the package exists, a package update will be performed creating a new version of the package with the new schedule definition or the current schedule definition if the schedule version is already defined in the Deploy database.
+- **Remove Schedule Prefix** indicates if a schedule prefix should be removed during the import of schedule. The checkbox should be selected and the prefix entered into the **Schedule Prefix to Remove** text box without the trailing underscore (i.e. QA).
 
 ![Schedule Import Summary Image](../static/img/schedule-import-summary.png)
 

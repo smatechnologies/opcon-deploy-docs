@@ -20,7 +20,7 @@ OpCon Deploy includes the capability to archive records no longer required in th
 * Enforcing a version retention policy by removing older versions that are no longer needed while preserving active deployments
 * Maintaining performance of the OpCon Deploy repository over time as record counts grow
 
-* Archiving is performed using a designated value that indicates how many versions should be maintained in the main tables. The value is set using the Settings function (Number of versions to retain). The default value is 5
+* Archiving is performed using a designated value that indicates how many versions should be maintained in the main tables. The value is set using the Settings function (Number of versions to retain). The default value is 10
 * Archiving is a complex process that checks the various tables to determine if the version is still active as an active version cannot be archived
 * During the archiving process, if a deployment record is associated with the schedule or package version that is being archived, the deployment record will also be archived
 
@@ -107,7 +107,7 @@ C:\test\deploy\ArchiveT.SMAOpConDeployClient.exe -u admin -p lBsC5ohnSf2P7/Ku81F
 
 **Archive** — the process of moving schedule, package, transformation rule, and deployment records that are no longer needed in the main tables to archive tables, triggered when the number of stored versions for an item exceeds the configured retention value.
 
-**Versions to retain** — the configurable count (default 5) that determines how many versions of each schedule, package, or transformation rule are kept in the main tables; versions beyond this count become candidates for archiving, provided they are not active.
+**Versions to retain** — the configurable count (default 10) that determines how many versions of each schedule, package, or transformation rule are kept in the main tables; versions beyond this count become candidates for archiving, provided they are not active.
 
 **Active deployment** — a deployment record whose status marks a schedule or package version as currently deployed to a target OpCon system; active deployments cannot be archived because removing them would destroy the rollback information needed to restore the previous state.
 

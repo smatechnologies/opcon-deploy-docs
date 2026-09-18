@@ -24,15 +24,19 @@ OpCon Deploy is installed across three components: the client software, the data
 
 ## Requirements
 
-* Operating System: Support for Windows Server 2012, 2012 R2, 2016, and 2019
-* Java: Embedded OpenJDK 11
+* Operating System: Windows Server 2016 or later
+* Java: Embedded OpenJDK 17
 * Microsoft SQL Server version 2012 SP3 or higher
-* OpCon Server version 18.3 minimum
 * OpCon RestAPI must be active for each OpCon system participating in OpCon Deploy
-* To use the Diagram feature, the open source software Graphviz (version 2.38), is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org)
+* To use the Diagram feature, the open source software Graphviz is required. This can be downloaded from [www.graphviz.org](http://www.graphviz.org)
 * To implement Windows Authentication for the OpCon Deploy Client requires manual configuration after the installation is complete
 * To implement Windows Authentication for the OpCon Impex Server requires OpCon versions 21.0.10, 20.0.15 or greater and manual configuration after the installation is complete
-* Version 22.2 requires matching SMA OpCon ImpEx2 versions (OpCon 22.1 or greater, OpCon 22.0.2 or greater, OpCon 21.0.14 or greater and OpCon 20.0.20 or greater)
+
+:::note
+
+Each Deploy release states the OpCon versions it requires, because the ImpEx2 server portion of Deploy is paired with a specific OpCon release. See [Release notes](release-notes) for the versions required by the release you are installing.
+
+:::
 
 ## Deploy installation
 
@@ -195,9 +199,11 @@ To install the OpCon Deploy server, complete the following steps:
 
 The config.ini file contains the configuration statements that provide the connection to the OpCon Deploy database. After installation, the config.ini file can be found in the c:\ProgramData\OpConxps\Deploy\client directory.
 
+The installation also places `Newconfig.ini` in the same directory. This is the unmodified configuration template shipped with the release, and it is not read by the software. Compare it with your `config.ini` after an upgrade to identify any configuration statements added since the version you were running.
+
 Users may establish a connection to the OpCon Deploy database using Windows Authentication. The databaseUser should be left blank and the password of the Windows Domain user should be encrypted and placed in the config file (see databaseUser / databaseUserPassword).
 
-Users may establish a TLS connection to the OpCon Deploy database if required by adding ***;ssl=require*** to the database URL (see databaseURL).
+Users may establish a TLS connection to the OpCon Deploy database if required by adding ***;ssl=require*** to the database URL (see databaseUrl).
 
 ### debug
 
@@ -213,7 +219,7 @@ The name of the Ebean Server.
 The database driver software class name.
    * For MS SQL: ```net.sourceforge.jtds.jdbc.Driver```
 
-### databaseURL
+### databaseUrl
 
 The database URL. If a specific database instance is to be used for MS SQL, the instance name is appended after the database name.
    * For MS SQL: ```jdbc:jtds:sqlserver: //<server>/SMAOpConDeploy jdbc:jtds:sqlserver://<server>/SMAOpConDeploy;instance=INST001```
@@ -433,6 +439,8 @@ system.debug=false
 ```
 ### Sample Deploy server configuration file using TLS SQL Server connection
 
+TLS and Windows Authentication are independent settings. This sample differs from the first sample only in the `opcon.db.name` statement; set `opcon.db.using.winauth` according to how the server authenticates, not according to whether the connection uses TLS.
+
 ```
 #
 # OpCon server connection information
@@ -441,7 +449,7 @@ opcon.server.name=EC2AMAZ-2QV0RKO
 opcon.db.name=OPCONXPS;TrustServerCertificate=True
 opcon.db.user=opconsam
 opcon.db.password=sYnk3bzpZybGPbSOrhsr4g==
-opcon.db.using.winauth=true
+opcon.db.using.winauth=false
 opcon.db.connection.max=10
 #
 # REST server configuration

@@ -20,7 +20,7 @@ OpCon Deploy supports schedules that contain SAP R3 jobs. When importing a sched
 
 The OpCon environment supports the scheduling of SAP jobs defined within the SAP environment.
 
-To extract and insert SAP job definitions, the **Refresh SAP Job Definitions** and **Import SAP Job Definitions** options must be selected during the import or deploy process.
+To extract and insert SAP job definitions, select **Refresh SAP Job Definitions** during the import process and **Insert SAP Job Definitions** during the deploy process.
 
 SAP job definitions are saved in the OpCon JMASTER_AUX table using field codes 13100 for the query details and field code 13101 for the step details. There will be one field code 13101 record for each defined step starting at sequence number 1. This data is not visible from Enterprise Manager as the field codes do not exist in the OpCon implementation. These field codes have no impact on job execution and are removed when the OpCon SAP job is deleted.
 

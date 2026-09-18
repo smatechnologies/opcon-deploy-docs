@@ -32,13 +32,17 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
     * EXPORT   export a specific schedule version or a specific script version from the Deploy database into a file
     * OEXPORT  export a schedule or a specific script version from and OpCon system (defined in Deploy Server configuration) into a file 
 
+**-d**
+
+* Optional argument that defines a description to be added to the comment field
+
 **-di**	
 
 * Required argument that indicates the directory where the extracted information will be placed for EXPORT & OEXPORT actions and where the information can be read for IMPORT actions
 
 **-o**	
 
-* Optional argument used for OEXPORT action and defines the OpCon system that the object must be extracted from. The value is the name of a server definition in the Deploy database
+* Optional argument required for the OEXPORT action. Defines the OpCon system that the object must be extracted from. The value is the name of a server definition in the Deploy database
 
 **-p**	
 
@@ -63,13 +67,12 @@ File.SMAOpConDeployClient supports the following arguments in the CLI:
 
 * Required argument that defines the user that will perform the action 
 * It must be a registered user in the repository 
-* During the DEPLOY or SIMULATE actions, a check is made to determine if the user has the appropriate role to access the server defined in the -s argument
 
 **-v**	
 
-* Optional argument that defines the version of the schedule or script to export
-    * EXPORT action    defines the version of the schedule or script to extract from the Deploy datatabase 
-    * OEXPORT action   defines the version of the script to extract from the OpCon system
+* Optional argument required for the EXPORT action, and for the OEXPORT action when the object type is SCRIPT
+    * EXPORT action    defines the version of the schedule or script to extract from the Deploy database 
+    * OEXPORT action   defines the version of the script to extract from the OpCon system. Not required when exporting a schedule
 
 
 ## Examples
@@ -112,7 +115,7 @@ The above examples show how the File.SMAOpConDeployClient program can be used to
 | Error or symptom | Meaning | How to fix it |
 |---|---|---|
 | File not found when using `-di` directory for IMPORT action | The file path supplied via `-di` does not contain a file matching the name derived from `-tn` (plus `.json` for schedules) | Verify the directory path given to `-di` and confirm a file named `<tn>.json` (schedule) or `<tn>` (script) exists in that directory |
-| Import fails with JSON validation error | The file read from the `-di` directory is not valid JSON and cannot be parsed as a schedule or transformation rule definition | Check the file contents for formatting errors; re-export the definition to regenerate a valid file |
+| Import fails with JSON validation error | The file read from the `-di` directory is not valid JSON and cannot be parsed as a schedule or script definition | Check the file contents for formatting errors; re-export the definition to regenerate a valid file |
 | IMPORT action fails because no matching schedule record exists in the repository | The schedule named in `-tn` does not exist in the Deploy database and the import cannot create a new version | Verify the schedule name matches an existing Deploy repository record, or perform an initial EXPORT from an OpCon system to create the record first |
 
 ## Key terms
@@ -121,7 +124,7 @@ The above examples show how the File.SMAOpConDeployClient program can be used to
 
 **Export function** — the EXPORT action that extracts a specific version of a schedule or script from the Deploy repository and writes it to a file in the specified directory; the related OEXPORT action performs the same extraction directly from a live OpCon system rather than from the repository.
 
-**Transformation rule file** — a JSON file containing a transformation rule definition that can be imported into the Deploy repository using the IMPORT action with the `-tf` argument, making the rule available for use in subsequent deployments.
+**Transformation rule file** — a JSON file containing a transformation rule definition. Transformation rules are not imported by this application; use the `-tf` argument of the batch application instead, as described in [Batch processing](batch-processing).
 
 **Related topics:**
 

@@ -25,7 +25,7 @@ Deploy 25.2.x was introduced during a transitionary phase when the release of lo
 changed ImpEx2 library that could connect to both OpCon 26.x and OpCon 25.x and older system. This transition is now complete and
 Deploy 25.x.x is no longer required.
 
-Deploy users should upgrade to Deploy version 26.0.2 taking into account any paired ImpEx2 versions.
+Deploy users should upgrade to the latest 26.0.x release, taking into account any paired ImpEx2 versions. The most recent release is the first entry in the version list below.
 
 ## 26
 

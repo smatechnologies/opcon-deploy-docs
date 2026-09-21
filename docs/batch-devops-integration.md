@@ -75,6 +75,10 @@ Devops.SMAOpConDeployClient.exe supports the following arguments:
 
 * Optional argument required for DEPLOY action. Indicates the full filename of the artifact to be deployed
 
+**-i**
+
+* Optional argument for REPO action. Defines the item to retrieve (values `blob`, `repository` or `project`)
+
 **-ip**	
 
 * Optional argument required for REPO action. Defines the path of the item to retrieve within the branch

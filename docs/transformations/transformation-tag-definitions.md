@@ -226,6 +226,22 @@ This tag is used to change a value in the Call field of the IBM i job definition
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
+### IBMi_Inquiry_Message_Reply
+
+This tag is used to change the value of the IBM i inquiry message reply in the definition and supports the following tags:
+
+* currentValue	
+
+    * (*Required*): Contains the value in the definition to be changed
+
+* newValue	
+
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
+
+* partialUpdate
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
+
 ### IBMi_Job_Description
 
 This tag is used to change the values in the Job Description field of the IBM i job definition. The job description field consists of two values: Name and Library. When changing the job description field, both values must be separated by a comma (e.g., name,library). This tag supports this following tags:
@@ -941,6 +957,26 @@ This tag is used to change the value of an OS2200 userid associated with the job
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
+### SAP_Step_Param_Name
+
+This tag is used to change the name of a step parameter in an SAP job definition and supports the following tags:
+
+* jobName	
+
+    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+
+* currentValue	
+
+    * (*Required*): Contains the value in the definition to be changed
+
+* newValue	
+
+    * (*Required*): The value to be placed in the definition if the currentValue matches the value in the definition
+
+* partialUpdate
+
+    * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
+
 ### Schedule_Auto_Build_Time
 
 This tag is used to change the Schedule auto build time for schedules that have the auto build option enabled.
@@ -1525,13 +1561,9 @@ This tag is used to change the value of the z/OS ddname associated with the job 
 
     * Indicates if the match to be performed is the complete definition or a partial definition (value is true or false; default is false)
 
-### ZOS_Event_User
+### ZOS_Event_Name
 
-This tag is used to change the value of an z/OS event user associated with the job and supports the following tags:
-
-* jobName	
-
-    * (*Optional*): When present, this indicates the job or group of jobs that is associated with the rule. A group of jobs is defined by using a wild card character in the job name (e.g., JOB0100 or JOB01* for all jobs starting with the characters JOB01)
+This tag is used to change the value of a z/OS event name in the definition and supports the following tags:
 
 * currentValue	
 

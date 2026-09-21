@@ -1,4 +1,10 @@
 ---
+title: OpCon Deploy
+description: "Move OpCon schedule definitions between environments with versioning, transformation rules, and audited deployments: installation, packages, deployments, and batch processing."
+tags:
+  - Conceptual
+  - System Administrator
+  - OpCon Deploy
 slug: '/'
 sidebar_label: 'OpCon Deploy'
 hide_table_of_contents: true

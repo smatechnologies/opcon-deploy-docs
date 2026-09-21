@@ -27,7 +27,17 @@ The Deployments functions support the capabilities required to deploy packages o
 
 The deploy function is used to deploy a package or a registered schedule definition within the OpCon Deploy system to a registered OpCon system. During the deploy process, the package version or schedule version is selected from the repository, the target OpCon system is selected, optionally, transformation rules can be selected from the repository, an optional description can be inserted, and the definition is then deployed to the target OpCon system.
 
-Deployment supports backward compatibility between OpCon systems 19.0 and 18.3.x. During the deployment process a check is made to determine if the OpCon versions match. If they do not match, a check is made to see if OpCon 19.0 features are present in the definition. If this is the case, the deployment is stopped with an error message indicating the incompatibility.
+Deployment supports backward compatibility to older OpCon systems. During the deployment process a check is made to determine if the OpCon versions match. If they do not match, the definition is checked for features the target system does not support, and the deployment is stopped with an error message naming the feature that caused the incompatibility.
+
+The version thresholds checked are:
+
+| If the target OpCon system is below | The deployment is stopped when the definition contains |
+| ----------------------------------- | ------------------------------------------------------ |
+| 19.0 | An SQL job type using Windows Authentication |
+| 22.0 | An OpConMFT job, an ACS job, or a GuideWire Cloud job |
+| 24.4 | An RPA job |
+
+The error message names the job type, for example `Definition contains OpConMFT job type`. Machine feature checks are performed separately; see [Machine feature check](#machine-feature-check).
 
 You can perform the deployment immediately or schedule it for a future date and time.
 

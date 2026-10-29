@@ -29,6 +29,27 @@ Deploy users should upgrade to the latest 26.0.x release, taking into account an
 
 ## 26
 
+## Version 26.0.5
+
+2026 October
+
+Deploy version 26.0.5 contains fixes and upgrades for vulnerabilities.
+
+**Migration Considerations**
+
+**Vulnerabilities**
+
+:eight_spoked_asterisk: **CON-2545*** Upgraded jackson-databing and jackson-core libraries. 
+
+**New Features**
+
+**Fixes**
+
+:eight_spoked_asterisk: **CON-1198*** database on SQL Azure installation using special characters not allowing install. 
+:eight_spoked_asterisk: **CON-2282*** Installer issue during the database scripting step with an SSL trust error when ODBC Driver 18 and the latest SQLCMD are installed.
+:eight_spoked_asterisk: **CON-2764*** UpdateTransformationRule reports the wrong result when a save fails.
+:eight_spoked_asterisk: **CON-2734*** Cannot save any edit to existing transformation rules.
+
 ## Version 26.0.4
 
 2026 August

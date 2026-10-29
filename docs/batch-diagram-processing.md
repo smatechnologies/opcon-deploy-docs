@@ -20,7 +20,7 @@ Diagram.SMAOpConDeployClient supports the following arguments in the CLI:
 
 **-ho**
 
-* Optional argument that indicates if the package diagram should only consist of headers. Default value is complete diagram
+* Optional argument that indicates if the package diagram should only consist of headers. This argument requires a value of `true` or `false` — enter `-ho true` for a headers only diagram. Default value is false, which produces a complete diagram
 
 **-p**	
 
@@ -41,7 +41,6 @@ Diagram.SMAOpConDeployClient supports the following arguments in the CLI:
 
 * Required argument that defines the user that will perform the action 
 * It must be a registered user in the repository 
-* During the DEPLOY or SIMULATE actions, a check is made to determine if the user has the appropriate role to access the server defined in the -s argument
 
 **-v**	
 
@@ -58,7 +57,7 @@ C:\test\deploy\Diagram.SMAOpConDeployClient.exe -pkg "PKG001" -u admin -v 15 -p 
 ```
  
 ```
-C:\test\deploy\Diagram.SMAOpConDeployClient.exe -pkg "PKG001" -u admin -v 15 -ho -p lBsC5ohnSf2P7/Ku81FiGw==
+C:\test\deploy\Diagram.SMAOpConDeployClient.exe -pkg "PKG001" -u admin -v 15 -ho true -p lBsC5ohnSf2P7/Ku81FiGw==
 ```
  
 

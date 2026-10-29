@@ -29,7 +29,7 @@ To update the list of records displayed in the Audit Queries window, Select the 
 
 | Filter | What it does | Default | Notes |
 |--------|-------------|---------|-------|
-| **Category** | Filters the audit log to records from a specific action category | All categories | Valid values: `Deployment`, `Package`, `Schedule`, `Server`, `TransformationRule`, `User`, `GlobalRule` |
+| **Category** | Filters the audit log to records from a specific action category | All categories | Valid values: `Deployment`, `Package`, `Schedule`, `Script`, `Server`, `TransformationRule`, `User`, `GlobalRule` |
 | **User** | Filters records to a specific OpCon Deploy user | All users | Enter the exact user name |
 | **Message** | Filters records where the audit message contains the entered string | — | Partial string match; not case-sensitive |
 | **From** | Start date for the query date range | — | Use MM/DD/YYYY format |
@@ -39,7 +39,7 @@ To update the list of records displayed in the Audit Queries window, Select the 
 
 ## Key terms
 
-**Audit category** — the classification assigned to each audit log entry that identifies the type of action recorded; valid values are `Deployment`, `Package`, `Schedule`, `Server`, `TransformationRule`, `User`, and `GlobalRule`, and the category filter can be used to narrow query results to a specific area of activity.
+**Audit category** — the classification assigned to each audit log entry that identifies the type of action recorded; valid values are `Deployment`, `Package`, `Schedule`, `Script`, `Server`, `TransformationRule`, `User`, and `GlobalRule`, and the category filter can be used to narrow query results to a specific area of activity.
 
 **Audit log** — the chronological record in the OpCon Deploy database of every action performed by every user, with each entry storing the category, a timestamp, the name of the user who acted, and a description of what changed; the log is read-only and accessible only to users with the Administration role.
 

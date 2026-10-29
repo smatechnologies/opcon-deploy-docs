@@ -152,26 +152,34 @@ Wildcards are not supported. The text entered in the **Filter** field is checked
     * Job_Machine_Name
     * Job_Machine_Name_to_Machine_Group_Name
     * Job_Name
+    * Job_Name_Mask
     * Job_Tag
     * MCP_Arguments
     * MCP_File_Title
     * MCP_Prerun_Arguments
     * MCP_Prerun_File_Title
-    * MCP_User
+    * MCP_User_Code
     * Move_Schedule_Package
     * OS2200_Account
     * OS2200_Elementname
+    * OS2200_Elementname_Mask
     * OS2200_Filename
     * OS2200_Project
     * OS2200_Qualifier
     * OS2200_Runid
+    * OS2200_Runid_Mask
     * OS2200_Userid
     * Property_Name
-    * Resource_Name,
+    * Resource_Name
+    * Role_Add
+    * Role_Name
+    * SAP_Step_Param_Name
+    * Schedule_Auto_Build_Time
     * Schedule_Build_For_All_Machines_In_Group
     * Schedule_Instance_Property
     * Schedule_Name
     * Schedule_Named_Instance
+    * Schedule_Start_Time
     * Script_Name
     * Threshold_Name
     * SQL_DTExec_Server

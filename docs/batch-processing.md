@@ -116,7 +116,7 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 **-v**	
 
-* Optional argument that defines the version of the schedule or package used with DEPLOY or SIMULATE
+* Required for DEPLOY and SIMULATE. Defines the version of the schedule or package to deploy or simulate
 
 **-w**	
 
@@ -126,13 +126,19 @@ The Batch.SMAOpConDeployClient.exe application supports the following arguments:
 
 When performing an IMPORT function, either a schedule name (`-w`), a filename for schedules (`-fw`), or a filename for transformation rules (`-tf`) argument must be present.
 
-When a DEPLOY or SIMULATE function is being performed, either a schedule name (`-w`) or a package (`-pkg`) argument must be present.
+When a DEPLOY or SIMULATE function is being performed, a version (`-v`) argument must be present, together with either a schedule name (`-w`) or a package (`-pkg`) argument.
 
 Also, when performing an INIT function, a filename (-fw) argument must be present.
 
 :::
 
 When using batch processing to deploy schedules or packages, no checking is performed for the existence of the schedule/package or any mismatch between the existing schedule and the version in the previous deployment record. However, a backup of the definitions is made and stored in the current deployment record so that no data will be lost. It is recommended that before performing a batch deployment, a simulation is performed to determine if there could be any problems with the deployment.
+
+:::note
+
+The DEPLOY, SIMULATE, INIT and schedule IMPORT actions are attempted up to three times before the application reports a failure, so a single command can produce up to three sets of entries in the job output. Importing transformation rules with `-tf` is attempted once.
+
+:::
 
 ## Batch processing examples
 

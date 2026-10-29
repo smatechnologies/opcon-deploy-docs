@@ -62,4 +62,4 @@ Yes. Run the batch application with `-a SIMULATE` using the same arguments as a 
 
 **Q: How do I encrypt the password used in batch command arguments?**
 
-Use the batch application with the `-ep` argument to encrypt a password value. The encrypted value can then be used in the `-p` argument for subsequent batch calls, avoiding plain-text passwords in scripts or pipeline definitions.
+Use the encryption tool provided by the Enterprise Manager. The batch applications do not encrypt passwords themselves — they only accept an already-encrypted value in the `-p` argument. Encrypt the password once with that tool and use the result in `-p` for subsequent calls, so no plain-text password appears in scripts or pipeline definitions.

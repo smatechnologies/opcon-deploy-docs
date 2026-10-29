@@ -31,7 +31,7 @@ tags:
 
 ## Key terms
 
-**Tag ID** — the identifier for a specific transformation tag type, such as `Machine_Name` or `Job_Name`, that determines which field in the schedule definition is targeted when the rule is evaluated during deployment; each figure in this page illustrates a different tag ID and how its match and replacement values are configured.
+**Tag ID** — the identifier for a specific transformation tag type, such as `Job_Machine_Name` or `Job_Name`, that determines which field in the schedule definition is targeted when the rule is evaluated during deployment; each figure in this page illustrates a different tag ID and how its match and replacement values are configured.
 
 **Schedule instance property** — a named property value associated with a specific schedule instance that can be targeted for transformation, allowing both the property name and its content value to be remapped to environment-specific values during deployment without altering the stored repository definition.
 
